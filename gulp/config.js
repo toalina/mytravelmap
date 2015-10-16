@@ -13,9 +13,6 @@ module.exports = {
   sass: {
     src: src + "/sass/{,*/}*.{scss,sass}",
     dest: dest + '/css/',
-    // settings: {
-    //   indentedSyntax: true,
-    // }
   },
   index: {
     src: src + "/index.html",
@@ -24,9 +21,6 @@ module.exports = {
   html: {
     src: src + "/html/**/*.html",
     dest: dest + "/html/"
-  },
-  ngConfig: {
-    dest: dest + '/js/'
   },
   server: {
     src: dest,

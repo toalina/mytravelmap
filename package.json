@@ -1,0 +1,28 @@
+{
+  "name": "my-travel-map",
+  "version": "1.0.0",
+  "description": "Web app to manage travel plans, past and future",
+  "main": "gulpfile.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/toalina/mytravelmap.git"
+  },
+  "author": "Kumji, Phil, Jeff, & Alina",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/toalina/mytravelmap/issues"
+  },
+  "homepage": "https://github.com/toalina/mytravelmap#readme",
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "gulp-sass": "^2.0.4",
+    "gulp-webserver": "^0.9.1",
+    "webpack-stream": "^2.1.1"
+  }
+}
