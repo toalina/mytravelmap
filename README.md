@@ -12,6 +12,9 @@ A web app to manage travel plans, past and future. User will sign up/log in, cho
 - Bookmark URLs for favorite places
 - Photos
 
+## Workflow
+- Always make a new branch when working on a new issue! Don't work on master branch.
+
 ## Folder Structure
 
 - api = back-end stuff
