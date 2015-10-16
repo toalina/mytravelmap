@@ -17,11 +17,11 @@ A web app to manage travel plans, past and future. User will sign up/log in, cho
 
 ## Folder Structure
 
-- api = back-end stuff
-- app = front-end stuff
+- api = back-end stuff, for development
+- app = front-end stuff, for development
 - db = database
 - gulp = gulp tasks (see Gulp section)
-- public = post production, what the public will actually view
+- public = for production!
   - !!! stuff from /api and /app will pipe through Gulp tasks into /public, so don't worry or change code in /public folder!
 - test = test files for javascript modules
 
