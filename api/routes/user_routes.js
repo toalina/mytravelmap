@@ -10,11 +10,15 @@ var ee = new eventEmitter();
 var usersRouter = module.exports = exports = express.Router();
 
 /* ======================== SIGN UP ======================== */
+usersRouter.get('/', function(req, res) {
+  res.send('hello world');
+});
 
 usersRouter.post('/signup', jsonParser, function(req,res){
   var newUser = new User();
   newUser.basic.username = req.body.username;
   newUser.username = req.body.username;
+  console.log('got to first event generatehash');
   ee.emit('generateHash', newUser, req, res);
 });
 
@@ -23,6 +27,7 @@ ee.on('generateHash', function(newUser, req, res){
     if(err){
       return errorHandle(err, res);
     }
+    console.log('got to second event save')
     ee.emit('save', newUser, req, res);
   });
 });
