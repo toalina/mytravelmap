@@ -1,0 +1,43 @@
+// Breakpoint for Media Queries
+$breakpoint: 50em;
+
+// Color Maps
+$colors: (
+  'base': #fff,
+  'primary': #1e1d24,
+  'secondary': #b4b3b5,
+  'accent': #97f1e7,
+);
+
+// Text size maps
+$font-size: (
+  'x-small': em(14),
+  'small': em(16),
+  'medium': em(20),
+  'large': em(24),
+  'x-large': em(28),
+  'xx-large': em(34),
+  'mega-small': em(48),
+);
+
+//font family map
+// $font-family: (
+//   'primary': (
+//     'light': 'Lato' sans-serif,
+//     'normal': 'Lato' sans-serif,
+//     'bold': 'Lato' sans-serif
+//   ),
+//   'secondary': (
+//     'light': 'RobotoSlab-Light' serif,
+//     'regular': 'RobotoSlab-Regular' serif
+//   ),
+// );
+
+// Font Family variables
+$lato: 'Lato', sans-serif;
+$roboto-slab: 'Roboto Slab', serif;
+
+// Font weight variables
+$weight-light: 300;
+$weight-normal: 400;
+$weight-bold: 700;
