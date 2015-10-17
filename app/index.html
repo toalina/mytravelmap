@@ -16,24 +16,35 @@
       <h1>My Travel Map</h1>
       <nav>
         <ul>
+          <li><a href="#">Future</a></li>
+          <li><a href="#">Past</a></li>
           <li><a href="#">Map</a></li>
-          <li><a href="#">Future Journeys</a></li>
-          <li><a href="#">Past Journeys</a></li>
           <li><a href="#">Logout</a></li>
+          <li class="searchbox">
+           <input type="text" placeholder="Search......" name="search" class="searchbox-input" required>
+           <span class="icon-search"></span>
+         </li>
         </ul>
       </nav>
     </header>
 
     <!--  WELCOME PAGE   -->
-    <!-- This should be directed as route '/' -->
+
     <section class="welcome">
       <h1>Let's go see the world.</h1>
       <a href="#">Log In</a>
       <a href="#">Sign Up</a>
     </section>
 
+    <!-- DEFAULT LANDING PAGE  -->
+    <section>
+      <!-- carousel of photos -->
+      <a href="#">Map!</a>
+    </section>
+
     <!-- LOG IN / SIGN UP -->
     <section>
+      <h1>Log In / Sign Up</h1>
       <form>
         <input type="text" placeholder="username">
         <input type="email" placeholder="email">
@@ -41,21 +52,93 @@
       </form>
     </section>
 
-    <!-- DEFAULT LANDING PAGE  -->
+    <!-- DASHBOARD -->
     <section>
-      <!-- TOP NAV should display above this -->
-      <!-- carousel of photos -->
+      <h1>Dashboard</h1>
+      <!-- Image as background for links -->
+      <a href="#">Future</a>
+      <a href="#">Past</a>
       <a href="#">Map</a>
+    </section>
+
+    <!-- !! LIST VIEW !!-->
+    <!-- FUTURE -->
+    <section>
+      <h1>Future</h1>
+      <!-- ng-repeat the article -->
+      <article>
+        <h2>Location</h2>
+        <ul>
+          <li>Time</li>
+          <li>Description</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- PAST -->
+    <section>
+      <h1>Past</h1>
+      <!-- ng-repeat the article -->
+      <article>
+        <h2>Location</h2>
+        <ul>
+          <li>Time</li>
+          <li>Description</li>
+        </ul>
+      </article>
     </section>
 
     <!-- MAP -->
     <section>
       <h1>Google Map</h1>
-      <div id="map">Google Map Placeholder</div>
-      <div id="content">Map Info Window</div>
+      <div id="map">Display Google Map HERE!</div>
+
+      <!-- MAP INFO WINDOW -->
+      <article>
+        <h2>Location</h2>
+        <ul>
+          <li>Plan</li>
+          <li>Photos</li>
+          <li>Memos</li>
+          <li>Links</li>
+        </ul>
+      </article>
+
     </section>
 
-    <!-- MAP POPUP WINDOW -->
+    <!-- FEATURES -->
+    <section>
+      <!-- MAKE PLAN -->
+      <article>
+        <h1>Make Plan</h1>
+        <textarea></textarea>
+      </article>
+
+      <!-- ADD PHOTOS -->
+      <article>
+        <h1>Add Photos</h1>
+
+      </article>
+
+      <!-- WRITE MEMOS -->
+      <article>
+        <h1>Write Memos</h1>
+        <textarea></textarea>
+      </article>
+
+      <!-- SAVE URLS -->
+      <article>
+        <h1>Save URLs</h1>
+        <form>
+          <input type="text" placeholder="Description">
+          <input type="text" placeholder="URL">
+          <input type="submit" >
+        </form>
+      </article>
+
+    </section>
+
+
 
   </body>
 </html>
