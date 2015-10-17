@@ -1,3 +1,5 @@
+'use strict';
+
 $('.searchbox-input').hide();
 
 $('.icon-search').on('click', function() {
