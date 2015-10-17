@@ -9,12 +9,8 @@ var userSchema = new mongoose.Schema({
     username: String,
     password: String
   },
-  placeHasbeen: {
-    place: {type: mongoose.Schema.Types.ObjectId, ref: 'Place'}
-  }
-  placeTogo: {
-    place: {type: mongoose.Schema.Types.ObjectId, ref: 'Place'}
-  }
+  placeHasbeen: [{type: ObjectId, ref: 'Place'}]
+  placeTogo: [{type: ObjectId, ref: 'Place'}]
 });
 
 userSchema.methods.generateHash = function(password, callback) {
