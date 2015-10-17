@@ -1,13 +1,14 @@
 @font-face {
   font-family: 'icomoon';
-  src:url('fonts/icomoon.eot?-qcuolu');
-  src:url('fonts/icomoon.eot?#iefix-qcuolu') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?-qcuolu') format('truetype'),
-    url('fonts/icomoon.woff?-qcuolu') format('woff'),
-    url('fonts/icomoon.svg?-qcuolu#icomoon') format('svg');
+  src:url('fonts/icomoon.eot?ciypg7');
+  src:url('fonts/icomoon.eot?ciypg7#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?ciypg7') format('truetype'),
+    url('fonts/icomoon.woff?ciypg7') format('woff'),
+    url('fonts/icomoon.svg?ciypg7#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
+
 %icon-fonts {
   font-family: 'icomoon';
   speak: none;
@@ -18,8 +19,10 @@
   line-height: 1;
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-$icons: (phone "\e603") (mail "\e604") (location "\e605") (bubble "\e60b") (search "\e617") (flag "\e610") (play "\e611") (facebook "\e613") (twitter "\e602") (google "\e612") (pinterest "\e616");
+
+$icons: (pencil "\e800") (map "\e801") (location "\e605") (calendar "\e802") (search "\e617") (facebook "\e613") (twitter "\e602") (google "\e612") (pinterest "\e616");
 
 @each $icon in $icons {
   .icon-#{nth($icon, 1)}:before {
@@ -29,16 +32,16 @@ $icons: (phone "\e603") (mail "\e604") (location "\e605") (bubble "\e60b") (sear
 }
 // ----- Footer Icons ------ //
 .icon-facebook:before {
-  color: $color-icon-circle;
+  color: $color-accent;
 }
 .icon-twitter:before {
-  color: $color-icon-circle;
+  color: $color-accent;
 }
 .icon-google:before {
-  color: $color-icon-circle;
+  color: $color-accent;
 }
 .icon-pinterest:before {
-  color: $color-icon-circle;
+  color: $color-accent;
 }
 
 

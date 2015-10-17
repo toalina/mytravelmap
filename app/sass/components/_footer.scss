@@ -1,0 +1,14 @@
+.social-icon-links {
+  text-align: center;
+  margin: 0 auto;
+  @media screen and (min-width: 50em) {
+    float: right;
+    display: inline;
+    text-align: right;
+  }
+  li {
+    padding: 0.5em;
+    display: inline-block;
+    font-size: 1em;
+  }
+}
