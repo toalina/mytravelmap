@@ -19,17 +19,13 @@ $color-secondary: #d2d2d2;
 $color-accent: #e5886d;
 $color-accent-light: #fabdab;
 
-/// ===== MAPS ====== ///
+// Font variables
+$xx-small: 0.5em;
+$x-small: 0.707em;
+$small: 1em;
+$medium: 1.414em;
+$large: 1.999;
+$x-large: 2.827;
+$xx-large: 3.998em;
 
-
-// Text size maps
-$font-size: (
-  'x-small': em(14),
-  'small': em(16),
-  'medium': em(20),
-  'large': em(24),
-  'x-large': em(28),
-  'xx-large': em(34),
-  'mega-small': em(48),
-);
 

@@ -1,0 +1,49 @@
+@mixin flex-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+}
+@mixin flex-item {
+  -webkit-flex-grow: 1;
+  -webkit-flex-shrink: 0;
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+
+// @mixin flex_wrapper ($flex-direction, $justify-content, $align-content) {
+//   display: -webkit-box;
+//   display: -ms-flexbox;
+//   display: -webkit-flex;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   -webkit-flex-direction: $flex-direction;
+//   -webkit-justify-content: $justify-content;
+//   -webkit-align-content: $align-content;
+// }
+
+// // flex-direction: row;
+// // justify-content: center;
+// // align-content: flex-start;
+
+// @mixin flex_item {
+//   -webkit-flex-grow: 1;
+//   -webkit-flex-shrink: 0;
+//   flex-grow: 1;
+//   flex-shrink: 0;
+// }
+

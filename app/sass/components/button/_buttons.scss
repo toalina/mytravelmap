@@ -1,9 +1,9 @@
 .btn-small {
-  @include button($color-base, $color-accent, $color-accent, $color-base, 8em, 'x-small');
+  @include button($color-base, $color-accent, $color-accent, $color-base, 8em, $small);
   &:hover {
-    border-color: color('accent');
+    border-color: $color-accent;
   }
   @media only screen and (min-width: $breakpoint) {
-    width: 6em;
+    width: 8em;
   }
 }

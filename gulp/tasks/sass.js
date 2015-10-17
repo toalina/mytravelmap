@@ -8,11 +8,8 @@ var config = require('../config').sass;
 gulp.task('sass', function () {
   return gulp.src(config.src)
     .pipe(sourcemaps.init())
-
     .pipe(sass(config.settings))
-
     .on('error', handleErrors)
-
     .pipe(sourcemaps.write())
 
     // .pipe(autoprefixer({ browsers: ['last 2 version'], cascade: false }))
