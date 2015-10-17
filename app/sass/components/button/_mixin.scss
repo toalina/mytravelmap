@@ -1,0 +1,19 @@
+@mixin button($background, $color, $hover-bg, $hover-color, $width, $f-size) {
+  font-size: font-size($f-size);
+  letter-spacing: .125em;
+  display: inline-flex;
+  justify-content: center;
+  text-transform: uppercase;
+  width: $width;
+  padding: 1em 0;
+  border: solid 1px;
+  background-color: $background;
+  color: $color;
+  border-color: $color;
+  border-radius: .5em;
+  &:hover{
+    background-color: $hover-bg;
+    color: $hover-color;
+    border-color: $hover-color;
+  }
+}
