@@ -1,6 +1,6 @@
 'use sctrict';
 $(document).ready(function(){
-  $('.landing-carousel').slick({
+  $('.carousel-wrapper').slick({
     dots: true,
     arrows: false,
     autoplay: true,

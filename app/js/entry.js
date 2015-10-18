@@ -4,6 +4,6 @@ require('./responsive-nav.js');
 
 // require('./slick/slick.js');
 require('./slick/slick-app.js');
-require('./slick/jquery.js');
+// require('./slick/jquery.js');
 
 

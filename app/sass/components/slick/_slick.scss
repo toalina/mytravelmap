@@ -62,14 +62,14 @@
 }
 .slick-slide {
     float: left;
-    height: 100%;
+    height: 20em;
     min-height: 1px;
     [dir="rtl"] & {
         float: right;
     }
     img {
         display: block;
-        height: 5em;
+        height: 8em;
     }
     &.slick-loading img {
         display: none;
