@@ -1,0 +1,68 @@
+/* General styles for nav-main */
+.nav-main {
+  background: $color-base;
+  position: fixed;
+  border: 1px solid $color-accent;
+  text-align: center;
+  font-size: $small;
+  font-weight: $weight-normal;
+  font-family: $lato;
+  a {
+    display: block;
+    color: $color-accent;
+    &:hover {
+      background: $color-accent;
+      color: $color-base;
+    }
+    &:active {
+      background: $color-accent-light;
+      color: $color-base;
+    }
+  }
+  .searchbox {
+    padding: 1em;
+    .searchbox-input {
+      padding: 0.5em;
+      width: 8em;
+    }
+  }
+}
+
+.nav-main-vertical {
+  width: 10em;
+  height: 100%;
+  // top: 0;
+  z-index: 1000;
+  a {
+    border-bottom: 1px solid $color-accent;
+    padding: 1em;
+  }
+}
+
+/* Vertical menu that slides from the left or right */
+.nav-main-left {
+  left: -15em;
+  &.nav-main-open {
+    left: 0;
+  }
+}
+
+/* Push classes applied to the body */
+.nav-main-push {
+  overflow-x: hidden;
+  position: relative;
+  left: 0;
+}
+
+.nav-main-push-toright {
+  left: 15em;
+}
+
+/* Transitions */
+.nav-main,
+.nav-main-push {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+

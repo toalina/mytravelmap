@@ -5,14 +5,21 @@
   justify-content: center;
   h1 {
     text-align: center;
+    font-family: $lato;
+    font-weight: $weight-bold;
+    font-size: $medium;
+    padding-bottom: 1em;
   }
-  // form {
-  //   display: block;
-  // }
   input {
     display: block;
     padding: 1em;
+    display: inline-flex;
+    justify-content: center;
+    margin: 0.5em;
   }
-
+  .btn-small {
+    display: block;
+    text-align: center;
+  }
 
 }

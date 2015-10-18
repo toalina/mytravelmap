@@ -8,13 +8,13 @@
     font-family: $lato;
     font-weight: $weight-bold;
     font-size: $medium;
-
+    padding-bottom: 1em;
   }
   a {
-    font-weight: $weight-normal;
-
+    font-weight: $weight-bold;
+    margin: 0.5em;
   }
   .welcome-wrapper {
-    max-width: 50%;
+
   }
 }

@@ -8,11 +8,13 @@
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <link rel="stylesheet" href="css/main.css">
   </head>
-  <body>
+  <body class="nav-main-push">
     <!-- TOP NAV  -->
     <header>
       <h1>My Travel Map</h1>
-      <nav>
+      <button class="btn-small" id="showLeft">Menu</button>
+
+      <nav class="nav-main nav-main-vertical nav-main-left" id="nav-main-s1">
         <ul>
           <li><a href="#">Future</a></li>
           <li><a href="#">Past</a></li>
@@ -21,10 +23,11 @@
           <li class="searchbox">
            <input type="text" placeholder="Search......" name="search" class="searchbox-input" required>
            <span class="icon-search"></span>
-         </li>
+          </li>
         </ul>
       </nav>
     </header>
+
 
     <!--  WELCOME PAGE   -->
 
@@ -50,7 +53,7 @@
         <form>
           <input type="text" placeholder="username">
           <input type="email" placeholder="email">
-          <input type="submit" name="Submit">
+          <input type="submit" name="Submit" class="btn-small">
         </form>
       </div>
     </section>
