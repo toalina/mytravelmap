@@ -16,6 +16,9 @@
     display: inline-flex;
     justify-content: center;
     margin: 0.5em;
+    @media only screen and (min-width: $breakpoint) {
+      display: block;
+    }
   }
   .btn-small {
     display: block;

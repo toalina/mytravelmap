@@ -10,10 +10,12 @@ header {
     font-size: $medium;
     display: inline;
   }
-  button {
+  #showRight {
     float: right;
     display: inline;
-
+    @media only screen and (min-width: $breakpoint) {
+      display: none;
+    }
   }
   @media only screen and (min-width: $breakpoint) {
     padding: 2em 5em 2em 5em;

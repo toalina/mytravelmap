@@ -3,48 +3,67 @@
   background: $color-base;
   position: fixed;
   border: 1px solid $color-accent;
-}
-
-.nav-main a {
-  display: block;
-  color: $color-accent;
-  font-family: $lato;
-  font-weight: $weight-normal;
-  font-size: $small;
-  text-align: center;
-}
-
-.nav-main a:hover {
-  background: $color-accent;
-  color: $color-base;
-}
-.nav-main a:active {
-  background: $color-accent;
-  color: $color-base;
+  a {
+    display: block;
+    color: $color-accent;
+    font-family: $lato;
+    font-weight: $weight-normal;
+    font-size: $small;
+    text-align: center;
+    &:hover {
+      background: $color-accent;
+      color: $color-base;
+    }
+    &:active {
+      background: $color-accent;
+      color: $color-base;
+    }
+  }
+  @media screen and (min-width: $breakpoint){
+    position: static;
+    border: none;
+    ul {
+      float: right;
+    }
+    li {
+      display: inline-block;
+      text-align: center;
+    }
+  }
 }
 
 /* Orientation-dependent styles for the content of the menu */
-
 .nav-main-vertical {
   width: 15em;
   height: 100%;
   top: 5em;
   z-index: 1000;
-}
-
-.nav-main-vertical a {
-  border-bottom: 1px solid $color-accent;
-  padding: 1em;
+  @media screen and (min-width: $breakpoint){
+    width: 100%;
+    height: 3em;
+  }
+  a {
+    border-bottom: 1px solid $color-accent;
+    padding: 1em;
+    @media screen and (min-width: $breakpoint){
+      border: none;
+      padding: 1em;
+    }
+  }
 }
 
 /* Vertical menu that slides from the left or right */
-
 .nav-main-right {
-  right: -15em;
-}
-
-.nav-main-right.nav-main-open {
-  right: 0px;
+  right: -16em;
+  @media screen and (min-width: $breakpoint){
+    right: 0em;
+  }
+  &.nav-main-open {
+    right: 0em;
+    @media screen and (min-width: $breakpoint){
+      right: 0em;
+    }
+  }
 }
 
 /* Push classes applied to the body */
@@ -52,81 +71,29 @@
   overflow-x: hidden;
   position: relative;
   left: 0;
-
+  @media screen and (min-width: $breakpoint){
+    overflow-x: initial;
+    position: static;
+    left: 0;
+  }
 }
 .nav-main-push-toright {
   left: 15em;
+   @media screen and (min-width: $breakpoint){
+    left: 0;
+  }
 }
-
 .nav-main-push-toleft {
-  left: -15em;
+  left: -16em;
+   @media screen and (min-width: $breakpoint){
+    left: 0;
+  }
 }
 
 /* Transitions */
-
 .nav-main,
 .nav-main-push {
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   transition: all 0.3s ease;
-}
-
-/* Example media queries */
-
-@media screen and (min-width: $breakpoint){
-  #showRight {
-    display: none;
-  }
-
-  .nav-main {
-    position: static;
-    border: none;
-    ul {
-      float: right;
-    }
-  }
-  .nav-main {
-    li {
-      display: inline-block;
-      text-align: center;
-    }
-  }
-
-  /* Orientation-dependent styles for the content of the menu */
-  .nav-main-vertical {
-    width: 100%;
-    height: 3em;
-    z-index: 1000;
-  }
-
-  .nav-main-vertical a {
-    border: none;
-    padding: 1em;
-  }
-
-  /* Vertical menu that slides from the left or right */
-
-  .nav-main-right {
-    right: 0em;
-  }
-
-  .nav-main-right.nav-main-open {
-    right: 0px;
-  }
-
-  /* Push classes applied to the body */
-  .nav-main-push {
-    overflow-x: hidden;
-    position: static;
-    left: 0;
-
-  }
-  .nav-main-push-toright {
-    left: 0;
-  }
-
-  .nav-main-push-toleft {
-    left: 0;
-  }
-
 }
