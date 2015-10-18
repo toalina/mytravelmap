@@ -7,3 +7,15 @@
     width: 8em;
   }
 }
+
+.btn-xsmall {
+  @include button($color-base, $color-accent, $color-accent, $color-base, 4.5em, $x-small);
+  padding: .5em;
+  &:hover {
+    border-color: $color-accent;
+  }
+  @media only screen and (min-width: $breakpoint) {
+    width: 6em;
+  }
+}
+

@@ -1,9 +1,8 @@
 header {
   height: 3em;
-  border-bottom: 1px solid $color-accent;
+  border-bottom: 1px solid $color-secondary;
   padding: 1em 1em;
   .header-button-wrapper {
-    // position: fixed;
 
     @media only screen and (min-width: $breakpoint) {
       position: static;
@@ -19,9 +18,11 @@ header {
         font-size: $large;
       }
     }
-    #showRight {
+    span {
       float: right;
       display: inline;
+      font-size: $large;
+      color: $color-primary;
       @media only screen and (min-width: $breakpoint) {
         display: none;
       }

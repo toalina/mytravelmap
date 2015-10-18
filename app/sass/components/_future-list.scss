@@ -1,0 +1,57 @@
+.list-wrapper {
+  font-family: $lato;
+  border-bottom: 1px solid $color-secondary;
+
+  h1 {
+    font-weight: $weight-bold;
+    font-size: $large;
+    padding-bottom: 1em;
+    text-align: center;
+  }
+}
+
+.list-article {
+  width: 90%;
+  margin: 0 auto;
+  display: block;
+  text-align: left;
+  padding: 2em;
+  border-bottom: 1px solid $color-secondary;
+
+  @media only screen and (min-width: $breakpoint) {
+    width: 60%;
+  }
+  figure {
+    img {
+      display: block;
+      margin: 0 auto;
+      height: 10em;
+      border-radius: 80%;
+      background: $color-accent;
+    }
+  }
+  h2 {
+    font-weight: $weight-bold;
+    font-size: $medium;
+    letter-spacing: $xx-small;
+  }
+  p {
+    line-height: $medium;
+  }
+  &:last-child {
+    border: none;
+    padding-bottom: 5em;
+  }
+}
+.article-links {
+  list-style-type: none;
+  padding-top: 1em;
+
+  li {
+    display: inline;
+    margin: 0.2em;
+  }
+  a {
+    font-size: $x-small;
+  }
+}

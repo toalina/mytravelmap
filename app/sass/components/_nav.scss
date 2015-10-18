@@ -34,10 +34,10 @@
 
 /* Orientation-dependent styles for the content of the menu */
 .nav-main-vertical {
-  width: 15em;
+  width: 12em;
   height: 100%;
   top: 5em;
-  z-index: 1000;
+  z-index: 500;
   @media screen and (min-width: $breakpoint){
     width: 100%;
     height: 3em;
@@ -54,7 +54,7 @@
 
 /* Vertical menu that slides from the left or right */
 .nav-main-right {
-  right: -16em;
+  right: -12.1em;
   @media screen and (min-width: $breakpoint){
     right: 0em;
   }
@@ -78,13 +78,13 @@
   }
 }
 .nav-main-push-toright {
-  left: 15em;
+  left: 12em;
    @media screen and (min-width: $breakpoint){
     left: 0;
   }
 }
 .nav-main-push-toleft {
-  left: -16em;
+  left: -12em;
    @media screen and (min-width: $breakpoint){
     left: 0;
   }
@@ -101,6 +101,10 @@
 .searchbox {
   padding: 1em;
   text-align: center;
+  border-bottom: 1px solid $color-accent;
+  @media screen and (min-width: $breakpoint){
+    border: none;
+  }
   .searchbox-input {
     padding: 0.5em;
   }

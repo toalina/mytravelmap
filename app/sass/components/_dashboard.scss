@@ -1,32 +1,38 @@
+@mixin flexitem {
+  -webkit-flex-grow: 1;
+  -webkit-flex-shrink: 0;
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+
 .dashboard {
+  text-align: center;
+  font-family: $lato;
+  border-bottom: 1px solid $color-secondary;
+  padding: 5em 0;
   h1 {
-    font-family: $lato;
     font-weight: $weight-bold;
-    font-size: $medium;
+    font-size: $large;
     padding-bottom: 1em;
   }
   .dashboard-links-wrapper {
     margin: 0 auto;
     display: flex;
-    align-items: center;
-    justify-content: center;
-
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
 
     figure {
-      width: 15em;
-      -webkit-flex-grow: 1;
-      -webkit-flex-shrink: 0;
-      flex-grow: 1;
-      flex-shrink: 0;
+      @include flexitem;
+      // width: 30em;
+      // display: inline;
     }
     img {
-      width: 5em;
+      width: 8em;
+    }
+    a {
+      color: $color-primary;
+      &:hover {
+        color: $color-accent;
+      }
     }
   }
 
