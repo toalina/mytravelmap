@@ -11,8 +11,10 @@
   <body class="nav-main-push">
     <!-- TOP NAV  -->
     <header>
-      <h1>My Travel Map</h1>
-      <button class="btn-small" id="showRight">Menu</button>
+      <div class="header-button-wrapper">
+        <h1>My Travel Map</h1>
+        <button class="btn-small" id="showRight">Menu</button>
+      </div>
 
       <nav class="nav-main nav-main-vertical nav-main-right" id="nav-main-s2">
         <ul>
@@ -21,8 +23,8 @@
           <li><a href="#">Map</a></li>
           <li><a href="#">Logout</a></li>
           <li class="searchbox">
-           <input type="text" placeholder="Search......" name="search" class="searchbox-input" required>
-           <span class="icon-search"></span>
+            <input type="text" placeholder="Search......" name="search" class="searchbox-input" required>
+            <span class="icon-search"></span>
           </li>
         </ul>
       </nav>
@@ -42,7 +44,7 @@
     <!-- DEFAULT LANDING PAGE  -->
     <section class="banner">
       <h1>Some kind of carousel thing</h1>
-      <div class="landing-carousel">
+      <div class="carousel-wrapper">
         <div>
           <figure>
             <img src="imgs/JackieChanDrawing.png" alt="Jackie Chan">
@@ -79,12 +81,23 @@
     </section>
 
     <!-- DASHBOARD -->
-    <section>
+    <section class="dashboard">
       <h1>Dashboard</h1>
       <!-- Image as background for links -->
-      <a href="#">Future</a>
-      <a href="#">Past</a>
-      <a href="#">Map</a>
+      <div class="dashboard-links-wrapper">
+        <figure>
+          <img src="imgs/AngelinaJolieDrawing.jpg" alt="Angelina Jolie">
+          <a href="#">Future</a>
+        </figure>
+        <figure>
+          <img src="imgs/AngelinaJolieDrawing.jpg" alt="Angelina Jolie">
+          <a href="#">Past</a>
+        </figure>
+        <figure>
+          <img src="imgs/AngelinaJolieDrawing.jpg" alt="Angelina Jolie">
+          <a href="#">Map</a>
+        </figure>
+      </div>
     </section>
 
     <!-- !! LIST VIEW !!-->
@@ -165,13 +178,13 @@
     </section>
 
     <footer>
-      <ul>
+      <ul class="footer-links">
         <li>My Travel Map</li>
         <li><a href="#">Press</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Contact</a></li>
       </ul>
-      <ul class="social-icon-links">
+      <ul class="social-media-links">
         <li><a href="#"><span class="icon-facebook"></span></a></li>
         <li><a href="#"><span class="icon-twitter"></span></a></li>
         <li><a href="#"><span class="icon-google"></span></a></li>

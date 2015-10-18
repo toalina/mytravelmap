@@ -97,3 +97,11 @@
   -moz-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
+
+.searchbox {
+  padding: 1em;
+  text-align: center;
+  .searchbox-input {
+    padding: 0.5em;
+  }
+}

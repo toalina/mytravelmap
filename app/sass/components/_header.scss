@@ -2,26 +2,32 @@ header {
   height: 3em;
   border-bottom: 1px solid $color-accent;
   padding: 1em 1em;
+  .header-button-wrapper {
+    // position: fixed;
 
-  h1 {
-    float: left;
-    font-family: $lato;
-    font-weight: $weight-bold;
-    font-size: $medium;
-    display: inline;
-  }
-  #showRight {
-    float: right;
-    display: inline;
     @media only screen and (min-width: $breakpoint) {
-      display: none;
+      position: static;
+    }
+    h1 {
+      float: left;
+      font-family: $roboto-slab;
+      font-weight: $weight-normal;
+      font-size: $large;
+      display: inline;
+      @media only screen and (min-width: $breakpoint) {
+        // padding-top: 0.5em;
+        font-size: $large;
+      }
+    }
+    #showRight {
+      float: right;
+      display: inline;
+      @media only screen and (min-width: $breakpoint) {
+        display: none;
+      }
     }
   }
   @media only screen and (min-width: $breakpoint) {
     padding: 2em 5em 2em 5em;
-    h1 {
-      // padding-top: 0.5em;
-      font-size: $large;
-    }
   }
 }

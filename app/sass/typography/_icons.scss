@@ -30,18 +30,6 @@ $icons: (pencil "\e800") (map "\e801") (location "\e605") (calendar "\e802") (se
     @extend %icon-fonts;
   }
 }
-// ----- Footer Icons ------ //
-.icon-facebook:before {
-  color: $color-accent;
-}
-.icon-twitter:before {
-  color: $color-accent;
-}
-.icon-google:before {
-  color: $color-accent;
-}
-.icon-pinterest:before {
-  color: $color-accent;
-}
+
 
 

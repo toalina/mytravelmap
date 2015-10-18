@@ -3,6 +3,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 5em 0;
+  border: 1px solid $color-accent;
   h1 {
     text-align: center;
     font-family: $lato;
@@ -13,18 +15,18 @@
   input {
     display: block;
     padding: 1em;
-    display: inline-flex;
+    margin-right: 1em;
     justify-content: center;
     margin: 0.5em;
     @media only screen and (min-width: $breakpoint) {
-      display: block;
+      display: inline-flex;
     }
   }
   .btn-small {
     display: block;
     margin: 0 auto;
     text-align: center;
-    padding-top: 1em;
+    margin-top: 1em;
   }
 
 }

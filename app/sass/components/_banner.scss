@@ -1,13 +1,15 @@
 .banner {
+  font-family: $lato;
   h1 {
-    font-family: $lato;
     font-weight: $weight-bold;
     font-size: $large;
     text-align: center;
     padding: 1em;
   }
-  .landing-carousel {
-    width: 100%;
+  .btn-small {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 1em;
   }
-
 }
