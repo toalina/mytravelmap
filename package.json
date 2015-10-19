@@ -21,6 +21,7 @@
   "homepage": "https://github.com/toalina/mytravelmap#readme",
   "dependencies": {
     "angular": "^1.4.7",
+    "angular-route": "^1.4.7",
     "body-parser": "^1.14.1",
     "express": "^4.13.3",
     "gulp": "^3.9.0",

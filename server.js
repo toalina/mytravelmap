@@ -8,7 +8,7 @@ process.env.APP_SECRET = process.env.APP_SECRET || 'itwillbeawesomeappever';
 
 app.use(express.static(__dirname + '/build'));
 var locationsRouter = require(__dirname + '/api/routes/locations_routes');
-app.use('/locations', locationsRouter);
+app.use('/api/locations', locationsRouter);
 
 var port = process.env.PORT || 3000;
 module.exports = app.listen(port, function() {
