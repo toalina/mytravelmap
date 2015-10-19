@@ -169,7 +169,6 @@
           <li>Links</li>
         </ul>
       </article>
-
     </section>
 
     <!-- FEATURES -->
@@ -184,7 +183,7 @@
           <li>Brooklyn Bridge</li>
           <li>Central Park</li>
         </ul>
-        <button>Add</button>
+        <button class="btn-xsmall">Add</button>
       </article>
 
       <!-- ADD PHOTOS -->
@@ -202,27 +201,59 @@
           <div></div>
           <div></div>
         </section>
+        <button class="btn-xsmall">Add</button>
 
       </article>
 
       <!-- WRITE MEMOS -->
-      <article>
-        <h1>Write Memos</h1>
-        <textarea></textarea>
+      <article class="memo-summary">
+        <h1>Memos</h1>
+        <ul>
+          <li>Time Square</li>
+          <li>SOHO</li>
+          <li>Brooklyn Bridge</li>
+          <li>Central Park</li>
+        </ul>
+        <button class="btn-xsmall">Add</button>
       </article>
 
       <!-- SAVE URLS -->
-      <article>
-        <h1>Save URLs</h1>
-        <form>
-          <input type="text" placeholder="Description">
-          <input type="text" placeholder="URL">
-          <input type="submit">
-        </form>
+      <article class="bookmarks-summary">
+        <h1>Bookmarks</h1>
+        <ul>
+          <li>Time Square</li>
+          <li>SOHO</li>
+          <li>Brooklyn Bridge</li>
+          <li>Central Park</li>
+        </ul>
+        <button class="btn-xsmall">Add</button>
       </article>
-
     </section>
 
+    <!-- FORM TO ADD / EDIT -->
+    <section class="add-edit-form">
+      <!-- Form to add / edit a post -->
+      <h1>Add / Edit Post</h1>
+      <form>
+        <fieldset>
+          <legend>Your Trip</legend>
+          <input type="text" description="Destination" placeholder="Destination">
+          <input type="text" description="Travel dates" placeholder="Travel dates">
+          <input type="text" description="Short description" placeholder="Short description">
+        </fieldset>
+        <fieldset>
+          <legend>Future or Past?</legend>
+          <input type="radio" value="future">
+          <label for="future">Future Journey</label>
+          <input type="radio" value="past">
+          <label for="past">Past Journey</label>
+        </fieldset>
+        <button type="submit" class="btn-small">Submit</button>
+
+      </form>
+    </section>
+
+    <!-- FOOTER  -->
     <footer>
       <ul class="footer-links">
         <li>My Travel Map</li>

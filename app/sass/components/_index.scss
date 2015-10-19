@@ -6,10 +6,15 @@
 @import "welcome";
 @import "banner";
 @import "login";
-@import "future-list";
+@import "list-wrapper";
 @import "dashboard";
 
+// Summary views
 @import "plan-summary";
 @import "photo-summary";
+@import "memo-summary";
+@import "bookmarks-summary";
+
+@import "add-edit-form";
 
 @import "footer";

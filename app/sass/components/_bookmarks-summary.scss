@@ -1,4 +1,4 @@
-.photo-summary {
+.bookmarks-summary {
   padding: 3em 1em;
   border-bottom: 1px solid $color-secondary;
   @media only screen and (min-width: $breakpoint) {
@@ -19,29 +19,15 @@
     font-size: $medium;
     padding-bottom: 1em;
   }
-}
-.flickr {
-  h1 {
-    margin-bottom: 2em;
+  ul {
+    list-style-type: square;
+    font-family: $lato;
+    font-weight: $weight-normal;
+    font-size: $small;
   }
-  div {
-    width: 4em;
-    height: 4em;
-    text-align: center;
-    margin: 0.2em;
-    display: inline-block;
+  li {
+    display: block;
+    margin: 0.5em;
+  }
 
-    &:nth-child(odd) {
-      background-color: $color-accent;
-      &:hover {
-        background-color: $color-accent-light;
-      }
-    }
-    &:nth-child(even) {
-      background-color: $color-primary;
-      &:hover {
-        background-color: $color-secondary;
-      }
-    }
-  }
 }

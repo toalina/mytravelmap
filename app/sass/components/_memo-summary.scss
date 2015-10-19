@@ -1,4 +1,4 @@
-.plan-summary {
+.memo-summary {
   padding: 3em 1em;
   border-bottom: 1px solid $color-secondary;
   @media only screen and (min-width: $breakpoint) {
@@ -20,7 +20,7 @@
     padding-bottom: 1em;
   }
   ul {
-    list-style-type: georgian;
+    list-style-type: square;
     font-family: $lato;
     font-weight: $weight-normal;
     font-size: $small;
@@ -29,5 +29,4 @@
     display: block;
     margin: 0.5em;
   }
-
 }
