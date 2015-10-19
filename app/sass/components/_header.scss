@@ -1,0 +1,46 @@
+header {
+  height: 4em;
+  border-bottom: 1px solid $color-secondary;
+  padding: 1em 1em;
+  background-color: $color-base;
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  z-index: 600;
+  width: 100%;
+  text-align: center;
+  @media only screen and (min-width: $breakpoint) {
+    height: 6em;
+  }
+
+  .header-button-wrapper {
+    padding-right: 2em;
+    @media only screen and (min-width: $breakpoint) {
+      position: static;
+      // border-bottom: 1px solid $color-secondary;
+    }
+    h1 {
+      float: left;
+      font-family: $roboto-slab;
+      font-weight: $weight-normal;
+      font-size: $large;
+      display: inline;
+      @media only screen and (min-width: $breakpoint) {
+        // padding-top: 0.5em;
+        font-size: $large;
+      }
+    }
+    .icon-menu {
+      float: right;
+      display: inline;
+      font-size: $large;
+      color: $color-primary;
+      @media only screen and (min-width: $breakpoint) {
+        display: none;
+      }
+    }
+  }
+  @media only screen and (min-width: $breakpoint) {
+    padding: 2em 4em 2em 5em;
+  }
+}

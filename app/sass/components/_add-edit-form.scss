@@ -1,0 +1,44 @@
+.add-edit-form {
+
+  padding: 3em 0;
+  border-bottom: 1px solid $color-secondary;
+  h1 {
+    text-align: center;
+    font-family: $roboto-slab;
+    font-weight: $weight-bold;
+    font-size: $large;
+    padding-bottom: 1em;
+  }
+  form {
+    font-family: $lato;
+  }
+  fieldset {
+    display: block;
+    margin: 0 auto;
+  }
+  legend, label {
+    text-align: center;
+    font-weight: $weight-bold;
+    display: block;
+  }
+  input {
+    display: block;
+    padding: 1em;
+    margin: 0 auto;
+    width: 20em;
+    @media only screen and (min-width: $breakpoint) {
+
+    }
+  }
+  // span {
+  //   text-align: center;
+  //   display: inline;
+  // }
+  .btn-small {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 1em;
+  }
+
+}

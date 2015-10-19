@@ -1,0 +1,47 @@
+.login {
+  font-family: $lato;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5em 0;
+  border: 1px solid $color-secondary;
+  // background: radial-gradient(circle, $color-base, $color-accent-light);
+  background-image: url('../imgs/machupicchu.jpg');
+  background-size: cover;
+  background-position: center center;
+  @media only screen and (min-width: $breakpoint) {
+    height: 20em;
+  }
+  h1 {
+    text-align: center;
+    font-family: $roboto-slab;
+    font-weight: $weight-bold;
+    font-size: $large;
+    color: $color-base;
+    padding-bottom: 1em;
+  }
+  input {
+    display: block;
+    padding: 1.5em;
+    margin: 1em auto;
+    justify-content: center;
+    border: none;
+
+    @media only screen and (min-width: $breakpoint) {
+      display: inline-flex;
+      margin-right: 1.5em;
+    }
+  }
+  .btn-small {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 1em;
+    &:hover {
+      cursor: pointer;
+    }
+
+  }
+  //
+
+}

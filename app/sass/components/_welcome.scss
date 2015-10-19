@@ -1,0 +1,32 @@
+.welcome {
+  height: 15em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  clear: both;
+  padding: 6em 0 5em 0;
+  border-bottom: 1px solid $color-secondary;
+  background-image: url('../imgs/japan.jpg');
+  background-size: cover;
+  background-position: center center;
+  @media only screen and (min-width: $breakpoint) {
+    height: 20em;
+    padding-top: 7em;
+  }
+  h1 {
+    font-weight: $weight-bold;
+    font-size: $large;
+    padding-bottom: 1em;
+    color: $color-base;
+    font-family: $roboto-slab;
+  }
+  a {
+    font-family: $lato;
+    font-weight: $weight-bold;
+    margin: 0.5em;
+  }
+  .welcome-wrapper {
+
+  }
+}

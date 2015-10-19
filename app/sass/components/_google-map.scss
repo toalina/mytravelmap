@@ -1,0 +1,33 @@
+.google-map {
+  padding: 3em 1em;
+  border-bottom: 1px solid $color-secondary;
+  @media only screen and (min-width: $breakpoint) {
+    width: 60%;
+    margin: 0 auto;
+  }
+  h1 {
+    text-align: center;
+    font-family: $roboto-slab;
+    font-weight: $weight-bold;
+    font-size: $large;
+    padding-bottom: 1em;
+  }
+  #map, h2, h3 {
+    text-align: center;
+    font-family: $lato;
+    font-weight: $weight-bold;
+    font-size: $medium;
+    padding-bottom: 1em;
+  }
+  ul {
+    list-style-type: georgian;
+    font-family: $lato;
+    font-weight: $weight-normal;
+    font-size: $small;
+  }
+  li {
+    display: block;
+    margin: 0.5em;
+  }
+
+}

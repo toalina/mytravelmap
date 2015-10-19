@@ -1,6 +1,6 @@
 var dest = "./public";
 var src = "./app"; // source for frontend stuff
-var devSrc = ".api"; // source for backend stuff
+var devSrc = "./api"; // source for backend stuff
 // add dev tasks configs below!
 
 module.exports = {
