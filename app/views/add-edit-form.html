@@ -1,0 +1,59 @@
+<!-- SAMPLE FORM FROM TUTORIAL -->
+    <!-- Side Panel -->
+      <div class="panel panel-default">
+        <!-- Panel Title -->
+        <div class="panel-heading">
+            <h2>Save Your Trip!</h2>
+        </div>
+        <!-- Panel Body -->
+        <div>
+          <!-- Creates Form (novalidate disables HTML validation, Angular will control) -->
+          <form name ="addForm" novalidate>
+            <!-- Text Boxes and Other User Inputs. Note ng-model binds the values to Angular $scope -->
+            <div class="form-group">
+                <label for="username">Username <span class="badge">All fields required</span></label>
+                <input type="text" class="form-control" id="username" placeholder="Username" ng-model="formData.username" required>
+            </div>
+            <label class="radio control-label">Future or Past?</label>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="optionsRadios" id="radiofuture" value="Future" ng-model="formData.triptype">
+                    Future
+                </label>
+            </div>
+            <div class="radio" required>
+                <label>
+                    <input type="radio" name="optionsRadios" id="radiopast" value="Past" ng-model="formData.triptype">
+                    Past
+                </label>
+            </div>
+
+            <div class="form-group">
+                <label for="destination">Destination</label>
+                <input type="text" class="form-control" id="destination" placeholder="Destination" ng-model="formData.destination" required>
+            </div>
+            <div class="form-group">
+                <label for="departure">Departure</label>
+                <input type="date" class="form-control" id="departure" placeholder="10-1-2015" ng-model="formData.departure" required>
+            </div>
+            <div class="form-group">
+                <label for="days"># of Days</label>
+                <input type="number" class="form-control" id="days" placeholder="12 days" ng-model="formData.days" required>
+            </div>
+            <div class="form-group">
+                <label for="latitude">Latitude</label>
+                <input type="text" class="form-control" id="latitude" value="39.500" ng-model="formData.latitude" readonly>
+            </div>
+            <div class="form-group">
+                <label for="longitude">Longitude</label>
+                <input type="text" class="form-control" id="longitude" value="-98.350" ng-model="formData.longitude" readonly>
+            </div>
+            <!-- <div class="form-group">
+                <label for="verified">HTML5 Verified Location? <span><button class="btn btn-default btn-xs"><span class="glyphicon glyphicon-refresh"></span></button></span></label>
+                <input type="text" class="form-control" id="verified" placeholder= "Nope (Thanks for spamming my map...)" ng-model="formData.htmlverified" readonly>
+            </div> -->
+            <!-- Submit button. Note that its tied to createUser() function from addCtrl. Also note ng-disabled logic which prevents early submits.  -->
+            <button type="submit" class="btn-small" ng-disabled="addForm.$invalid">Submit</button>
+          </form>
+        </div>
+      </div>
