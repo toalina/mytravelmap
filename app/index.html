@@ -266,68 +266,60 @@
         <button type="submit" class="btn-small">Submit</button>
       </form>
 
-      <!-- SAMPLE FORM FROM TUTORIAL -->
-    <!-- Side Panel -->
-      <div class="panel panel-default">
-        <!-- Panel Title -->
-        <div class="panel-heading">
-            <h2>Save Your Trip!</h2>
-        </div>
-        <!-- Panel Body -->
-        <div>
-          <!-- Creates Form (novalidate disables HTML validation, Angular will control) -->
-          <form name ="addForm" novalidate>
-            <!-- Text Boxes and Other User Inputs. Note ng-model binds the values to Angular $scope -->
-            <div class="form-group">
-                <label for="username">Username <span class="badge">All fields required</span></label>
-                <input type="text" class="form-control" id="username" placeholder="Username" ng-model="formData.username" required>
-            </div>
-            <label class="radio control-label">Future or Past?</label>
-            <div class="radio">
-                <label>
-                    <input type="radio" name="optionsRadios" id="radiofuture" value="Future" ng-model="formData.triptype">
-                    Future
-                </label>
-            </div>
-            <div class="radio" required>
-                <label>
-                    <input type="radio" name="optionsRadios" id="radiopast" value="Past" ng-model="formData.triptype">
-                    Past
-                </label>
-            </div>
+    <!-- SAMPLE FORM FROM TUTORIAL -->
 
-            <div class="form-group">
-                <label for="destination">Destination</label>
-                <input type="text" class="form-control" id="destination" placeholder="Destination" ng-model="formData.destination" required>
-            </div>
-            <div class="form-group">
-                <label for="departure">Departure</label>
-                <input type="date" class="form-control" id="departure" placeholder="10-1-2015" ng-model="formData.departure" required>
-            </div>
-            <div class="form-group">
-                <label for="days"># of Days</label>
-                <input type="number" class="form-control" id="days" placeholder="12 days" ng-model="formData.days" required>
-            </div>
-            <div class="form-group">
-                <label for="latitude">Latitude</label>
-                <input type="text" class="form-control" id="latitude" value="39.500" ng-model="formData.latitude" readonly>
-            </div>
-            <div class="form-group">
-                <label for="longitude">Longitude</label>
-                <input type="text" class="form-control" id="longitude" value="-98.350" ng-model="formData.longitude" readonly>
-            </div>
-            <!-- <div class="form-group">
-                <label for="verified">HTML5 Verified Location? <span><button class="btn btn-default btn-xs"><span class="glyphicon glyphicon-refresh"></span></button></span></label>
-                <input type="text" class="form-control" id="verified" placeholder= "Nope (Thanks for spamming my map...)" ng-model="formData.htmlverified" readonly>
-            </div> -->
-            <!-- Submit button. Note that its tied to createUser() function from addCtrl. Also note ng-disabled logic which prevents early submits.  -->
-            <button type="submit" class="btn-small" ng-disabled="addForm.$invalid">Submit</button>
-          </form>
-        </div>
+        <!-- Panel Title -->
+      <div class="panel-heading">
+          <h2>Save Your Trip!</h2>
+      </div>
+      <!-- Panel Body -->
+      <div>
+        <!-- Creates Form (novalidate disables HTML validation, Angular will control) -->
+        <form name ="addForm" novalidate>
+          <!-- Text Boxes and Other User Inputs. Note ng-model binds the values to Angular $scope -->
+          <div class="form-group">
+            <label for="username">Username <span class="badge">All fields required</span></label>
+            <input type="text" class="form-control" id="username" placeholder="Username" ng-model="formData.username" required>
+          </div>
+          <label class="radio control-label">Future or Past?</label>
+          <div class="radio">
+            <label>
+              <input type="radio" name="optionsRadios" id="radiofuture" value="Future" ng-model="formData.triptype">
+                Future
+            </label>
+          </div>
+          <div class="radio" required>
+            <label>
+              <input type="radio" name="optionsRadios" id="radiopast" value="Past" ng-model="formData.triptype">
+                Past
+            </label>
+          </div>
+
+          <div class="form-group">
+            <label for="destination">Destination</label>
+            <input type="text" class="form-control" id="destination" placeholder="Destination" ng-model="formData.destination" required>
+          </div>
+          <div class="form-group">
+            <label for="departure">Departure</label>
+            <input type="date" class="form-control" id="departure" placeholder="10-1-2015" ng-model="formData.departure" required>
+          </div>
+          <div class="form-group">
+            <label for="days"># of Days</label>
+            <input type="number" class="form-control" id="days" placeholder="12 days" ng-model="formData.days" required>
+          </div>
+          <div class="form-group">
+            <label for="latitude">Latitude</label>
+            <input type="text" class="form-control" id="latitude" value="39.500" ng-model="formData.latitude" readonly>
+          </div>
+          <div class="form-group">
+            <label for="longitude">Longitude</label>
+            <input type="text" class="form-control" id="longitude" value="-98.350" ng-model="formData.longitude" readonly>
+          </div>
+
+          <button type="submit" class="btn-small" ng-disabled="addForm.$invalid">Submit</button>
+        </form>
       </div>
     </section>
-
-
 
     <!-- FOOTER  -->
     <footer>
@@ -344,61 +336,11 @@
         <li><a href="#"><span class="icon-pinterest"></span></a></li>
       </ul>
     </footer>
+    <script type="text/javascript" src="bundle.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <!-- <script>window.jQuery || document.write('<script src="js/slick/jquery.js"><\/script>')</script> -->
     <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.min.js"></script>
-    <script src="js/packed.js"></script>
+    <script src="js/styles.js"></script>
 
-    <!-- !!!!!!! STUFF FROM KUMJI !!!!!!! -->
-<!-- =======
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-            <script type="text/javascript" src="bundle.js"></script>
-<style>
-body {
-    font: bold 12px Arial;
-     }
-a {
-    text-decoration: none;
-  }
-#map{
-    height:500px;
-    width:500px;
-    box-shadow: 3px 3px 10px gray;
-    }
-#repeat{
-     display: inline;
-     }
-#country_container {
-     width: 1000px;
-     margin: 13px 3px 3px 0px;
-     text-align: center;
-     width: 85px;
-     padding: 4px;
-     display: inline-table;
-     color: white;
-     background-color: black;
-     font-size: 12px;
-     cursor: pointer;
-     border: 1px solid black;
-     border-radius:13px;
-     }
-#country_container:hover {
-     box-shadow: 0px 0px 10px black;
-     background-color: gray;
-     border: 1px solid gray;
-     cursor: pointer;
-     }
-#names {
-     cursor: pointer;
-       }
-</style>
-  </head>
-  <body data-ng-app="mapsApp">
-<div data-ng-controller="locationCtrl" data-ng-init="getAll()">
-    <div id="map"> </div>
-    <p>Hello world! My Travel Map!!!</p>
-
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrXy6WRs6tH1roPBbwXXdaNR0NhE_MsDI"></script>
->>>>>>> master -->
   </body>
 </html>
