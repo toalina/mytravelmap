@@ -1,8 +1,7 @@
-.google-map {
-  padding: 3em 1em;
+.features {
+  padding: 6em 1em 5em 1em;
   @media only screen and (min-width: $breakpoint) {
-    width: 60%;
-    margin: 0 auto;
+    padding-top: 8em;
   }
   h1 {
     text-align: center;
@@ -11,7 +10,7 @@
     font-size: $large;
     padding-bottom: 1em;
   }
-  #map, h2, h3 {
+  h2 {
     text-align: center;
     font-family: $lato;
     font-weight: $weight-bold;
@@ -19,7 +18,7 @@
     padding-bottom: 1em;
   }
   ul {
-    list-style-type: georgian;
+    list-style-type: square;
     font-family: $lato;
     font-weight: $weight-normal;
     font-size: $small;
@@ -28,5 +27,5 @@
     display: block;
     margin: 0.5em;
   }
-
 }
+

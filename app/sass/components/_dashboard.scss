@@ -6,10 +6,13 @@
 }
 
 .dashboard {
+  padding: 6em 1em 5em 1em;
   text-align: center;
   font-family: $lato;
-  border-bottom: 1px solid $color-secondary;
-  padding: 3em 1em;
+  @media only screen and (min-width: $breakpoint) {
+    height: 20em;
+    padding-top: 8em;
+  }
   h1 {
     font-weight: $weight-bold;
     font-size: $large;
