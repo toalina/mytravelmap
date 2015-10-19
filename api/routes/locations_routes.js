@@ -13,12 +13,8 @@ locationRouter.get('/getAll', function(req,res) {
 
 locationRouter.post('/create', jsonParser, function(req,res) {
   var newLocation = new Location();
-<<<<<<< HEAD
-=======
   newLocation.lng = req.body.lng;
->>>>>>> b7eab8162ed598e25011f45978a50fd6b2df7719
   newLocation.lat = req.body.lat;
-  newLocation.long = req.body.long;
   newLocation.memo = req.body.memo;
   newLocation.name = req.body.name;
   newLocation.save(function(err, data) {
