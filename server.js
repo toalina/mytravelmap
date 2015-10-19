@@ -6,7 +6,7 @@ mongoose.connect(process.env.MONGO_URL || 'mongodb://localhost/travel_dev');
 process.env.APP_SECRET = process.env.APP_SECRET || 'itwillbeawesomeappever';
 
 
-app.use(express.static(__dirname + '/build'));
+app.use(express.static(__dirname + '/public'));
 var locationsRouter = require(__dirname + '/api/routes/locations_routes');
 app.use('/api/locations', locationsRouter);
 
