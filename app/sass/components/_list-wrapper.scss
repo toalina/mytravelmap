@@ -1,17 +1,19 @@
 .list-wrapper {
   font-family: $lato;
   border-bottom: 1px solid $color-secondary;
-
+  padding: 3em 1em;
   h1 {
+    text-align: center;
+    font-family: $roboto-slab;
     font-weight: $weight-bold;
     font-size: $large;
     padding-bottom: 1em;
-    text-align: center;
   }
 }
 
 .list-article {
-  width: 90%;
+  font-family: $lato;
+  width: 85%;
   margin: 0 auto;
   display: block;
   text-align: left;
@@ -20,6 +22,7 @@
 
   @media only screen and (min-width: $breakpoint) {
     width: 60%;
+
   }
   figure {
     img {
@@ -40,7 +43,7 @@
   }
   &:last-child {
     border: none;
-    padding-bottom: 5em;
+
   }
 }
 .article-links {
