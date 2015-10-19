@@ -1,9 +1,20 @@
+// body {
+//   top: 5em;
+// }
 header {
   height: 3em;
   border-bottom: 1px solid $color-secondary;
   padding: 1em 1em;
-  .header-button-wrapper {
+  background-color: $color-base;
+  // scroll up bar plugin
+  position: absolute;
+  top: -5em;
+  left: 0;
+  width: 100%;
+  z-index: 600;
 
+  .header-button-wrapper {
+    padding-right: 2em;
     @media only screen and (min-width: $breakpoint) {
       position: static;
     }
@@ -18,7 +29,7 @@ header {
         font-size: $large;
       }
     }
-    span {
+    .icon-menu {
       float: right;
       display: inline;
       font-size: $large;
