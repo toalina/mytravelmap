@@ -10,17 +10,9 @@ var userSchema = new mongoose.Schema({
     password: String
   },
 
-  placesHasBeen: [{type: ObjectId, ref: 'Place'}],
+  locationsHasBeen: [{type: mongoose.Schema.Types.ObjectId, ref: 'Location'}],
 
-  placesToGo: [{type: ObjectId, ref: 'Place'}],
-
-  placesHasBeen: {
-    place: {type: mongoose.Schema.Types.ObjectId, ref: 'Place'}
-  },
-
-  placesToGo: {
-    place: {type: mongoose.Schema.Types.ObjectId, ref: 'Place'}
-  }
+  locationsToGo: [{type: mongoose.Schema.Types.ObjectId, ref: 'Location'}]
 
 });
 
