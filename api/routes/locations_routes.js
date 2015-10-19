@@ -13,7 +13,7 @@ locationRouter.get('/getAll', function(req,res) {
 
 locationRouter.post('/create', jsonParser, function(req,res) {
   var newLocation = new Location();
-  newLocation.long = req.body.long;
+  newLocation.lng = req.body.lng;
   newLocation.lat = req.body.lat;
   newLocation.memo = req.body.memo;
   newLocation.name = req.body.name;
@@ -26,7 +26,7 @@ locationRouter.post('/create', jsonParser, function(req,res) {
 locationRouter.put('/update/:location_id', jsonParser, function(req, res){
   Location.findOne({'_id': req.params.location_id}, function(err, location) {
     if (err) return err;
-      if(req.body.long) location.long = req.body.long;
+      if(req.body.lng) location.lng = req.body.lng;
       if(req.body.lat)  location.lat = req.body.lat;
       if(req.body.memo) location.memo = req.body.memo;
       if(req.body.name) location.name = req.body.name;
