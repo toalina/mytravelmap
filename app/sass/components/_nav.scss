@@ -36,11 +36,13 @@
 .nav-main-vertical {
   width: 12em;
   height: 100%;
-  top: 5em;
+  top: 4em;
   z-index: 500;
   @media screen and (min-width: $breakpoint){
     width: 100%;
-    height: 3em;
+    height: 63px;
+    border-bottom: 1px solid $color-secondary;
+
   }
   a {
     border-bottom: 1px solid $color-accent;

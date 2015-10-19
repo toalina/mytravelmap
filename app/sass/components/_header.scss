@@ -1,22 +1,23 @@
-// body {
-//   top: 5em;
-// }
 header {
-  height: 3em;
+  height: 4em;
   border-bottom: 1px solid $color-secondary;
   padding: 1em 1em;
   background-color: $color-base;
-  // scroll up bar plugin
+  box-sizing: border-box;
   position: absolute;
-  top: -5em;
   left: 0;
-  width: 100%;
   z-index: 600;
+  width: 100%;
+  text-align: center;
+  @media only screen and (min-width: $breakpoint) {
+    height: 6em;
+  }
 
   .header-button-wrapper {
     padding-right: 2em;
     @media only screen and (min-width: $breakpoint) {
       position: static;
+      // border-bottom: 1px solid $color-secondary;
     }
     h1 {
       float: left;
@@ -40,6 +41,6 @@ header {
     }
   }
   @media only screen and (min-width: $breakpoint) {
-    padding: 2em 5em 2em 5em;
+    padding: 2em 4em 2em 5em;
   }
 }
