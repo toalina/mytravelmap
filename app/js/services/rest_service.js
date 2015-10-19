@@ -3,7 +3,6 @@ var handleSuccess = function(callback) {
     callback(null, res.data);
   }
 };
-
 var handlFailure = function(callback) {
   return function(data) {
     callback(data);

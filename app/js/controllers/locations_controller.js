@@ -35,8 +35,7 @@ module.exports = function(app) {
         $scope.locations.splice($scope.locations.indexOf(location), 1);
       });
     };
-
-  }])
-}
+  }]);
+};
 
 
