@@ -20,9 +20,16 @@
   },
   "homepage": "https://github.com/toalina/mytravelmap#readme",
   "dependencies": {
+    "angular": "^1.4.7",
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3",
     "gulp": "^3.9.0",
     "gulp-sass": "^2.0.4",
     "gulp-webserver": "^0.9.1",
+    "mongoose": "^4.1.11",
     "webpack-stream": "^2.1.1"
+  },
+  "devDependencies": {
+    "gulp-mocha": "^2.1.3"
   }
 }
