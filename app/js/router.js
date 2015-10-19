@@ -3,25 +3,23 @@ module.exports = function(mapsApp) {
     $route
       .when('/welcome', {
         templateUrl: 'views/welcome.html'
-      })
-      .when('/login', {
-        templateUrl: 'views/login.html'
-        // controller?
+        // controller: Set the $location.path
+        // to go to /#/dashboard
       })
       .when('/dashboard', {
         templateUrl: 'views/dashboard.html'
       })
       .when('/future', {
         templateUrl: 'views/future-trips.html'
-        // controller?
+        // controller??
       })
       .when('/past', {
         templateUrl: 'views/past-trips.html'
-        // controller?
+        // controller??
       })
       .when('/map', {
         templateUrl: 'views/google-map.html'
-        // controller?
+        // controller? : Maybe it'll go to form?
       })
       .when('/summaries', {
         templateUrl: 'views/summaries.html'
@@ -35,7 +33,7 @@ module.exports = function(mapsApp) {
         controller: 'locationCtrl'
       })
       .otherwise({
-        redirectTo: '/welcome', // map
+        redirectTo: '/welcome',
       });
       // .otherwise({
       //   redirectTo: '/locations/getAll' // map
