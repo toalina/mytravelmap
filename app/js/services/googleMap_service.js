@@ -1,5 +1,5 @@
 module.exports = function(app) {
-  app.factory('Gservice', ['$http', function($http){
+  app.factory('Gservice', function(){
     var Gservice = function(locations){
       var markers = [];
       var initLatLng = {lat: locations[0].lat, lng: locations[0].lng};
@@ -27,5 +27,5 @@ module.exports = function(app) {
       });
       markers.push(marker);
     }; 
-  }]);
+  });
 };

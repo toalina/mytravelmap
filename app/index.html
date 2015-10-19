@@ -6,9 +6,51 @@
     <title>My Travel Map</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrXy6WRs6tH1roPBbwXXdaNR0NhE_MsDI"></script>  
+<script type="text/javascript" src="bundle.js"></script>
+<style>
+body {
+    font: bold 12px Arial;
+     }
+a {
+    text-decoration: none;
+  }
+#map{
+    height:500px; 
+    width:500px; 
+    box-shadow: 3px 3px 10px gray;
+    }
+#repeat{ 
+     display: inline;
+     }
+#country_container { 
+     width: 1000px; 
+     margin: 13px 3px 3px 0px; 
+     text-align: center; 
+     width: 85px; 
+     padding: 4px; 
+     display: inline-table;  
+     color: white; 
+     background-color: black; 
+     font-size: 12px; 
+     cursor: pointer;
+     border: 1px solid black; 
+     border-radius:13px; 
+     }
+#country_container:hover { 
+     box-shadow: 0px 0px 10px black;
+     background-color: gray; 
+     border: 1px solid gray; 
+     cursor: pointer; 
+     }
+#names { 
+     cursor: pointer; 
+       }
+</style>
   </head>
-  <body>
+  <body data-ng-app="mapsApp">
+<div data-ng-controller="locationCtrl" data-ng-init="getAll()">
+    <div id="map"> </div>
     <p>Hello world! My Travel Map!!!</p>
   </body>
 </html>
