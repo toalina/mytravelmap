@@ -1,18 +1,18 @@
-/*
-  gulpfile.js
-  ===========
-  Rather than manage one giant configuration file responsible
-  for creating multiple tasks, each task has been broken out into
-  its own file in gulp/tasks. Any files in that directory get
-  automatically required below.
+var gulp = require('gulp');
+var mocha = require('gulp-mocha');
+var webpack = require('webpack-stream');
 
-  To add a new task, simply add a new task file that directory.
-  gulp/tasks/default.js specifies the default set of tasks to run
-  when you run `gulp`.
-*/
+gulp.task('webpack:dev', function() {
+  return gulp.src('./app/js/app.js') 
+    .pipe(webpack({
+      output: { filename: 'bundle.js'}
+    }))
+    .pipe(gulp.dest('build/'));
+}); //webpack for the development
 
-var requireDir = require('require-dir');
+gulp.task('staticfiles:dev', function() {
+  return gulp.src('./app/**/*.html')
+    .pipe(gulp.dest('build'))
+});
 
-// Require all tasks in gulp/tasks, including subfolders
-requireDir('./gulp/tasks', { recurse: true });
-
+gulp.task('default', ['staticfiles:dev','webpack:dev']);
