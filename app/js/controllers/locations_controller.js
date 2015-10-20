@@ -6,11 +6,24 @@ module.exports = function(app) {
 
     $scope.lat = 'LATITUDE';
     $scope.lng = 'LONGITUDE';
+    $scope.name = 'NAME';
 
-    $rootScope.$on('userLatLng', function(event, data){
-      $scope.$apply(function(){
-        $scope.lat = data.lat;
-        $scope.lng = data.lng;
+    // $rootScope.$on('userLatLng', function(event, data){
+    //   $scope.$apply(function(){
+    //     $scope.lat = data.lat;
+    //     $scope.lng = data.lng;
+    //   });
+    // });
+
+    $rootScope.$on('geocodeLatLng', function(event, geocoder, data){
+      geocoder.geocode({'location': data}, function(results, status) {
+        if (status === google.maps.GeocoderStatus.OK){
+          if (results[1]) {
+            $scope.lat = data.lat;
+            $scope.lng = data.lng;
+            $scope.$apply(function(){$scope.name = results[1].formatted_address;})
+          }
+        };
       });
     });
 
@@ -57,5 +70,3 @@ module.exports = function(app) {
     };
   }]);
 };
-
-
