@@ -13,9 +13,10 @@ module.exports = function(app) {
       }
        
        google.maps.event.addListener(this.map, 'rightclick', function(e){
-        this.temp = e.latLng.lat(); 
-        var locationData = this.temp;
-        console.log(this.temp);
+        this.tempLat = e.latLng.lat();
+        this.tempLng = e.latLng.lng(); 
+        var locationData = {lat: this.tempLat, lng: this.tempLng};
+        console.log(locationData);
         $rootScope.$emit('userLatLng', locationData);
        });      
 

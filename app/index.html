@@ -48,26 +48,10 @@ a {
 </style>
   </head>
   <body data-ng-app="mapsApp">
-<<<<<<< HEAD
-<div data-ng-controller="locationCtrl" data-ng-init="getAll()">
-    <div id="map"> </div>
-    <p>Hello world! My Travel Map!!!</p>
-
-
-    <form name = "newLogForm2" data-ng-submit = "createLocation(location)">
-      <label for "item">
-        <input type = "text" placeholder = "lat" data-ng-model = "location.lat">
-        <input type = "text" placeholder = "long" data-ng-model = "location.lng">
-        <input type = "text" placeholder = "memo" data-ng-model = "location.memo">
-      </label>
-      <button class = "myButton" type = "submit">New Location</button>
-    </form>
-=======
     <div data-ng-controller="locationCtrl" data-ng-init="getAll()">
  
         <div id="map"> </div>
-        <p>Hello world! My Travel Map!!!</p>{{lat}} / {{test2}}
-
+        <p>Hello world! My Travel Map!!!</p>LAT:{{lat}} / LNG:{{lng}}
 
         <form name = "newLogForm2" data-ng-submit = "createLocation(location)">
           <label for "item">
@@ -78,8 +62,6 @@ a {
           </label>
           <button class = "myButton" type = "submit">New Location</button>
         </form>
->>>>>>> 95867749a5669b0f2114b4d9821ff64b285a14b3
-
 
 </div>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrXy6WRs6tH1roPBbwXXdaNR0NhE_MsDI"></script> 

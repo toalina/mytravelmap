@@ -4,13 +4,14 @@ module.exports = function(app) {
     var locations = [];           
     var googleMapService = Gservice(locations);
 
-    $scope.lat = 'testing';
+    $scope.lat = 'LATITUDE';
+    $scope.lng = 'LONGITUDE';
+
     $rootScope.$on('userLatLng', function(event, data){
-      // $scope.apply(function(){
-      //   $scope.lat = data;
-      // });
-      $scope.test2 = data;
-      alert(data);
+      $scope.$apply(function(){
+        $scope.lat = data.lat;
+        $scope.lng = data.lng;
+      });
     });
 
     $scope.getAll = function() {
