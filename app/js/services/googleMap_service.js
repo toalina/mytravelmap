@@ -5,16 +5,16 @@ module.exports = function(app) {
       var initLatLng = {lat: 39.0997265, lng: -94.5785667};
       this.map = new google.maps.Map(document.getElementById('map'), { zoom: 4, center: initLatLng});
     };
+
     Gservice.prototype.initMap = function(locations) {
-      
       for(var i =0; i < locations.length; i++) {
         this.setMarker(locations[i]);
       }
 
-       google.maps.event.addListener(this.map, 'click', function(e){
-        console.log(e.latLng.lat());
-       });      
-
+      //  google.maps.event.addListener(this.map, 'click', function(event){
+      //             console.log(event.latLng);
+                  
+      // });
     };
     Gservice.prototype.setMarker = function(location) {
       var infoWindow = new google.maps.InfoWindow();
@@ -29,6 +29,8 @@ module.exports = function(app) {
         infoWindow.open(this.map, marker);
       });
       this.markers.push(marker);
+      console.log(this.temp);
+
     }; 
 
     return function(locations) {

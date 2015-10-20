@@ -4,8 +4,6 @@ module.exports = function(app) {
     var locations = [];           
     var googleMapService = Gservice(locations);
 
-    $scope.lat = 'testing';
-
     $scope.getAll = function() {
       $http.get('/api/locations/getAll')
       .then(
@@ -18,7 +16,11 @@ module.exports = function(app) {
         }
       )
     };
-
+    
+    $scope.google.maps.event.addListener(googleMapService.this.map,'click', function(event){
+                  console.log(event.latLng);
+                  
+      });
     $scope.createLocation = function(location) {
       $http.post('/api/locations/create', location)
       .then(
