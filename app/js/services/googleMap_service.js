@@ -28,7 +28,7 @@ module.exports = function(app) {
           position: new google.maps.LatLng(location.lat, location.lng),
           title: location.name,
           });
-      marker.content = '<div class="infoWindowContent">' + location.memo + '</div>';
+      marker.content = '<div class="infoWindowContent">' + location.memo + '</div>' + '<a href = "/#/plan"><button>Plan</button></a><br/><a href = "/#/photos"><button>Photos</button></a><br/><a href = "/#/memos"><button>Memos</button></a><br/><a href = "/#/links"><button>Links</button></a><br/>';
       marker.addListener('click', function(){
         infoWindow.setContent('<h2>' + marker.title + '</h2>' + marker.content);
         infoWindow.open(this.map, marker);

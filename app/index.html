@@ -6,7 +6,6 @@
     <title>My Travel Map</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1"> 
-            <!--<script src="js/jquery-2.1.1.min.js"></script>-->
             <script type="text/javascript" src="bundle.js"></script>
             
 <style>
@@ -57,24 +56,13 @@ a {
 
         <form name = "newLogForm2" data-ng-submit = "createLocation(location)">
           <label for "item">
-            <input type = "text" placeholder = "latitude" data-ng-model = "location.lat">
-            <input type = "text" placeholder = "long" data-ng-model = "location.lng">
+            Latitude: <input type = "text" placeholder = "{{lat}}" data-ng-model = "location.lat">
+            Longitude: <input type = "text" placeholder = "{{lng}}" data-ng-model = "location.lng">
             <input type = "text" placeholder = "memo" data-ng-model = "location.memo">
             <input type = "text" placeholder = "name" data-ng-model = "location.name">
           </label>
           <button class = "myButton" type = "submit">New Location</button>
-        </form>
-
-<!--         <fieldset class="gllpLatlonPicker">
-    <input type="text" class="gllpSearchField">
-    <input type="button" class="gllpSearchButton" value="search">
-    <input type="text" class="gllpLatitude" value="20"/>
-    <input type="text" class="gllpLongitude" value="20"/>
-    <input type="hidden" class="gllpZoom" value="3"/>
-    <div class="gllpMap">Google Maps</div>
-  </fieldset> -->
-
-        
+        </form>    
 
 
     </div>
@@ -83,8 +71,6 @@ a {
 
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrXy6WRs6tH1roPBbwXXdaNR0NhE_MsDI"></script>
 
-    <!--<link rel="stylesheet" type="text/css" href="jquery-gmaps-latlon-picker.css"/>
-    <script src="js/jquery-gmaps-latlon-picker.js"></script>-->
 
   </body>
 </html>
