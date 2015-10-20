@@ -1,24 +1,74 @@
 module.exports = function(app) {
-  app.controller('locationCtrl', ['$scope', 'Resource', 'Gservice', function($scope, Resource, Gservice){
-    $scope.locations = [];
-    var locationResource = Resource('locations');
-    var googleMapService = Gservice($scope.locations);
+  app.controller('locationCtrl', ['$rootScope','$scope','$http', 'Gservice', function($rootScope, $scope, $http, Gservice){
+
+    var locations = [];           
+    var googleMapService = Gservice(locations);
+
+    $scope.lat = 'LATITUDE';
+    $scope.lng = 'LONGITUDE';
+    $scope.name = 'NAME';
+    $scope.temp = {};
+
+       $scope.modalShown = false;
+    $scope.toggleModal = function() {
+      console.log('toggleModal!!');
+      $scope.modalShown = !$scope.modalShown;
+    };
+
+
+    // $rootScope.$on('userLatLng', function(event, data){
+    //   $scope.$apply(function(){
+    //     $scope.lat = data.lat;
+    //     $scope.lng = data.lng;
+    //   });
+    // });
+
+    $rootScope.$on('geocodeLatLng', function(event, geocoder, data){
+      geocoder.geocode({'location': data}, function(results, status) {
+        if (status === google.maps.GeocoderStatus.OK){
+          if (results[1]) {
+            $scope.$apply(function(){
+              $scope.click = true;
+              $scope.lat = data.lat;
+              $scope.lng = data.lng;
+              $scope.name = results[1].formatted_address;
+              $scope.temp = { lat: data.lat, lng: data.lng, name: results[1].formatted_address};
+            });
+          };
+        };
+      });
+      console.log('temp stuff!: ' + $scope.temp.name);
+      $scope.toggleModal();
+    });
 
     $scope.getAll = function() {
-      locationResource.getAll(function(err, data){
-        if (err) return console.log(err);
-        $scope.locations = data;
-        googleMapService.initMap($scope.locations);
-      });
+      $http.get('/api/locations/getAll')
+      .then(
+        function(res){
+          locations = res.data;
+          googleMapService.initMap(locations);
+        },
+        function(res){
+          alert('not working');
+        }
+      )
     };
 
     $scope.createLocation = function(location) {
-      locationResource.create(location, function(err, data){
-        if (err) return console.log(err);
-        $scope.locations.push(data);
-        $scope.newLocation = null;
-        googleMapService.setMarker(location);
-      });
+      $http.post('/api/locations/create', location)
+      .then(
+        function(res){
+          locations.push(res.data);
+          googleMapService.setMarker(location);
+          location.lat = '';
+          location.lng = '';
+          location.memo = '';
+          location.name = ''; 
+      },
+        function(res){
+          alert('Didnt work');
+        }
+      );
     };
 
     $scope.updateLocation = function(location) {
@@ -30,12 +80,7 @@ module.exports = function(app) {
     };
 
     $scope.deleteLocation = function(location) {
-      locationResource.remove(location, function(err){
-        if (err) return console.log(err);
-        $scope.locations.splice($scope.locations.indexOf(location), 1);
-      });
+      $http.delete('/delete/')
     };
   }]);
 };
-
-

@@ -10,7 +10,12 @@ app.use(express.static(__dirname + '/public'));
 var locationsRouter = require(__dirname + '/api/routes/locations_routes');
 app.use('/api/locations', locationsRouter);
 
+var userRouter = require(__dirname + '/api/routes/user_routes');
+app.use('/api', userRouter);
+
 var port = process.env.PORT || 3000;
 module.exports = app.listen(port, function() {
   console.log('server up on port: ' +  port);
 });
+
+

@@ -44,6 +44,5 @@ module.exports = function(mapsApp) {
       .otherwise({
         redirectTo: '/welcome',
       });
-
   }]);
 };
