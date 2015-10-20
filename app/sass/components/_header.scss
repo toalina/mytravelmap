@@ -14,7 +14,7 @@ header {
   }
 
   .header-button-wrapper {
-    padding-right: 2em;
+    padding-right: 1em;
     @media only screen and (min-width: $breakpoint) {
       position: static;
       // border-bottom: 1px solid $color-secondary;
@@ -26,8 +26,13 @@ header {
       font-size: $large;
       display: inline;
       @media only screen and (min-width: $breakpoint) {
-        // padding-top: 0.5em;
         font-size: $large;
+      }
+    }
+    a {
+      color: black;
+      &:hover {
+        color: $color-accent;
       }
     }
     .icon-menu {
@@ -35,6 +40,9 @@ header {
       display: inline;
       font-size: $large;
       color: $color-primary;
+      &:hover {
+        color: $color-accent;
+      }
       @media only screen and (min-width: $breakpoint) {
         display: none;
       }

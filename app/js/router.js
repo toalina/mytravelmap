@@ -37,14 +37,13 @@ module.exports = function(mapsApp) {
         templateUrl: 'views/add-edit-form.html'
         // controller?
       })
-      .when('/locations/getAll', { // show map
-        controller: 'locationCtrl'
+      .when('/summary', {
+        templateUrl: 'views/summary.html'
       })
+
       .otherwise({
         redirectTo: '/welcome',
       });
-      // .otherwise({
-      //   redirectTo: '/locations/getAll' // map
-      // });
+
   }]);
 };

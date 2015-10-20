@@ -12,6 +12,7 @@ footer {
     @media screen and (min-width: 50em) {
       float: left;
       display: inline;
+      margin-top: 0.5em;
     }
     li {
       display: inline-block;
@@ -30,6 +31,7 @@ footer {
     @media screen and (min-width: 50em) {
       float: right;
       display: inline;
+      padding-bottom: 0.5em;
     }
     li {
       padding: 0.5em;
@@ -46,18 +48,5 @@ footer {
   }
 }
 
-// ----- Footer Icons ------ //
-// .icon-facebook:before {
-//   color: $color-primary;
-// }
-// .icon-twitter:before {
-//   color: $color-primary;
-// }
-// .icon-google:before {
-//   color: $color-primary;
-// }
-// .icon-pinterest:before {
-//   color: $color-primary;
-// }
 
 
