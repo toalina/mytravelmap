@@ -1,7 +1,8 @@
 module.exports = function(app) {
-  app.factory('Gservice', ['$http', function($http){
+  app.factory('Gservice', ['$rootScope','$http', function($rootScope, $http){
     var Gservice = function(locations){
       this.markers = [];
+      this.temp;
       var initLatLng = {lat: 39.0997265, lng: -94.5785667};
       this.map = new google.maps.Map(document.getElementById('map'), { zoom: 4, center: initLatLng});
     };
@@ -10,11 +11,14 @@ module.exports = function(app) {
       for(var i =0; i < locations.length; i++) {
         this.setMarker(locations[i]);
       }
+       
+       google.maps.event.addListener(this.map, 'rightclick', function(e){
+        this.temp = e.latLng.lat(); 
+        var locationData = this.temp;
+        console.log(this.temp);
+        $rootScope.$emit('userLatLng', locationData);
+       });      
 
-      //  google.maps.event.addListener(this.map, 'click', function(event){
-      //             console.log(event.latLng);
-                  
-      // });
     };
     Gservice.prototype.setMarker = function(location) {
       var infoWindow = new google.maps.InfoWindow();

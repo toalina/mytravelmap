@@ -1,8 +1,17 @@
 module.exports = function(app) {
-  app.controller('locationCtrl', ['$scope', '$http', 'Gservice', function($scope, $http, Gservice){
+  app.controller('locationCtrl', ['$rootScope','$scope', '$http', 'Gservice', function($rootScope, $scope, $http, Gservice){
 
     var locations = [];           
     var googleMapService = Gservice(locations);
+
+    $scope.lat = 'testing';
+    $rootScope.$on('userLatLng', function(event, data){
+      // $scope.apply(function(){
+      //   $scope.lat = data;
+      // });
+      $scope.test2 = data;
+      alert(data);
+    });
 
     $scope.getAll = function() {
       $http.get('/api/locations/getAll')
