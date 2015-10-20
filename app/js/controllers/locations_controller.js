@@ -1,14 +1,16 @@
 module.exports = function(app) {
   app.controller('locationCtrl', ['$scope', 'Resource', 'Gservice', function($scope, Resource, Gservice){
-    $scope.locations = [];
+    var locations = [{lat: 23.200000, lng: 77.250000, name: 'test', memo: 'hello world'},
+                  {lat: 28.500000, lng: 77.250000, name: 'test1', memo: 'omg'}];
+                  
     var locationResource = Resource('locations');
-    var googleMapService = Gservice($scope.locations);
+    var googleMapService = Gservice(locations);
 
     $scope.getAll = function() {
       locationResource.getAll(function(err, data){
         if (err) return console.log(err);
         $scope.locations = data;
-        googleMapService.initMap($scope.locations);
+        googleMapService.initMap(locations);
       });
     };
 

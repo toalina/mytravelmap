@@ -1,17 +1,20 @@
 module.exports = function(app) {
   app.factory('Gservice', ['$http', function($http){
     var Gservice = function(locations){
-      var markers = [];
+      this.markers = [];
       var initLatLng = {lat: locations[0].lat, lng: locations[0].lng};
-      var map = new google.maps.Map(document.getElementById('map'), { zoom: 4, center: initLatLng});
+      this.map = new google.maps.Map(document.getElementById('map'), { zoom: 4, center: initLatLng});
     };
     Gservice.prototype.initMap = function(locations) {
+      console.log(locations);
       for(var i =0; i < locations.length; i++) {
-      setMarker(locations[i], map);
+        this.setMarker(locations[i]);
       }
-      google.maps.event.addListener(map, 'click', function(event){
-        setMarker(event.latLng);
+   
+      google.maps.event.addListener(this.map, 'click', function(event){
+        //this.addMarker(event.latLng); -> need to create
       });
+
     };
     Gservice.prototype.setMarker = function(location) {
       var infoWindow = new google.maps.InfoWindow();
@@ -23,9 +26,13 @@ module.exports = function(app) {
       marker.content = '<div class="infoWindowContent">' + location.memo + '</div>';
       marker.addListener('click', function(){
         infoWindow.setContent('<h2>' + marker.title + '</h2>' + marker.content);
-        infoWindow.open(map, marker);
+        infoWindow.open(this.map, marker);
       });
-      markers.push(marker);
+      this.markers.push(marker);
     }; 
+
+    return function(locations) {
+      return new Gservice(locations);
+    };
   }]);
 };
