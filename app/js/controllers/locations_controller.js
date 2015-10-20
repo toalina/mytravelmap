@@ -1,5 +1,5 @@
 module.exports = function(app) {
-  app.controller('locationCtrl', ['$rootScope','$scope', '$http', 'Gservice', function($rootScope, $scope, $http, Gservice){
+  app.controller('locationCtrl', ['$rootScope','$scope','$http', 'Gservice', function($rootScope, $scope, $http, Gservice){
 
     var locations = [];           
     var googleMapService = Gservice(locations);
@@ -7,6 +7,14 @@ module.exports = function(app) {
     $scope.lat = 'LATITUDE';
     $scope.lng = 'LONGITUDE';
     $scope.name = 'NAME';
+    $scope.temp = {};
+
+       $scope.modalShown = false;
+    $scope.toggleModal = function() {
+      console.log('toggleModal!!');
+      $scope.modalShown = !$scope.modalShown;
+    };
+
 
     // $rootScope.$on('userLatLng', function(event, data){
     //   $scope.$apply(function(){
@@ -19,12 +27,18 @@ module.exports = function(app) {
       geocoder.geocode({'location': data}, function(results, status) {
         if (status === google.maps.GeocoderStatus.OK){
           if (results[1]) {
-            $scope.lat = data.lat;
-            $scope.lng = data.lng;
-            $scope.$apply(function(){$scope.name = results[1].formatted_address;})
-          }
+            $scope.$apply(function(){
+              $scope.click = true;
+              $scope.lat = data.lat;
+              $scope.lng = data.lng;
+              $scope.name = results[1].formatted_address;
+              $scope.temp = { lat: data.lat, lng: data.lng, name: results[1].formatted_address};
+            });
+          };
         };
       });
+      console.log('temp stuff!: ' + $scope.temp.name);
+      $scope.toggleModal();
     });
 
     $scope.getAll = function() {
