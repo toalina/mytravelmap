@@ -4,6 +4,8 @@ module.exports = function(app) {
     var locations = [];           
     var googleMapService = Gservice(locations);
 
+    $scope.lat = 'testing';
+
     $scope.getAll = function() {
       $http.get('/api/locations/getAll')
       .then(
@@ -43,10 +45,7 @@ module.exports = function(app) {
     };
 
     $scope.deleteLocation = function(location) {
-      locationResource.remove(location, function(err){
-        if (err) return console.log(err);
-        $scope.locations.splice($scope.locations.indexOf(location), 1);
-      });
+      $http.delete('/delete/')
     };
   }]);
 };
