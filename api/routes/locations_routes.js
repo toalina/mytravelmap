@@ -5,8 +5,10 @@ var jsonParser = require('body-parser').json();
 var locationRouter = module.exports = exports = express.Router();
 
 locationRouter.get('/getAll', function(req,res) {
+  console.log('before query');
   Location.find({}, function(err, data) {
     if (err) return err;
+    console.log(data);
     res.json(data);
   });
 });

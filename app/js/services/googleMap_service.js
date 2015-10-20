@@ -2,7 +2,7 @@ module.exports = function(app) {
   app.factory('Gservice', ['$http', function($http){
     var Gservice = function(locations){
       this.markers = [];
-      var initLatLng = {lat: locations[0].lat, lng: locations[0].lng};
+      var initLatLng = {lat: 39.0997265, lng: -94.5785667};
       this.map = new google.maps.Map(document.getElementById('map'), { zoom: 4, center: initLatLng});
     };
     Gservice.prototype.initMap = function(locations) {

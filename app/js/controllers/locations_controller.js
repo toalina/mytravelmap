@@ -1,26 +1,35 @@
 module.exports = function(app) {
-  app.controller('locationCtrl', ['$scope', 'Resource', 'Gservice', function($scope, Resource, Gservice){
-    var locations = [{lat: 23.200000, lng: 77.250000, name: 'test', memo: 'hello world'},
-                  {lat: 28.500000, lng: 77.250000, name: 'test1', memo: 'omg'}];
-                  
-    var locationResource = Resource('locations');
+  app.controller('locationCtrl', ['$scope', '$http', 'Gservice', function($scope, $http, Gservice){
+
+    var locations = [];           
     var googleMapService = Gservice(locations);
 
     $scope.getAll = function() {
-      locationResource.getAll(function(err, data){
-        if (err) return console.log(err);
-        $scope.locations = data;
-        googleMapService.initMap(locations);
-      });
+      $http.get('/api/locations/getAll')
+      .then(
+        function(res){
+          locations = res.data;
+          googleMapService.initMap(locations);
+        },
+        function(res){
+          alert('not working');
+        }
+      )
     };
 
     $scope.createLocation = function(location) {
-      locationResource.create(location, function(err, data){
-        if (err) return console.log(err);
-        $scope.locations.push(data);
-        $scope.newLocation = null;
-        googleMapService.setMarker(location);
-      });
+      $http.post('/api/locations/create', location)
+      .then(
+        function(res){
+          console.log('SUCCESS MOTHA FUCKA!!!!!!!!!!!!!!!')
+          locations.push(res.data);
+          googleMapService.setMarker(location); 
+      },
+        function(res){
+          alert('Didnt work');
+        }
+      );
+      // googleMapService.setMarker(location);
     };
 
     $scope.updateLocation = function(location) {
