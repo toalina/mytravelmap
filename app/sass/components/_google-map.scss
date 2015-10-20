@@ -39,8 +39,10 @@
 }
 .mapForm-wrapper {
   border: 1px solid green;
+  width: 30em;
+  height: 30em;
   @media only screen and (min-width: $breakpoint) {
-    width: 60%;
+    width: 40%;
     margin: 0 auto;
   }
   fieldset {
