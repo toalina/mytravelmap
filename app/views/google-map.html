@@ -1,5 +1,7 @@
+
 <!-- MAP -->
-<section class="google-map">
+<section class="google-map" data-ng-app="mapsApp">
+<div data-ng-controller="locationCtrl" data-ng-init="getAll()">
   <h1>Google Map</h1>
   <div id="map">Display Google Map HERE!</div>
 
@@ -7,7 +9,7 @@
   <article class="info-window">
     <h2>Map Info Window</h2>
     <ul>
-      <li>Destination: {{ mapForm.destination }}</li>
+      <li>Destination: {{name}}</li>
       <li>Departure Date: {{ mapForm.departure | date }}</li>
       <li>Days: {{ mapForm.days }}</li>
       <li>{{ mapForm.triptype }}</li>
@@ -67,5 +69,5 @@
       <button type="submit" class="btn-small" ng-disabled="mapForm.$invalid">Submit</button>
     </form>
   </div>
-
+</div>
 </section>
