@@ -19,13 +19,13 @@
     padding-bottom: 1em;
     color: $color-base;
     font-family: $roboto-slab;
+    @media only screen and (min-width: $breakpoint) {
+      font-size: $x-large;
+    }
   }
   a {
     font-family: $lato;
     font-weight: $weight-bold;
     margin: 0.5em;
-  }
-  .welcome-wrapper {
-
   }
 }

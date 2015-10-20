@@ -1,5 +1,25 @@
+@mixin flexwrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+}
+
 @mixin flexitem {
-  -webkit-flex-grow: 1;
+ -webkit-flex-grow: 1;
   -webkit-flex-shrink: 0;
   flex-grow: 1;
   flex-shrink: 0;
@@ -7,77 +27,56 @@
 
 .dashboard {
   padding: 6em 1em 5em 1em;
-  text-align: center;
-  font-family: $lato;
   @media only screen and (min-width: $breakpoint) {
-    height: 20em;
     padding-top: 8em;
   }
   h1 {
     font-weight: $weight-bold;
     font-size: $large;
+    font-family: $roboto-slab;
     padding-bottom: 1em;
+    text-align: center;
   }
   .dashboard-links-wrapper {
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
+    font-family: $roboto-slab;
+    @include flexwrapper;
 
-    figure {
-      @include flexitem;
-      // width: 30em;
-      // display: inline;
-    }
-    img {
-      width: 8em;
-    }
     a {
-      color: $color-primary;
+      @include flexitem;
+      margin: 0.5em;
+      color: $color-base;
+      font-size: $large;
+      font-weight: $weight-bold;
+      text-align: center;
+      width: 9em;
+      height: 9em;
+      line-height: 9em;
       &:hover {
         color: $color-accent;
       }
+      @media only screen and (min-width: $breakpoint) {
+        margin: 0.2em;
+      }
+    }
+    .dashboard-future {
+      background-image: url('../imgs/barcelona2.jpg');
+      background-size: contain;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+    .dashboard-past {
+      background-image: url('../imgs/montreal2.jpg');
+      background-size: contain;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+    .dashboard-map {
+      background-image: url('../imgs/colombia2.jpg');
+      background-size: contain;
+      background-position: center center;
+      background-repeat: no-repeat;
     }
   }
-
 }
 
-// .features {
-//   @include flexbox;
-//   li {
-//     @include flex_item;
-//     margin: 0.75em;
-//     width: 11em;
-//     padding: 0.5em 0;
-//     @media screen and (min-width: 550px) {
-//       padding: 2em 0;
-//       margin-top: 0.75em;
-//     }
-//     @media screen and (min-width: 1030px) {
-//       margin-top: 1em;
-//     }
-//     &:hover {
-//     background: $color-icon-background-h;
-//     box-shadow: -0.01em -0.01em 1em 0.05em #888888;
-//       span {
-//         color: $color-icon-h;
-//         border-color: $hover-color-1;
-//       }
-//     }
-//   }
-//   span {
-//     margin: 0 auto;
-//     color: $color-icon-circle-h;
-//   }
-//   h3 {
-//     margin: 1em;
-//     font: $head-small-bold-font;
-//     text-align: center;
-//   }
-//   p {
-//     margin: 1em;
-//     text-align: center;
-//     font: $text-light-font;
-//     color: $color-text-medium;
-//     padding-top: 1em;
-//   }
-// }
+

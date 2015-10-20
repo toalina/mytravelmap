@@ -17,6 +17,9 @@
     font-size: $large;
     color: $color-base;
     padding-bottom: 1em;
+    @media only screen and (min-width: $breakpoint) {
+      font-size: $x-large;
+    }
   }
   input {
     display: block;
@@ -38,8 +41,6 @@
     &:hover {
       cursor: pointer;
     }
-
   }
-  //
 
 }

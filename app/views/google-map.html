@@ -3,15 +3,69 @@
   <h1>Google Map</h1>
   <div id="map">Display Google Map HERE!</div>
 
-  <!-- MAP INFO WINDOW -->
-  <article>
+  <!-- MAP POPUP INFO WINDOW -->
+  <article class="info-window">
     <h2>Map Info Window</h2>
-    <h3>Location</h3>
     <ul>
-      <li>Plan</li>
-      <li>Photos</li>
-      <li>Memos</li>
-      <li>Links</li>
+      <li>Destination: {{ mapForm.destination }}</li>
+      <li>Departure Date: {{ mapForm.departure | date }}</li>
+      <li>Days: {{ mapForm.days }}</li>
+      <li>{{ mapForm.triptype }}</li>
+    </ul>
+    <ul class="article-links">
+      <li><a href="#/plan" class="btn-xsmall">Plan</a></li>
+      <li><a href="#/photos" class="btn-xsmall">Photos</a></li>
+      <li><a href="#/memos" class="btn-xsmall">Memos</a></li>
+      <li><a href="#/bookmarks" class="btn-xsmall">Links</a></li>
     </ul>
   </article>
+
+  <!-- FORM  -->
+  <div class="mapForm-wrapper">
+    <!-- Creates Form (novalidate disables HTML validation, Angular will control) -->
+    <h2>Add Trip</h2>
+    <form name ="mapForm" novalidate>
+      <fieldset>
+        <label for="destination">Destination</label>
+        <input type="text" placeholder="Destination" ng-model="mapForm.destination" required>
+        {{ mapForm.destination }}
+      </fieldset>
+      <fieldset>
+        <label for="departure">Departure Date</label>
+        <input type="date" placeholder="10-1-2015" ng-model="mapForm.departure" required>
+        {{ mapForm.departure | date }}
+      </fieldset>
+      <fieldset>
+        <label for="days"># of Days</label>
+        <input type="number" placeholder="12 days" ng-model="mapForm.days" required>
+        {{ mapForm.days }}
+      </fieldset>
+      <label>Future or Past? </label>
+      {{ mapForm.triptype }}
+      <fieldset>
+        <label>
+          <input type="radio" value="Future" ng-model="mapForm.triptype">
+            Future
+        </label>
+      </fieldset>
+      <fieldset required>
+        <label>
+          <input type="radio" value="Past" ng-model="mapForm.triptype">
+            Past
+        </label>
+      </fieldset>
+      <fieldset>
+        <label for="latitude">Latitude</label>
+        <input type="text" id="latitude" value="39.500" ng-model="mapForm.latitude" readonly>
+        {{ mapForm.latitude }}
+      </fieldset>
+      <fieldset>
+        <label for="longitude">Longitude</label>
+        <input type="text" id="longitude" value="-98.350" ng-model="mapForm.longitude" readonly>
+        {{ mapForm.longitude }}
+      </fieldset>
+      <button type="submit" class="btn-small" ng-disabled="mapForm.$invalid">Submit</button>
+    </form>
+  </div>
+
 </section>
