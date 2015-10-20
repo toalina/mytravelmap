@@ -21,15 +21,17 @@ module.exports = function(app) {
       $http.post('/api/locations/create', location)
       .then(
         function(res){
-          console.log('SUCCESS MOTHA FUCKA!!!!!!!!!!!!!!!')
           locations.push(res.data);
-          googleMapService.setMarker(location); 
+          googleMapService.setMarker(location);
+          location.lat = '';
+          location.lng = '';
+          location.memo = '';
+          location.name = ''; 
       },
         function(res){
           alert('Didnt work');
         }
       );
-      // googleMapService.setMarker(location);
     };
 
     $scope.updateLocation = function(location) {
