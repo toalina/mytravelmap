@@ -21,9 +21,17 @@ module.exports = function(mapsApp) {
         templateUrl: 'views/google-map.html'
         // controller? : Maybe it'll go to form?
       })
-      .when('/summaries', {
-        templateUrl: 'views/summaries.html'
-
+      .when('/plan', {
+        templateUrl: 'views/plan.html'
+      })
+      .when('/photos', {
+        templateUrl: 'views/photos.html'
+      })
+      .when('/memos', {
+        templateUrl: 'views/memos.html'
+      })
+      .when('/bookmarks', {
+        templateUrl: 'views/bookmarks.html'
       })
       .when('/form', {
         templateUrl: 'views/add-edit-form.html'
