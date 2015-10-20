@@ -1,0 +1,15 @@
+// Map-Get Function for Colors
+@function color($key: 'primary') {
+  @return map-get($colors, $key);
+}
+
+//Map-Get Function for font-size:
+@function font-size($key: 'x-small') {
+  @return map-get($font-size, $key);
+}
+
+//Map-Get Function for Font-Family
+@function font-family($font-name, $font-variant) {
+  @return map-get(map-get($font-family, $font-name), $font-variant);
+}
+

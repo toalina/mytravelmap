@@ -1,0 +1,37 @@
+.updateForm {
+  padding: 6em 1em 5em 1em;
+  text-align: center;
+  font-family: $lato;
+  @media only screen and (min-width: $breakpoint) {
+    padding-top: 8em;
+    width: 60%;
+    margin: 0 auto;
+  }
+  h1 {
+    text-align: center;
+    font-family: $roboto-slab;
+    font-weight: $weight-bold;
+    font-size: $large;
+    padding-bottom: 1em;
+  }
+
+}
+.updateForm-wrapper {
+  border: 1px solid green;
+  fieldset {
+    margin: 0.5em;
+  }
+  .radio {
+    display: inline;
+  }
+  .btn-xsmall {
+    width: 8em;
+  }
+  label {
+    display: inline-block;
+  }
+  input {
+    padding: 1em;
+  }
+}
+

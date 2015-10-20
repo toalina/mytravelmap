@@ -1,0 +1,35 @@
+.photo-summary {
+  padding: 3em 1em;
+  @media only screen and (min-width: $breakpoint) {
+    width: 60%;
+    margin: 0 auto;
+  }
+  a {
+    font-family: $lato;
+  }
+}
+.gallery {
+  h1 {
+    margin-bottom: 2em;
+  }
+  div {
+    width: 4em;
+    height: 4em;
+    text-align: center;
+    margin: 0.2em;
+    display: inline-block;
+
+    &:nth-child(odd) {
+      background-color: $color-accent;
+      &:hover {
+        background-color: $color-accent-light;
+      }
+    }
+    &:nth-child(even) {
+      background-color: $color-primary;
+      &:hover {
+        background-color: $color-secondary;
+      }
+    }
+  }
+}

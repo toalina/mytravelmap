@@ -1,14 +1,17 @@
 var dest = "./public";
 var src = "./app"; // source for frontend stuff
-var devSrc = ".api"; // source for backend stuff
-// add dev tasks configs below!
 
 module.exports = {
   javascript: {
-    src: src + '/js/**/*.js',
+    src: src + '/js/styles/**/*.js',
     dest: dest + '/js/',
-    entry: src + '/js/entry.js',
-    outputFilename: 'packed.js'
+    entry: src + '/js/styles/entry.js',
+    outputFilename: 'styles.js'
+  },
+  webpack_dev: {
+    src: src + '/js/app.js',
+    dest: dest + '/js/',
+    outputFilename: 'bundle.js'
   },
   sass: {
     src: src + "/sass/{,*/}*.{scss,sass}",
@@ -19,8 +22,8 @@ module.exports = {
     dest: dest + "/"
   },
   html: {
-    src: src + "/html/**/*.html",
-    dest: dest + "/html/"
+    src: src + "/views/**/*.html",
+    dest: dest + "/views/"
   },
   server: {
     src: dest,

@@ -1,4 +1,6 @@
 var gulp = require('gulp');
 
-gulp.task('default', ['sass', 'html', 'index', 'webpack', 'watch', 'serve']);
+gulp.task('default', ['webpack_dev', 'sass', 'html', 'index', 'webpack', 'watch', 'serve']);
+
+// gulp.task('styles', []);
 
