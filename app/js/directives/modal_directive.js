@@ -1,6 +1,8 @@
-app.directive('modalDialog', function() {
+module.exports = function(app){
+  app.directive('modalDialog', function() {
   return {
     restrict: 'E',
+    templateUrl: '/views/ng-modal.html', // See below
     scope: {
       show: '='
     },
@@ -16,6 +18,6 @@ app.directive('modalDialog', function() {
         scope.show = false;
       };
     },
-    template: '../../views/ng-modal.html' // See below
   };
 });
+};
