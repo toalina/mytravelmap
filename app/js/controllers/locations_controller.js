@@ -4,6 +4,8 @@ module.exports = function(app) {
     var locations = [];           
     var googleMapService = Gservice(locations);
 
+    $scope.lat = 'testing';
+
     $scope.getAll = function() {
       $http.get('/api/locations/getAll')
       .then(
@@ -21,15 +23,17 @@ module.exports = function(app) {
       $http.post('/api/locations/create', location)
       .then(
         function(res){
-          console.log('SUCCESS MOTHA FUCKA!!!!!!!!!!!!!!!')
           locations.push(res.data);
-          googleMapService.setMarker(location); 
+          googleMapService.setMarker(location);
+          location.lat = '';
+          location.lng = '';
+          location.memo = '';
+          location.name = ''; 
       },
         function(res){
           alert('Didnt work');
         }
       );
-      // googleMapService.setMarker(location);
     };
 
     $scope.updateLocation = function(location) {
@@ -41,10 +45,7 @@ module.exports = function(app) {
     };
 
     $scope.deleteLocation = function(location) {
-      locationResource.remove(location, function(err){
-        if (err) return console.log(err);
-        $scope.locations.splice($scope.locations.indexOf(location), 1);
-      });
+      $http.delete('/delete/')
     };
   }]);
 };
