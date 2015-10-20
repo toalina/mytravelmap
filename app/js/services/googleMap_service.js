@@ -6,14 +6,14 @@ module.exports = function(app) {
       this.map = new google.maps.Map(document.getElementById('map'), { zoom: 4, center: initLatLng});
     };
     Gservice.prototype.initMap = function(locations) {
-      console.log(locations);
+      
       for(var i =0; i < locations.length; i++) {
         this.setMarker(locations[i]);
       }
-   
-      google.maps.event.addListener(this.map, 'click', function(event){
-        //this.addMarker(event.latLng); -> need to create
-      });
+
+       google.maps.event.addListener(this.map, 'click', function(e){
+        console.log(e.latLng.lat());
+       });      
 
     };
     Gservice.prototype.setMarker = function(location) {
