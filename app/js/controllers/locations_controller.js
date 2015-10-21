@@ -10,6 +10,7 @@ module.exports = function(app) {
     $scope.temp = {};
 
     $scope.modalShown = false;
+    $scope.addTrip = false;
 
     $scope.toggleModal = function() {
       console.log('toggleModal!!');
@@ -17,6 +18,7 @@ module.exports = function(app) {
     };
     $scope.hideModal = function() {
        $scope.modalShown = !$scope.modalShown;
+       $scope.addTrip = false;
     };
 
     $rootScope.$on('geocodeLatLng', function(event, geocoder, data){

@@ -28,6 +28,15 @@
       <div class="mapForm-wrapper" data-ng-show='modalShown'>
       <div class='ng-modal-overlay'>
         <div class='ng-modal-dialog' ng-style='dialogStyle'>
+
+        <div data-ng-hide="addTrip">
+          <fieldset>
+          <label for="destination">{{name}}</label><br><br><br>
+          <button class="btn-small" data-ng-click="addTrip=true">ADD Trip</button>
+          <button class="btn-small" data-ng-click="hideModal()">Cancel</button>
+          </fieldset>
+        </div>
+        <div data-ng-show="addTrip">
         <h2>Add Trip</h2>
         <form name ="newLocation" novalidate>
           <fieldset>
@@ -61,6 +70,7 @@
           <button type="submit" class="btn-small" data-ng-click="createLocation(newLocation)">Submit</button>
           <button class="btn-small" data-ng-click="hideModal()">Cancel</button>
         </form>
+      </div>
   </div>
   </div>
   </div>
