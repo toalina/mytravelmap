@@ -52,8 +52,9 @@ module.exports = function(app) {
       )
     };
 
-    $scope.createLocation = function(location) {
+    $scope.createLocation = function(location, type) {
       $scope.hideModal();
+      googleMapService.markerImage(type);
       $http.post('/api/locations/create', location)
       .then(
         function(res){

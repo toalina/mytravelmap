@@ -21,6 +21,12 @@ module.exports = function(app) {
        });      
     };
 
+    Gservice.prototype.markerImage = function(type) {
+      if(type === 'future')
+        this.image = '';
+      this.image = '';
+    };
+
     Gservice.prototype.setMarker = function(location) {
       var infoWindow = new google.maps.InfoWindow();
       var marker = new google.maps.Marker({
