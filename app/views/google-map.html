@@ -23,16 +23,15 @@
     </article>
 
     <!-- MODAL DIALOG (FORM) -->
-    <button data-ng-click="toggleModal()">Toggle Modal</button>
+
 
       <div class="mapForm-wrapper" data-ng-show='modalShown'>
       <div class='ng-modal-overlay'>
         <div class='ng-modal-dialog' ng-style='dialogStyle'>
         <h2>Add Trip</h2>
-        <form name ="newLocation" data-ng-submit="createLocation(newLocation)" novalidate>
+        <form name ="newLocation" novalidate>
           <fieldset>
-            <label for="destination">Destination</label>
-            <input type="text" placeholder="{{ name }}" data-ng-model="mapForm.destination" required>
+            <label for="destination">{{name}}</label>
           </fieldset>
           <fieldset>
             <label for="departure">Departure Date</label>
@@ -59,7 +58,8 @@
             </label>
           </fieldset>
 
-          <button type="submit" class="btn-small" data-ng-click="testSubmit()">Submit</button>
+          <button type="submit" class="btn-small" data-ng-click="createLocation(newLocation)">Submit</button>
+          <button class="btn-small" data-ng-click="hideModal()">Cancel</button>
         </form>
   </div>
   </div>
