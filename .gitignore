@@ -1,5 +1,10 @@
 node_modules
-public
+public/css/main.css
+public/js
+public/views
+public/index.html
 
 build
 db
+
+.DS_Store
