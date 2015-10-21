@@ -8,7 +8,5 @@ gulp.task('watch', function() {
   gulp.watch(config.sass.src, ['sass']);
   gulp.watch(config.index.src, ['index']);
   gulp.watch(config.html.src, ['html']);
-
-  // Watchify will watch and recompile our JS, so no need to gulp.watch it
 });
 

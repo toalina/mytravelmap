@@ -1,7 +1,7 @@
 module.exports = function(app) {
   app.controller('locationCtrl', ['$rootScope','$scope','$http', 'Gservice', function($rootScope, $scope, $http, Gservice){
 
-    var locations = [];           
+    var locations = [];
     var googleMapService = Gservice(locations);
 
     $scope.lat = 'LATITUDE';
@@ -9,7 +9,7 @@ module.exports = function(app) {
     $scope.name = 'NAME';
     $scope.temp = {};
 
-       $scope.modalShown = false;
+    $scope.modalShown = false;
     $scope.toggleModal = function() {
       console.log('toggleModal!!');
       $scope.modalShown = !$scope.modalShown;
@@ -63,7 +63,7 @@ module.exports = function(app) {
           location.lat = '';
           location.lng = '';
           location.memo = '';
-          location.name = ''; 
+          location.name = '';
       },
         function(res){
           alert('Didnt work');
