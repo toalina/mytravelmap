@@ -2,7 +2,7 @@ module.exports = function(app){
   app.directive('modalDialog', function() {
   return {
     restrict: 'E',
-    templateUrl: '/views/ng-modal.html', // See below
+    templateUrl: '/ng-modal.html', // See below
     scope: {
       show: '='
     },
