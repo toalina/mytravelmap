@@ -41,6 +41,8 @@
     "webpack-stream": "^2.1.1"
   },
   "devDependencies": {
+    "angular-base64": "^2.0.5",
+    "angular-cookies": "^1.4.7",
     "gulp-mocha": "^2.1.3"
   }
 }

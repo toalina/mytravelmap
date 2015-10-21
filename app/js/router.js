@@ -12,9 +12,17 @@ module.exports = function(mapsApp) {
       .when('/dashboard', {
         templateUrl: 'views/dashboard.html'
       })
+      .when('/signin', {
+        templateUrl: 'views/login.html',
+        controller: 'SigninController'
+      })
+      .when('/signup', {
+        templateUrl: 'views/login.html',
+        controller: 'SignupController'
+      })
       .when('/future', {
-        templateUrl: 'views/future-trips.html'
-        // controller??
+        templateUrl: 'views/future-trips.html',
+        controller: 'FutureTripsController'
       })
       .when('/past', {
         templateUrl: 'views/past-trips.html'
