@@ -19,7 +19,7 @@ module.exports = function(app) {
         .then(function(res) {
           $cookies.put('eat', res.data.token);
           $scope.getUserName();
-          $location.path('/words');
+          $location.path('/dashboard');
         }, function(res) {
           console.log(res);
         });
