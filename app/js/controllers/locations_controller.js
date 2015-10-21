@@ -9,12 +9,16 @@ module.exports = function(app) {
     $scope.name = 'NAME';
     $scope.temp = {};
 
-       $scope.modalShown = false;
+    $scope.modalShown = false;
     $scope.toggleModal = function() {
       console.log('toggleModal!!');
       $scope.modalShown = !$scope.modalShown;
     };
 
+    $scope.hideModal = function() {
+      console.log('hideModal!!');
+      $scope.show = false;
+    };
 
     // $rootScope.$on('userLatLng', function(event, data){
     //   $scope.$apply(function(){
