@@ -6,6 +6,8 @@ var mapsApp = angular.module('mapsApp', ['ngRoute']);
 
 require('./controllers/controllers')(mapsApp);
 require('./services/services')(mapsApp);
+//require('./directives/directives')(mapsApp);
 require('./router')(mapsApp);
+
 
 
