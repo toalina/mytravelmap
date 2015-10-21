@@ -1,8 +1,15 @@
 module.exports = function(app) {
-  app.controller('locationCtrl', ['$rootScope','$scope','$http', 'Gservice', function($rootScope, $scope, $http, Gservice){
+  app.controller('locationCtrl', ['$rootScope','$scope','$http', 'Gservice', '$location', '$cookies', function($rootScope, $scope, $http, Gservice, $location, $cookies){
 
     $scope.locations = [];           
     var googleMapService = Gservice($scope.locations);
+
+    var eat = $cookies.get('eat');
+    if (!(eat && eat.length))
+      $location.path('/signup');
+    
+    $http.defaults.headers.common.token = eat;
+    
 
     $scope.lat = 'LATITUDE';
     $scope.lng = 'LONGITUDE';
@@ -50,7 +57,7 @@ module.exports = function(app) {
           googleMapService.initMap($scope.locations);
         },
         function(res){
-          alert('not working');
+          alert('not working!!!!');
         }
       )
     };

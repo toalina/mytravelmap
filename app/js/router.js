@@ -6,18 +6,15 @@ module.exports = function(mapsApp) {
         // controller: Set the $location.path
         // to go to /#/dashboard
       })
-      .when('/signup', {
-        templateUrl: 'views/signup.html'
-      })
       .when('/dashboard', {
         templateUrl: 'views/dashboard.html'
       })
       .when('/signin', {
-        templateUrl: 'views/login.html',
+        templateUrl: 'views/signup.html',
         controller: 'SigninController'
       })
       .when('/signup', {
-        templateUrl: 'views/login.html',
+        templateUrl: 'views/signup.html',
         controller: 'SignupController'
       })
       .when('/future', {
