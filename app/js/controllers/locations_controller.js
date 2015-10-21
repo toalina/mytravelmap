@@ -27,9 +27,6 @@ module.exports = function(app) {
        $scope.modalShown = !$scope.modalShown;
        $scope.addTrip = false;
     };
-    $scope.timeCheck = function(type) {
-      console.log(type);
-    }
 
     $rootScope.$on('geocodeLatLng', function(event, geocoder, data){
       geocoder.geocode({'location': data}, function(results, status) {
