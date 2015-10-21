@@ -1,5 +1,4 @@
 var mongoose = require('mongoose');
-// var Place = require(__dirname + '/place');
 var bcrypt = require('bcrypt');
 var eat = require('eat')
 
@@ -9,11 +8,7 @@ var userSchema = new mongoose.Schema({
     username: String,
     password: String
   },
-
-  locationsHasBeen: [{type: mongoose.Schema.Types.ObjectId, ref: 'Location'}],
-
-  locationsToGo: [{type: mongoose.Schema.Types.ObjectId, ref: 'Location'}]
-
+  locations: [{type: mongoose.Schema.Types.ObjectId, ref: 'Location'}],
 });
 
 userSchema.methods.generateHash = function(password, callback) {
@@ -23,7 +18,6 @@ userSchema.methods.generateHash = function(password, callback) {
     callback(null, hash);
   }.bind(this));
 };
-
 
 userSchema.methods.generateToken = function(callback) {
   eat.encode({id: this._id}, process.env.APP_SECRET, callback);

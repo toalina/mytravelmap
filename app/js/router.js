@@ -18,8 +18,8 @@ module.exports = function(mapsApp) {
         controller: 'SignupController'
       })
       .when('/future', {
-        templateUrl: 'views/future-trips.html'
-        // controller??
+        templateUrl: 'views/future-trips.html',
+        controller: 'FutureTripsController'
       })
       .when('/past', {
         templateUrl: 'views/past-trips.html'

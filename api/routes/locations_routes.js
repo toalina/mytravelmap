@@ -1,12 +1,13 @@
 var Location = require(__dirname + '/../models/location');
 var express = require('express');
 var jsonParser = require('body-parser').json();
+var eatAuth = require(__dirname + '/../lib/eat_auth');
 
 var locationRouter = module.exports = exports = express.Router();
 
-locationRouter.get('/getAll', function(req,res) {
-  console.log('before query');
-  Location.find({}, function(err, data) {
+locationRouter.get('/getAll', eatAuth, function(req,res) {
+  console.log('before query'); 
+  Location.find({user: req.user.username}, function(err, data) {
     if (err) return err;
     console.log(data);
     res.json(data);
@@ -17,6 +18,7 @@ locationRouter.post('/create', jsonParser, function(req,res) {
   var newLocation = new Location();
   newLocation.lng = req.body.lng;
   newLocation.lat = req.body.lat;
+  // newLocation.user = req.user.username;
   newLocation.memo = req.body.memo;
   newLocation.name = req.body.name;
   newLocation.save(function(err, data) {

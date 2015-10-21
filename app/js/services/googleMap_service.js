@@ -17,10 +17,14 @@ module.exports = function(app) {
         this.tempLat = e.latLng.lat();
         this.tempLng = e.latLng.lng(); 
         var locationData = {lat: this.tempLat, lng: this.tempLng};
-        console.log(locationData);
-     //   $rootScope.$emit('userLatLng', locationData);
         $rootScope.$emit('geocodeLatLng', geocoder, locationData);
        });      
+    };
+
+    Gservice.prototype.markerImage = function(type) {
+      if(type === 'future')
+        this.image = '';
+      this.image = '';
     };
 
     Gservice.prototype.setMarker = function(location) {
