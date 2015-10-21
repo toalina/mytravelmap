@@ -38,12 +38,11 @@
                 {{ mapForm.days }}
               </fieldset>
 
-              <button type="submit" class="btn-small" data-ng-click="createLocation(newLocation, future)">Future</button>
-              <button type="submit" class="btn-small" data-ng-click="createLocation(newLocation, past)">Past</button>
+              <button type="submit" class="btn-small" data-ng-click="createFutureTrip(newLocation)">Future</button>
+              <button type="submit" class="btn-small" data-ng-click="createPastTrip(newLocation)">Past</button>
               <button class="btn-small" data-ng-click="hideModal()">Cancel</button>
             </form>
           </article> <!-- End of Form View -->
-
         </div>
       </div>
     </div>

@@ -3,6 +3,7 @@ module.exports = function(app) {
     var Gservice = function(locations){
       this.markers = [];
       this.temp;
+      this.image = {};
       var initLatLng = {lat: 39.0997265, lng: -94.5785667};
       this.map = new google.maps.Map(document.getElementById('map'), { zoom: 4, center: initLatLng});
 
@@ -22,17 +23,24 @@ module.exports = function(app) {
     };
 
     Gservice.prototype.markerImage = function(type) {
-      if(type === 'future')
-        this.image = '';
-      this.image = '';
+      console.log('markerImage: ' + type);
+      
+      if(type === 'future') {
+        this.image = 'imgs/future.png';
+      }
+      else if(type === 'past') {
+        this.image = 'imgs/past.png';
+      }
     };
 
     Gservice.prototype.setMarker = function(location) {
       var infoWindow = new google.maps.InfoWindow();
+      this.markerImage(location.type);
       var marker = new google.maps.Marker({
           map: this.map,
           position: new google.maps.LatLng(location.lat, location.lng),
           title: location.name,
+          icon: this.image
           });
       marker.content = '<ul class="article-links infoWindow"><li><a href="#/plan" class="btn-xsmall">Plan</a></li><li><a href="#/photos" class="btn-xsmall">Photos</a></li><li><a href="#/memos" class="btn-xsmall">Memos</a></li><li><a href="#/bookmarks" class="btn-xsmall">Links</a></li></ul></div>';
 
