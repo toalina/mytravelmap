@@ -7,7 +7,8 @@ var locationSchema = new mongoose.Schema({
   lng: Number,
   memo: String,
   name: String,
-  user_id: {type: mongoose.Schema.Types.ObjectId, ref: 'User'}
+  user_id: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
+  type: String
 
 //  gallery: [Need to figure out Cloudinary stuff]
 });

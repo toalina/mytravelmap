@@ -19,6 +19,7 @@ locationRouter.post('/create', jsonParser, function(req,res) {
   newLocation.lat = req.body.lat;
   newLocation.memo = req.body.memo;
   newLocation.name = req.body.name;
+  newLocation.type = req.body.type;
   newLocation.save(function(err, data) {
     if (err) return err;
     res.json(data);
@@ -32,6 +33,7 @@ locationRouter.put('/update/:location_id', jsonParser, function(req, res){
       if(req.body.lat)  location.lat = req.body.lat;
       if(req.body.memo) location.memo = req.body.memo;
       if(req.body.name) location.name = req.body.name;
+      if(req.body.type) location.type = req.body.type;
       location.save(function(err, data){
       if (err) return err; 
       res.json(data);
