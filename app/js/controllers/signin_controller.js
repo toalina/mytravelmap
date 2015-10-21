@@ -3,6 +3,7 @@ module.exports = function(app) {
     $scope.buttonText = 'Log In';
     $scope.user = {};
     $scope.changePlacesText = 'Or Create A New User';
+    $scope.warning = '';
 
     $scope.changePlaces = function() {
       return $location.path('/signup');
@@ -21,6 +22,7 @@ module.exports = function(app) {
           $scope.getUserName();
           $location.path('/dashboard');
         }, function(res) {
+          $scope.warning = 'fail';
           console.log(res);
         });
     };
