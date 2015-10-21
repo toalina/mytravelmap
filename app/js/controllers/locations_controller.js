@@ -1,7 +1,7 @@
 module.exports = function(app) {
   app.controller('locationCtrl', ['$rootScope','$scope','$http', 'Gservice', function($rootScope, $scope, $http, Gservice){
 
-    var locations = [];           
+    var locations = [];
     var googleMapService = Gservice(locations);
 
     $scope.lat = 'LATITUDE';
@@ -10,15 +10,15 @@ module.exports = function(app) {
     $scope.temp = {};
 
     $scope.modalShown = false;
+
     $scope.toggleModal = function() {
       console.log('toggleModal!!');
       $scope.modalShown = !$scope.modalShown;
     };
-
-    $scope.hideModal = function() {
-      console.log('hideModal!!');
-      $scope.show = false;
-    };
+    $scope.testSubmit = function() {
+      $scope.modalShown = !$scope.modalShown;
+      console.log('close windoW!!!: ' + $scope.modalShown);
+    }
 
     // $rootScope.$on('userLatLng', function(event, data){
     //   $scope.$apply(function(){
@@ -67,7 +67,7 @@ module.exports = function(app) {
           location.lat = '';
           location.lng = '';
           location.memo = '';
-          location.name = ''; 
+          location.name = '';
       },
         function(res){
           alert('Didnt work');
