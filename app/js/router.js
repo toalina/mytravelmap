@@ -47,5 +47,24 @@ module.exports = function(mapsApp) {
       .otherwise({
         redirectTo: '/welcome',
       });
-  }]);
+  }])
+
+  // angular-animate to fade in views
+  .animation('.reveal-animation', function() {
+    return {
+      enter: function(element, done) {
+        element.css('display', 'none');
+        element.fadeIn(800, done);
+        return function() {
+          element.stop();
+        };
+      },
+      leave: function(element, done) {
+        element.fadeOut(800, done);
+        return function() {
+          element.stop();
+        };
+      }
+    };
+  });
 };
