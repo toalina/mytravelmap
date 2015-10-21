@@ -20,6 +20,9 @@ module.exports = function(app) {
        $scope.modalShown = !$scope.modalShown;
        $scope.addTrip = false;
     };
+    $scope.timeCheck = function(type) {
+      console.log(type);
+    }
 
     $rootScope.$on('geocodeLatLng', function(event, geocoder, data){
       geocoder.geocode({'location': data}, function(results, status) {
@@ -52,9 +55,8 @@ module.exports = function(app) {
       )
     };
 
-    $scope.createLocation = function(location, type) {
+    $scope.createFutureTrip = function(location) {
       $scope.hideModal();
-      googleMapService.markerImage(type);
       $http.post('/api/locations/create', location)
       .then(
         function(res){
@@ -62,8 +64,29 @@ module.exports = function(app) {
           location.lng = $scope.temp.lng;
           location.memo = '';
           location.name = $scope.temp.name; 
-          console.log('create: ' + location.lat + location.name);
+          location.type = 'future';
           $scope.locations.push(location);
+          console.log('create future trip');
+          googleMapService.setMarker(location);          
+      },
+        function(res){
+          alert('Didnt work');
+        }
+      )
+    };
+
+    $scope.createPastTrip = function(location) {
+      $scope.hideModal();
+      $http.post('/api/locations/create', location)
+      .then(
+        function(res){
+          location.lat = $scope.temp.lat;
+          location.lng = $scope.temp.lng;
+          location.memo = '';
+          location.name = $scope.temp.name; 
+          location.type = 'past';
+          $scope.locations.push(location);
+          console.log('create past trip');
           googleMapService.setMarker(location);          
       },
         function(res){
