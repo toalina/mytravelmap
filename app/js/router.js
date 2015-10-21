@@ -6,6 +6,9 @@ module.exports = function(mapsApp) {
         // controller: Set the $location.path
         // to go to /#/dashboard
       })
+      .when('/signup', {
+        templateUrl: 'views/signup.html'
+      })
       .when('/dashboard', {
         templateUrl: 'views/dashboard.html'
       })
