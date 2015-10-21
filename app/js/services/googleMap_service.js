@@ -15,10 +15,10 @@ module.exports = function(app) {
         var geocoder = new google.maps.Geocoder;
         var infoWindow = new google.maps.InfoWindow;
         this.tempLat = e.latLng.lat();
-        this.tempLng = e.latLng.lng(); 
+        this.tempLng = e.latLng.lng();
         var locationData = {lat: this.tempLat, lng: this.tempLng};
         $rootScope.$emit('geocodeLatLng', geocoder, locationData);
-       });      
+       });
     };
 
     Gservice.prototype.markerImage = function(type) {
@@ -34,13 +34,14 @@ module.exports = function(app) {
           position: new google.maps.LatLng(location.lat, location.lng),
           title: location.name,
           });
-      marker.content = '<div class="infoWindowContent">' + location.memo + '</div>' + '<a href = "/#/plan"><button>Plan</button></a><br/><a href = "/#/photos"><button>Photos</button></a><br/><a href = "/#/memos"><button>Memos</button></a><br/><a href = "/#/links"><button>Links</button></a><br/>';
+      marker.content = '<ul class="article-links infoWindow"><li><a href="#/plan" class="btn-xsmall">Plan</a></li><li><a href="#/photos" class="btn-xsmall">Photos</a></li><li><a href="#/memos" class="btn-xsmall">Memos</a></li><li><a href="#/bookmarks" class="btn-xsmall">Links</a></li></ul></div>';
+
       marker.addListener('click', function(){
         infoWindow.setContent('<h2>' + marker.title + '</h2>' + marker.content);
         infoWindow.open(this.map, marker);
       });
       this.markers.push(marker);
-    }; 
+    };
 
 
 
