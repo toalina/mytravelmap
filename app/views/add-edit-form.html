@@ -1,9 +1,8 @@
 <section class="updateForm">
 <!-- ADD / UPDATE DETAILS FORM -->
   <div class="updateForm-wrapper">
-    <h1>Add / Update Trip Details Form</h1>
+    <h1>Update Details Form</h1>
     <form name ="updateForm" novalidate>
-
       <fieldset>
         <label for="destination">Destination</label>
         <input type="text" placeholder="Destination" ng-model="updateForm.destination" required>
@@ -15,19 +14,6 @@
       <fieldset>
         <label for="days"># of Days</label>
         <input type="number" placeholder="12 days" ng-model="updateForm.days" required>
-      </fieldset>
-      <label>Future or Past?</label>
-      <fieldset class="radio">
-        <label>
-          <input type="radio" value="Future" ng-model="updateForm.triptype">
-            Future
-        </label>
-      </fieldset>
-      <fieldset class="radio">
-        <label>
-          <input type="radio" value="Past" ng-model="updateForm.triptype">
-            Past
-        </label>
       </fieldset>
       <fieldset>
         <label>Plan</label>
