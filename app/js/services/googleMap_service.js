@@ -3,11 +3,12 @@ module.exports = function(app) {
     var Gservice = function(locations){
       this.markers = [];
       this.temp;
-      var initLatLng = {lat: 39.0997265, lng: -94.5785667};
-      this.map = new google.maps.Map(document.getElementById('map'), { zoom: 4, center: initLatLng});
-
+      this.image = {};
+      this.initLatLng = {lat: 39.0997265, lng: -94.5785667};
+      // this.map = new google.maps.Map(document.getElementById("map"), { zoom: 4, center: initLatLng});
     };
     Gservice.prototype.initMap = function(locations) {
+      this.map = new google.maps.Map(document.getElementById("map"), { zoom: 4, center: this.initLatLng});
       for(var i =0; i < locations.length; i++) {
         this.setMarker(locations[i]);
       }
@@ -15,10 +16,10 @@ module.exports = function(app) {
         var geocoder = new google.maps.Geocoder;
         var infoWindow = new google.maps.InfoWindow;
         this.tempLat = e.latLng.lat();
-        this.tempLng = e.latLng.lng(); 
+        this.tempLng = e.latLng.lng();
         var locationData = {lat: this.tempLat, lng: this.tempLng};
         $rootScope.$emit('geocodeLatLng', geocoder, locationData);
-       });      
+       });
     };
 
     Gservice.prototype.markerImage = function(type) {
@@ -41,13 +42,14 @@ module.exports = function(app) {
           title: location.name,
           icon: this.image
           });
-      marker.content = '<div class="infoWindowContent">' + location.memo + '</div>' + '<a href = "/#/plan"><button>Plan</button></a><br/><a href = "/#/photos"><button>Photos</button></a><br/><a href = "/#/memos"><button>Memos</button></a><br/><a href = "/#/links"><button>Links</button></a><br/>';
+      marker.content = '<ul class="article-links infoWindow"><li><a href="#/summary" class="btn-xsmall">Summary</a></li><li><a href="#/delete" class="btn-xsmall">Delete</a></li></ul>';
+
       marker.addListener('click', function(){
         infoWindow.setContent('<h2>' + marker.title + '</h2>' + marker.content);
         infoWindow.open(this.map, marker);
       });
       this.markers.push(marker);
-    }; 
+    };
 
 
 

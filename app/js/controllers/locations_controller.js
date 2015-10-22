@@ -13,13 +13,16 @@ module.exports = function(app) {
     $scope.addTrip = false;
 
     $scope.toggleModal = function() {
-      console.log('toggleModal!!');
       $scope.modalShown = !$scope.modalShown;
     };
     $scope.hideModal = function() {
        $scope.modalShown = !$scope.modalShown;
        $scope.addTrip = false;
     };
+
+    $scope.locationInfo = function(location) {
+      console.log('locationInfo: ' + location);
+    }
 
     $rootScope.$on('geocodeLatLng', function(event, geocoder, data){
       geocoder.geocode({'location': data}, function(results, status) {
@@ -99,6 +102,11 @@ module.exports = function(app) {
         googleMapService.setMarker(location);
       });
     };
+
+    $scope.deleteTest = function(){
+      alert("you must to go!!!!");
+      console.log("you must to go!!!");
+    }
 
     $scope.deleteLocation = function(location) {
       $http.delete('/delete/')
