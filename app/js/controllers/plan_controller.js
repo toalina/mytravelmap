@@ -32,5 +32,17 @@ module.exports = function(app){
       )
     };
 
+    $scope.updatePlan = function(updateForm){
+      alert($scope.tripInfo2._id);
+      $http.put('/api/locations/update/' + $scope.tripInfo2._id, updateForm)
+      .then(
+        function(res){console.log('Update Successful!!!')},
+        function(res){console.log('Failed to update record')}
+      )
+    }
+
+
+
+
   }]);
 };
