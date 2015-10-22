@@ -30,7 +30,7 @@ module.exports = function(app) {
       for(var i =0; i < locations.length; i++) {
         this.setMarker(locations[i]);
       }
-       google.maps.event.addListener(this.map, 'rightclick', function(e){
+       google.maps.event.addListener(this.map, 'click', function(e){
         var geocoder = new google.maps.Geocoder;
         var infoWindow = new google.maps.InfoWindow;
         this.tempLat = e.latLng.lat();
