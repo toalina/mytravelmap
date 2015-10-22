@@ -16,6 +16,7 @@ module.exports = function(app){
     $scope.tripInfo2;
 
     $scope.getPlan = function(){
+      console.log('in getPLAN function');
       $http.get('/api/locations/getAll')
       .then(
         function(res){
