@@ -1,7 +1,7 @@
 module.exports = function(app){
   app.controller('SignupController', ['$scope', '$http', '$location', '$cookies', function($scope, $http, $location, $cookies){
     $scope.buttonText = 'Create new user';
-    $scope.confirmPassword = true; 
+    $scope.confirmPassword = true;
     $scope.user = {};
     $scope.changePlacesText = 'Or sign in';
 
@@ -24,7 +24,7 @@ module.exports = function(app){
           $cookies.put('eat', res.data.token);
           $scope.getUserName();
           $location.path('/dashboard');
-          }, 
+          },
           function(res){
           console.log(res);
           }

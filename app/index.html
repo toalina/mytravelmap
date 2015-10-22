@@ -14,7 +14,7 @@
     <!-- TOP NAV  -->
     <header id="topbar">
       <div class="header-button-wrapper">
-        <h1><a href="#/welcome">My Travel Map</a></h1>
+        <h1><a href="#/dashboard">My Travel Map</a></h1>
         <span class="icon-menu" id="showRight"></span>
       </div>
 
@@ -23,7 +23,10 @@
           <li class="hvr-wobble-horizontal"><a href="#/map">Map</a></li>
           <li class="hvr-wobble-horizontal"><a href="#/future">Future</a></li>
           <li class="hvr-wobble-horizontal"><a href="#/past">Past</a></li>
-          <li class="hvr-wobble-horizontal"><a data-ng-if="loggedIn()" href data-ng-click="logOut()">Log Out{{username? ' of ' + username : ''}}</a></li>
+
+          <li class="hvr-wobble-horizontal"><a data-ng-if="!loggedIn()" href="#/signin">Log In</a></li>
+
+          <li class="hvr-wobble-horizontal"><a data-ng-if="loggedIn()" href data-ng-click="logOut()">Log Out {{username? ' of ' + username : ''}}</a></li>
         </ul>
       </nav>
     </header>

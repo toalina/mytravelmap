@@ -25,13 +25,6 @@ module.exports = {
     src: src + "/views/**/*.html",
     dest: dest + "/views/"
   },
-  server: {
-    src: dest,
-    livereload: true,
-    directoryListing: false,
-    open: false,
-    port: 9000
-  },
   production: {
     cssSrc: dest + '/css/*.css',
     jsSrc: dest + '/js/*.js',
