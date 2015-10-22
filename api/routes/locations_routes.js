@@ -14,7 +14,7 @@ locationRouter.get('/getAll', eatAuth, function(req,res) {
   });
 });
 
-locationRouter.post('/create', jsonParser, function(req,res) {
+locationRouter.post('/create', jsonParser, eatAuth, function(req,res) {
   console.log(req.body);
   var newLocation = new Location();
   newLocation.lng = req.body.lng; 
