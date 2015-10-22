@@ -5,7 +5,6 @@
     <h2>Single-click to choose a location</h2>
     <div id="map"></div>
 
-
     <!-- MODAL DIALOG -->
     <div data-ng-show='modalShown'>
       <div class='ng-modal-overlay'>
@@ -20,33 +19,31 @@
             </fieldset>
           </article>
 
+          <!-- FORM VIEW -->
+          <div class="mapForm-wrapper" data-ng-show="addTrip">
+            <h2>Add Trip</h2>
+            <form name ="newLocation" novalidate>
+              <fieldset>
+                <label for="destination">{{name}}</label>
+              </fieldset>
+              <fieldset>
+                <label for="departure">Departure Date</label>
+                <input type="date" placeholder="10-1-2015" data-ng-model="mapForm.departure" required>
+                {{ mapForm.departure | date }}
+              </fieldset>
+              <fieldset>
+                <label for="days">Duration</label>
+                <input type="number" placeholder="12 days" data-ng-model="mapForm.days" required>
+                {{ mapForm.days }}
+              </fieldset>
+              <button type="submit" class="btn-small" data-ng-click="createFutureTrip(newLocation)">Future</button>
+              <button type="submit" class="btn-small" data-ng-click="createPastTrip(newLocation)">Past</button>
+              <button class="btn-small" data-ng-click="hideModal()">Cancel</button>
+            </form>
+          </div>   <!-- END OF ng-show="addTrip" -->
 
-
-        <div class="mapForm-wrapper" data-ng-show="addTrip">
-        <h2>Add Trip</h2>
-          <form name ="newLocation" novalidate>
-            <fieldset>
-              <label for="destination">{{name}}</label>
-            </fieldset>
-            <fieldset>
-              <label for="departure">Departure Date</label>
-              <input type="date" placeholder="10-1-2015" data-ng-model="mapForm.departure" required>
-              {{ mapForm.departure | date }}
-            </fieldset>
-            <fieldset>
-              <label for="days">Duration</label>
-              <input type="number" placeholder="12 days" data-ng-model="mapForm.days" required>
-              {{ mapForm.days }}
-            </fieldset>
-
-            <button type="submit" class="btn-small" data-ng-click="createFutureTrip(newLocation)">Future</button>
-            <button type="submit" class="btn-small" data-ng-click="createPastTrip(newLocation)">Past</button>
-            <button class="btn-small" data-ng-click="hideModal()">Cancel</button>
-          </form>
-        </div>   <!-- END OF data-ng-show="addTrip" -->
-
-      </div>   <!-- END OF data-ng-show="addTrip" -->
-      </div>  <!-- END OF class='ng-modal-dialog' ng-style='dialogStyle'-->
+        </div>   <!-- END OF ng-modal-dialog -->
+      </div>  <!-- END OF ng-modal-overlay-->
     </div> <!-- END OF data-ng-show="modalShown" -->
 
   </div>
