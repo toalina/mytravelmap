@@ -49,6 +49,10 @@ module.exports = function(mapsApp) {
       .when('/summary', {
         templateUrl: 'views/summary.html'
       })
+      .when('/delete', {
+        templateUrl: 'views/deleteLocation.html',
+        controller: 'locationCtrl'
+      })
 
       .otherwise({
         redirectTo: '/welcome',

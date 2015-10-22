@@ -42,7 +42,7 @@ module.exports = function(app) {
           title: location.name,
           icon: this.image
           });
-      marker.content = '<ul class="article-links infoWindow"><li><a href="#/plan" class="btn-xsmall">Plan</a></li><li><a href="#/photos" class="btn-xsmall">Photos</a></li><li><a href="#/memos" class="btn-xsmall">Memos</a></li><li><a href="#/bookmarks" class="btn-xsmall">Links</a></li></ul></div>';
+      marker.content = '<ul class="article-links infoWindow"><li><a href="#/summary" class="btn-xsmall">Summary</a></li><li><a href="#/delete" class="btn-xsmall">Delete</a></li></ul>';
 
       marker.addListener('click', function(){
         $rootScope.anchor = location.name;
