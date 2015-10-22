@@ -1,5 +1,6 @@
 @import "button/index";
 @import "effects/index";
+@import "features/index";
 
 @import "header";
 @import "nav";
@@ -10,13 +11,6 @@
 @import "dashboard";
 @import "google-map";
 @import "ng-modal";
-
-// Summary views
-@import "features-wrapper";
-@import "plan-summary";
-@import "photo-summary";
-@import "memo-summary";
-@import "bookmarks-summary";
 
 @import "add-edit-form";
 
