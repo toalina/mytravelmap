@@ -10,7 +10,7 @@ module.exports = function(mapsApp) {
         templateUrl: 'views/dashboard.html'
       })
       .when('/signin', {
-        templateUrl: 'views/signup.html',
+        templateUrl: 'views/signin.html',
         controller: 'SigninController'
       })
       .when('/signup', {
