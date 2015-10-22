@@ -30,7 +30,8 @@ module.exports = function(mapsApp) {
         // controller? : Maybe it'll go to form?
       })
       .when('/plan', {
-        templateUrl: 'views/plan.html'
+        templateUrl: 'views/plan.html',
+        controller: 'PlanController'
       })
       .when('/photos', {
         templateUrl: 'views/photos.html'

@@ -1,5 +1,7 @@
 module.exports = function(app) {
   app.run(['$rootScope', '$cookies', '$location', '$http', function($scope, $cookies, $location, $http) {
+    $scope.anchor = 'look at this test!';
+
     $scope.loggedIn = function() {
       var eat = $cookies.get('eat');
       return eat && eat.length;

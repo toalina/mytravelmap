@@ -3,4 +3,5 @@ module.exports = function(app) {
   require('./signin_controller.js')(app);
   require('./signup_controller.js')(app);
   require('./trips_controller.js')(app);
+  require('./plan_controller')(app);
 };

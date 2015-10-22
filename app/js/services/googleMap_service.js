@@ -45,6 +45,7 @@ module.exports = function(app) {
       marker.content = '<ul class="article-links infoWindow"><li><a href="#/plan" class="btn-xsmall">Plan</a></li><li><a href="#/photos" class="btn-xsmall">Photos</a></li><li><a href="#/memos" class="btn-xsmall">Memos</a></li><li><a href="#/bookmarks" class="btn-xsmall">Links</a></li></ul></div>';
 
       marker.addListener('click', function(){
+        $rootScope.anchor = location.name;
         infoWindow.setContent('<h2>' + marker.title + '</h2>' + marker.content);
         infoWindow.open(this.map, marker);
       });
