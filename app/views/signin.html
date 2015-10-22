@@ -1,12 +1,12 @@
-<!-- LOG IN / SIGN UP -->
-<section class="signup" id="login">
+<!-- SIGN IN -->
+<section class="signin" id="login">
   <div class="login-wrapper">
-    <h1>Log In / Sign Up</h1>
+    <h1>Welcome Back!</h1>
     <form name = "userForm" data-ng-submit = "sendToServer(user)">
       <input type="text" placeholder="username" data-ng-model = "user.username">
       <input type="password" placeholder="password" data-ng-model = "user.password">
-      <input type="submit" name="Submit" class="btn-small">
-      <p ng-hide = 'loggedIn()' class = "btn-small">{{warning}}</p>
+      <button type="submit" name="Submit" class="btn-small">Submit</button>
+      <h1 ng-hide = 'loggedIn()'>{{warning}}</h1>
     </form>
   </div>
 </section>

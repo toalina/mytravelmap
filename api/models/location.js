@@ -10,6 +10,7 @@ var locationSchema = new mongoose.Schema({
   user: {type: String, required: true},
   start: Date,
   end: Date,
+  plan: String,
   duration: Number
 //gallery: [Need to figure out Cloudinary stuff]
 });

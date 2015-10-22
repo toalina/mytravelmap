@@ -17,7 +17,7 @@
 
 }
 .updateForm-wrapper {
-  border: 1px solid green;
+  // border: 1px solid green;
   fieldset {
     margin: 0.5em;
   }
@@ -29,6 +29,7 @@
   }
   label {
     display: inline-block;
+    font-size: $small;
   }
   input {
     padding: 1em;

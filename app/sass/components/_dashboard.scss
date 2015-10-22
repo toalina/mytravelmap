@@ -52,7 +52,7 @@
       height: 9em;
       line-height: 9em;
       &:hover {
-        color: $color-accent;
+        color: $color-accent-light;
       }
       @media only screen and (min-width: $breakpoint) {
         margin: 0.2em;

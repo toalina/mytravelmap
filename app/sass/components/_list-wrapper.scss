@@ -1,7 +1,36 @@
+@mixin flexwrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+}
+
+@mixin flexitem {
+ -webkit-flex-grow: 1;
+  -webkit-flex-shrink: 0;
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+
 .list-wrapper {
-  padding: 6em 1em 5em 1em;
+  padding: 6em 0.5em 5em 0.5em;
+  width: 100%;
   @media only screen and (min-width: $breakpoint) {
     padding-top: 8em;
+
   }
   h1 {
     text-align: center;
@@ -14,16 +43,14 @@
 
 .list-article {
   font-family: $lato;
-  width: 85%;
+  width: 100%;
   margin: 0 auto;
   display: block;
   text-align: left;
   padding: 2em;
   border-bottom: 1px solid $color-secondary;
-
   @media only screen and (min-width: $breakpoint) {
-    width: 60%;
-
+    width: 50%;
   }
   figure {
     img {
@@ -38,23 +65,35 @@
     font-weight: $weight-normal;
     font-size: $medium;
     letter-spacing: $xx-small;
+    padding: 1em 0;
   }
   p {
     line-height: $medium;
   }
   &:last-child {
     border: none;
-
   }
 }
 .article-links {
   list-style-type: none;
   padding-top: 1em;
+  @include flexwrapper;
+  @media only screen and (min-width: $breakpoint) {
+    width: 60%;
+  }
+
   li {
-    display: inline;
-    margin: 0.15em;
+    @include flexitem;
+    // flex-basis: 20%;
+    // display: inline-block;
+    // padding: 0.1em;
+    @media only screen and (min-width: $breakpoint) {
+      // display: inline;
+      // flex-basis: 20%;
+    }
   }
   a {
     font-size: $x-small;
+    width: 5.5em;
   }
 }

@@ -1,67 +1,75 @@
-<section class="updateForm">
+<section class="updateForm" ng-init = "getPlan()">
 <!-- ADD / UPDATE DETAILS FORM -->
   <div class="updateForm-wrapper">
-    <h1>Add / Update Trip Details Form</h1>
-    <form name ="updateForm" novalidate>
-
+    <h1>Update Trip Details Form</h1>
+    <form name ="updateForm" data-ng-submit = "updatePlan(updateForm)">
+    {{tripInfo2.name}}
       <fieldset>
         <label for="destination">Destination</label>
-        <input type="text" placeholder="Destination" ng-model="updateForm.destination" required>
+        <input type="text" placeholder= "{{tripInfo2.name}}" data-ng-model="updateForm.name">
       </fieldset>
       <fieldset>
         <label for="departure">Departure</label>
-        <input type="date" placeholder="10-1-2015" ng-model="updateForm.departure" required>
+        <input type="date" placeholder="10-1-2015" data-ng-model="updateForm.start">
+      </fieldset>
+       <fieldset>
+        <label for="departure">Return</label>
+        <input type="date" placeholder="10-1-2015" data-ng-model="updateForm.end">
       </fieldset>
       <fieldset>
-        <label for="days"># of Days</label>
-        <input type="number" placeholder="12 days" ng-model="updateForm.days" required>
+        <label for="days">Duration</label>
+        <input type="number" placeholder="12 days" data-ng-model="updateForm.duration">
       </fieldset>
       <label>Future or Past?</label>
       <fieldset class="radio">
         <label>
-          <input type="radio" value="Future" ng-model="updateForm.triptype">
+          <input type="radio" value="Future" data-ng-model="updateForm.type">
             Future
         </label>
       </fieldset>
       <fieldset class="radio">
         <label>
-          <input type="radio" value="Past" ng-model="updateForm.triptype">
+          <input type="radio" value="Past" data-ng-model="updateForm.type">
             Past
         </label>
       </fieldset>
       <fieldset>
         <label>Plan</label>
-        <input type="text" placeholder="Eiffel Tower... " ng-model="updateForm.plan">
+        <input type="text" placeholder="Eiffel Tower... " data-ng-model="updateForm.plan">
       </fieldset>
-      <fieldset>
+      <!--<fieldset>
         <label>Photos</label>
-        <button class="btn-xsmall" id="upload_widget_opener">Add photos</button>
         <script src="http://widget.cloudinary.com/global/all.js" type="text/javascript"></script>
-        <script type="text/javascript">
-          document.getElementById("upload_widget_opener").addEventListener("click", function() {
-            cloudinary.openUploadWidget({
-              cloud_name: 'dhtizamqh',
-              upload_preset: 'bslsfe4i'
-              },
-              function(error, result) {
-                if (error)
-                  console.log(error);
-                if (result)
-                  console.log(result[0].url);
-               });
-              }, false);
-        </script>
+<<<<<<< HEAD
+        <button class="btn-xsmall" id="upload_widget_opener" data-ng-click="addPhoto()">Add photos</button>
       </fieldset>
+=======
+        <script type="text/javascript">
+        //   document.getElementById("upload_widget_opener").addEventListener("click", function() {
+        //     cloudinary.openUploadWidget({
+        //       cloud_name: 'dhtizamqh',
+        //       upload_preset: 'bslsfe4i'
+        //       },
+        //       function(error, result) {
+        //         if (error)
+        //           console.log(error);
+        //         if (result)
+        //           console.log(result[0].url);
+        //        });
+        //       }, false);
+        // </script>
+      </fieldset>-->
+
       <fieldset>
         <label>Memos</label>
-        <input type="text" placeholder="Bring sunglasses..." ng-model="updateForm.memos">
+        <input type="text" placeholder="Bring sunglasses..." data-ng-model="updateForm.memo">
       </fieldset>
       <fieldset>
         <label>Bookmarks</label>
-        <input type="text" placeholder="http://..." ng-model="updateForm.bookmarks">
+        <input type="text" placeholder="http://..." data-ng-model="updateForm.bookmarks">
       </fieldset>
       <!-- on SUBMIT, go to /summary view -->
-      <a href="#/summary"><button type="submit" class="btn-small" ng-disabled="updateForm.$invalid">Submit</button></a>
+      <button type="submit" class="btn-small">Submit</button>
 
     </form>
   </div>

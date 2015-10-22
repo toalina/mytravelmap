@@ -1,7 +1,12 @@
-.bookmarks-summary {
+.plan-summary {
   padding: 3em 1em;
+  li {
+    &:hover {
+      color: $color-primary;
+    }
+  }
   @media only screen and (min-width: $breakpoint) {
-    width: 60%;
+    width: 50%;
     margin: 0 auto;
   }
 }

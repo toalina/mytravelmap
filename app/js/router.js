@@ -3,14 +3,13 @@ module.exports = function(mapsApp) {
     $route
       .when('/welcome', {
         templateUrl: 'views/welcome.html'
-        // controller: Set the $location.path
-        // to go to /#/dashboard
       })
       .when('/dashboard', {
-        templateUrl: 'views/dashboard.html'
+        templateUrl: 'views/dashboard.html',
+        controller: 'TripsController'
       })
       .when('/signin', {
-        templateUrl: 'views/signup.html',
+        templateUrl: 'views/signin.html',
         controller: 'SigninController'
       })
       .when('/signup', {
@@ -19,18 +18,19 @@ module.exports = function(mapsApp) {
       })
       .when('/future', {
         templateUrl: 'views/future-trips.html',
-        controller: 'FutureTripsController'
+        controller: 'TripsController'
       })
       .when('/past', {
-        templateUrl: 'views/past-trips.html'
-        // controller??
+        templateUrl: 'views/past-trips.html',
+        controller: 'TripsController'
       })
       .when('/map', {
         templateUrl: 'views/google-map.html'
         // controller? : Maybe it'll go to form?
       })
       .when('/plan', {
-        templateUrl: 'views/plan.html'
+        templateUrl: 'views/plan.html',
+        controller: 'PlanController'
       })
       .when('/photos', {
         templateUrl: 'views/photos.html'
@@ -42,11 +42,15 @@ module.exports = function(mapsApp) {
         templateUrl: 'views/bookmarks.html'
       })
       .when('/form', {
-        templateUrl: 'views/add-edit-form.html'
-        // controller?
+        templateUrl: 'views/add-edit-form.html',
+        controller: 'PlanController'
       })
       .when('/summary', {
         templateUrl: 'views/summary.html'
+      })
+      .when('/delete', {
+        templateUrl: 'views/deleteLocation.html',
+        controller: 'locationCtrl'
       })
 
       .otherwise({

@@ -1,4 +1,4 @@
-<!-- LOG IN / SIGN UP -->
+<!-- SIGN UP -->
 <section class="signup">
   <div class="login-wrapper">
     <h1>Sign Up</h1>
@@ -6,13 +6,10 @@
       <input type="text" placeholder="username" data-ng-model = "user.username">
       <input type="password" placeholder="password" data-ng-model = "user.password">
       <label data-ng-if = "confirmPassword">
-      <p data-ng-if = "!passwordMatch(user)">Passwords don't match</p>
-      Password Confirmation
-      <input type = "password" data-ng-model = "user.confirmation">
-    </label>
-<!--       <input type="submit" name="Submit" class="btn-small">
- -->    
-  <button type = "submit" data-ng-disabled = "disableButton(user)">{{buttonText}}</button>
- </form>
+        <span data-ng-if = "!passwordMatch(user)">Passwords don't match</span>
+        <input type = "password" placeholder="confirm password" data-ng-model = "user.confirmation">
+      </label>
+      <button class="btn-small" type = "submit" data-ng-disabled = "disableButton(user)">{{buttonText}}</button>
+   </form>
   </div>
 </section>
