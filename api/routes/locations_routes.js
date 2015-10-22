@@ -7,7 +7,7 @@ var locationRouter = module.exports = exports = express.Router();
 
 locationRouter.get('/getAll', eatAuth, function(req,res) {
   console.log('before query');
-  Location.find({user: req.user.username}, function(err, data) {
+  Location.find({}, function(err, data) {
     if (err) return err;
     console.log(data);
     res.json(data);
@@ -18,7 +18,6 @@ locationRouter.post('/create', jsonParser, function(req,res) {
   var newLocation = new Location();
   newLocation.lng = req.body.lng;
   newLocation.lat = req.body.lat;
-  // newLocation.user = req.user.username;
   newLocation.memo = req.body.memo;
   newLocation.name = req.body.name;
   newLocation.save(function(err, data) {

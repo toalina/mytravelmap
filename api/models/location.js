@@ -7,7 +7,6 @@ var locationSchema = new mongoose.Schema({
   memo: String,
   name: String,
   type: String,
-  user: {type: String, required: true},
   start: Date,
   end: Date,
   duration: Number,

@@ -10,10 +10,10 @@ module.exports = function(app) {
       $location.path('/welcome');
     };
 
-    $scope.getUserName = function(callback) {
+    $scope.getUserName = function() {
       var eat = $cookies.get('eat');
       if (!(eat && eat.length))
-        callback(new Error('not logged in'));
+         console.log('not logged in');
 
       $http({
         method: 'GET',

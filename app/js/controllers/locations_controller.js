@@ -41,6 +41,7 @@ module.exports = function(app) {
               $scope.lng = data.lng;
               $scope.name = results[1].formatted_address;
               console.log('geocode: ' + $scope.name);
+              console.log('data: ' + data.lat);
               $scope.temp = { lat: data.lat, lng: data.lng, name: results[1].formatted_address};
             });
           };
@@ -63,6 +64,7 @@ module.exports = function(app) {
     };
 
     $scope.createFutureTrip = function(location) {
+      console.log('in future temp: ' + $scope.temp.lat);
       $scope.hideModal();
       $http.post('/api/locations/create', location)
       .then(
@@ -82,7 +84,7 @@ module.exports = function(app) {
       )
     };
 
-    $scope.createPastTrip = function(location) {
+    $scope.createPastTrip = function(data) {
       $scope.hideModal();
       $http.post('/api/locations/create', location)
       .then(
