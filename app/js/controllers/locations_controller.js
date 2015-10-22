@@ -62,7 +62,7 @@ module.exports = function(app) {
 
     $scope.createFutureTrip = function(location) {
       $scope.hideModal();
-      $http.post('/api/locations/create', location)
+      $http.post('/api/locations/create', location) //location = req 
       .then(
         function(res){
           location.lat = $scope.temp.lat;
@@ -70,6 +70,7 @@ module.exports = function(app) {
           location.memo = '';
           location.name = $scope.temp.name; 
           location.type = 'future';
+          location.start = location.start;
           $scope.locations.push(location);
           console.log('create future trip');
           googleMapService.setMarker(location);          
