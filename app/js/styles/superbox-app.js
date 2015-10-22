@@ -1,0 +1,3 @@
+$(function() {
+  $('.superbox').SuperBox();
+});

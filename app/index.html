@@ -20,14 +20,10 @@
 
       <nav class="nav-main nav-main-vertical nav-main-right" id="nav-main-s2">
         <ul>
-          <li><a href="#/map">Map</a></li>
-          <li><a href="#/future">Future</a></li>
-          <li><a href="#/past">Past</a></li>
-          <li><a data-ng-if="loggedIn()" href data-ng-click="logOut()">Log Out{{username? ' of ' + username : ''}}</a></li>
-          <li class="searchbox">
-            <input type="text" placeholder="Search......" name="search" class="searchbox-input" required>
-            <span class="icon-search"></span>
-          </li>
+          <li class="hvr-wobble-horizontal"><a href="#/map">Map</a></li>
+          <li class="hvr-wobble-horizontal"><a href="#/future">Future</a></li>
+          <li class="hvr-wobble-horizontal"><a href="#/past">Past</a></li>
+          <li class="hvr-wobble-horizontal"><a data-ng-if="loggedIn()" href data-ng-click="logOut()">Log Out{{username? ' of ' + username : ''}}</a></li>
         </ul>
       </nav>
     </header>
@@ -53,6 +49,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script type="text/javascript" src="js/bundle.js"></script>
     <script src="js/styles.js"></script>
+
     <!-- <script>window.jQuery || document.write('<script src="js/slick/jquery.js"><\/script>')</script> -->
 
   </body>
