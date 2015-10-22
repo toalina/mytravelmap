@@ -6,8 +6,8 @@
       <input type="text" placeholder="username" data-ng-model = "user.username">
       <input type="password" placeholder="password" data-ng-model = "user.password">
       <label data-ng-if = "confirmPassword">
-        <span data-ng-if = "!passwordMatch(user)">Passwords don't match</span>
         <input type = "password" placeholder="confirm password" data-ng-model = "user.confirmation">
+        <span data-ng-if = "!passwordMatch(user)">Passwords don't match</span>
       </label>
       <button class="btn-small" type = "submit" data-ng-disabled = "disableButton(user)">{{buttonText}}</button>
    </form>

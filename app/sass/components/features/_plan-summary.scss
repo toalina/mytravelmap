@@ -1,3 +1,24 @@
+.plan-dialog {
+  .btn-small {
+    display: inline-block;
+  }
+  .ng-modal-overlay {
+    width:100%;
+    height:200%;
+  }
+  .ng-modal-dialog {
+    /* Center the dialog */
+    top: 50%;
+    left: 50%;
+    @media only screen and (min-width: $breakpoint) {
+      width: 60%;
+      top: 20%;
+    }
+  }
+  button {
+    width: 13em;
+  }
+}
 .plan-summary {
   padding: 3em 1em;
   li {
@@ -6,7 +27,7 @@
     }
   }
   @media only screen and (min-width: $breakpoint) {
-    width: 50%;
+    width: 60%;
     margin: 0 auto;
   }
 }

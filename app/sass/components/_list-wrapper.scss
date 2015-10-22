@@ -84,7 +84,6 @@
 
   li {
     @include flexitem;
-
     @media only screen and (min-width: $breakpoint) {
       // display: inline;
       // flex-basis: 20%;

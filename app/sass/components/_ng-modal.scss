@@ -1,3 +1,29 @@
+@mixin flexwrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+}
+@mixin flexitem {
+ -webkit-flex-grow: 1;
+  -webkit-flex-shrink: 0;
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+
 .ng-modal-overlay {
   /* A dark translucent div that covers the whole screen */
   position:absolute;
@@ -38,7 +64,7 @@
     margin-bottom: 1em;
   }
   button {
-    width: 5em;
+    width: 10em;
   }
 }
 .mapForm-wrapper {
@@ -55,17 +81,15 @@
 }
 // Created in locations_controller.js
 .infoWindow {
-  height: 3em;
-  margin: 0 auto;
+  height: 3.5em;
+  // margin: 0 auto;
+  @include flexwrapper;
   @media only screen and (min-width: $breakpoint) {
     width: 100%;
   }
   li {
-    width: 7em;
-    display: inline;
-    @media only screen and (min-width: $breakpoint) {
-      // display: inline;
-    }
+    @include flexitem;
+
   }
 }
 
