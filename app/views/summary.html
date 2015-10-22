@@ -1,20 +1,22 @@
 <!-- FEATURES -->
-<section class="google-map features" data-ng-app="mapsApp" data-init="getSummary()">
-  <div class='ng-modal-overlay'>
+<section class="google-map" ng-init="getPlan()">
+  <div class='ng-modal-overlay' >
+   <div class='ng-modal-overlay'>
     <div class='ng-modal-dialog' ng-style='dialogStyle'>
-      <h1>Summary View</h1>
-      <article class="plan-summary">
-        <h1>Plan</h1>
-        <h2>{{anchor}}</h2>
-        <ul>
-          <li>Time Square</li>
-          <li>SOHO</li>
-          <li>Brooklyn Bridge</li>
-          <li>Central Park</li>
-          <li><a href="#/form" class="btn-xsmall">Add</a></li>
-        </ul>
-        <a href="#/map"><button class="btn-small">Cancel</button></a>
-    </div>
+    <h1>Summary View</h1>
+    <article class="plan-summary">
+      <h1>Plan</h1>
+      <h2>{{tripInfo2.name}}</h2>
+    <ul>
+      <li>{{tripInfo2.plan}}</li>
+      <li>{{tripInfo2.memo}}</li>
+      <li>{{tripInfo2.duration}}{{tripInfo2.duration ? 'days' : ''}}</li>
+      <li>{{tripInfo2.start | date: 'mediumDate'}} {{tripInfo2.end ?  'to' : ''}} {{tripInfo2.end | date: 'mediumDate'}}</li>
+    </ul>
+    <a href="#/form" class="btn-xsmall">Detailed Summary</a>
+    <a href="#/map"><button class="btn-small">Cancel</button></a>
+  </div>
+  </div>
   </div>
 </section>
 
