@@ -1,4 +1,4 @@
-  var Location = require(__dirname + '/../models/location');
+var Location = require(__dirname + '/../models/location');
 var express = require('express');
 var jsonParser = require('body-parser').json();
 var eatAuth = require(__dirname + '/../lib/eat_auth');
@@ -14,18 +14,14 @@ locationRouter.get('/getAll', eatAuth, function(req,res) {
   });
 });
 
-locationRouter.post('/create', jsonParser, eatAuth, function(req,res) {
-  console.log(req.body);
+locationRouter.post('/create', jsonParser, function(req,res) {
   var newLocation = new Location();
-  newLocation.lng = req.body.lng; 
+  newLocation.lng = req.body.lng;
   newLocation.lat = req.body.lat;
-  newLocation.user = req.user.username;
+  // newLocation.user = req.user.username;
   newLocation.memo = req.body.memo;
   newLocation.name = req.body.name;
-  newLocation.type = req.body.type;
   newLocation.save(function(err, data) {
-    console.log('asdasd');
-    console.log(data);
     if (err) return err;
     res.json(data);
   });
@@ -37,11 +33,7 @@ locationRouter.put('/update/:location_id', jsonParser, function(req, res){
       if(req.body.lng) location.lng = req.body.lng;
       if(req.body.lat)  location.lat = req.body.lat;
       if(req.body.memo) location.memo = req.body.memo;
-      if(req.body.plan) location.plan = req.body.plan;
       if(req.body.name) location.name = req.body.name;
-      if(req.body.duration) location.duration = req.body.duration;
-      if(req.body.start) location.start = req.body.start;
-      if(req.body.end) location.end = req.body.end;
       location.save(function(err, data){
       if (err) return err;
       res.json(data);

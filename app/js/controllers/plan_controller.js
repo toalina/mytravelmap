@@ -1,10 +1,10 @@
 module.exports = function(app){
   app.controller('PlanController', ['$rootScope', '$scope', '$http', '$location', '$cookies', function($rootScope, $scope, $http, $location, $cookies){
-    
+
     var eat = $cookies.get('eat');
     if (!(eat && eat.length))
       $location.path('/signup');
-    
+
     $http.defaults.headers.common.token = eat;
 
     $scope.test = function(){
@@ -39,10 +39,24 @@ module.exports = function(app){
         function(res){console.log('Update Successful!!!')},
         function(res){console.log('Failed to update record')}
       )
-    }
+    };
 
+    var myURL = '';
 
+    $scope.addPhoto = function() {
 
+      cloudinary.openUploadWidget({
+        cloud_name: 'dhtizamqh',
+        upload_preset: 'bslsfe4i'
+        },
+        function(error, result) {
+          if (error)
+            console.log(error);
+          if (result)
+            console.log('from controller ', result[0].url);
+            myURL = (result[0].url);  // save photo in the database
+        });
+    };
 
   }]);
 };
