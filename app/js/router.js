@@ -46,7 +46,8 @@ module.exports = function(mapsApp) {
         controller: 'PlanController'
       })
       .when('/summary', {
-        templateUrl: 'views/summary.html'
+        templateUrl: 'views/summary.html',
+        controller: 'PlanController'
       })
       .when('/delete', {
         templateUrl: 'views/deleteLocation.html',
