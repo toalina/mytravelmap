@@ -21,7 +21,7 @@
           </article>
 
           <!-- FORM VIEW -->
-          <article class="mapForm-wrapper" data-ng-show="addTrip">
+          <!-- <article class="mapForm-wrapper" data-ng-show="addTrip">
           <h2>Add Trip</h2>
             <form name ="newLocation" novalidate>
               <fieldset>
@@ -42,7 +42,56 @@
               <button type="submit" class="btn-small" data-ng-click="createPastTrip(newLocation)">Past</button>
               <button class="btn-small" data-ng-click="hideModal()">Cancel</button>
             </form>
-          </article> <!-- End of Form View -->
+          </article> --> <!-- End of Form View -->
+          <div class="mapForm-wrapper" data-ng-show='modalShown'>
+      <div class='ng-modal-overlay'>
+        <div class='ng-modal-dialog' ng-style='dialogStyle'>
+
+        <div data-ng-hide="addTrip">
+          <fieldset>
+          <label for="destination">{{name}}</label><br><br><br>
+          <button class="btn-small" data-ng-click="addTrip=true">ADD Trip</button>
+          <button class="btn-small" data-ng-click="hideModal()">Cancel</button>
+          </fieldset>
+        </div>
+        <div data-ng-show="addTrip">
+        <h2>Add Trip</h2>
+        <form name ="newLocation" novalidate>
+          <fieldset>
+            <label for="destination">{{name}}</label>
+          </fieldset>
+          <fieldset>
+            <label for="departure">Departure Date</label>
+            <input type="date" placeholder="10-1-2015" data-ng-model="mapForm.departure" required>
+            {{ mapForm.departure | date }}
+          </fieldset>
+          <fieldset>
+            <label for="days"># of Days</label>
+            <input type="number" placeholder="12 days" data-ng-model="mapForm.days" required>
+            {{ mapForm.days }}
+          </fieldset>
+          <label>Future or Past? </label>
+          {{ mapForm.triptype }}
+          <fieldset>
+            <label>
+              <input type="radio" value="Future" data-ng-model="mapForm.triptype">
+                Future
+            </label>
+          </fieldset>
+          <fieldset required>
+            <label>
+              <input type="radio" value="Past" data-ng-model="mapForm.triptype">
+                Past
+            </label>
+          </fieldset>
+          <button type="submit" class="btn-small" data-ng-click="createFutureTrip(newLocation)">FUTURE</button>
+          <button type="submit" class="btn-small" data-ng-click="createPastTrip(newLocation)">PAST</button>
+          <button class="btn-small" data-ng-click="hideModal()">Cancel</button>
+        </form>
+      </div>
+  </div>
+  </div>
+  </div>
         </div>
       </div>
     </div>

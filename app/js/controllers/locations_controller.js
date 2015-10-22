@@ -27,9 +27,6 @@ module.exports = function(app) {
        $scope.modalShown = !$scope.modalShown;
        $scope.addTrip = false;
     };
-    $scope.timeCheck = function(type) {
-      console.log(type);
-    }
 
     $rootScope.$on('geocodeLatLng', function(event, geocoder, data){
       geocoder.geocode({'location': data}, function(results, status) {
@@ -55,6 +52,7 @@ module.exports = function(app) {
         function(res){
           $scope.locations = res.data;
           googleMapService.initMap($scope.locations);
+          console.log('temp in getAll: ' + $scope.temp);
         },
         function(res){
           alert('not working!!!!');
@@ -111,8 +109,47 @@ module.exports = function(app) {
     };
 
     $scope.deleteLocation = function(location) {
-      $http.delete('/delete/')
+      $http.delete('/api/locations/delete/' + location._id, function(err, res) {
+        if (err) return console.log(err);
+        $location.path('/map');
+      })
     };
+
+
+
+    $scope.deleteTemp;
+    
+    $scope.deleteTrip = function() {
+      $http.get('api/locations/getAll')
+      .then(
+        function(res){
+          $scope.locations = res.data;
+          var x = $scope.locations.filter(function(item){
+            return item.name === $scope.anchor;
+          });
+          $scope.deleteTemp = x[0];
+          $scope.deleteLocation($scope.deleteTemp);
+        }, function(res){
+          console.log('did not get plan data');
+        }
+    )};
+
+    $scope.getSummary = function() {
+      $http.get('api/locations/getAll')
+      .then(
+        function(res){
+          $scope.locations = res.data;
+          var x = $scope.locations.filter(function(item){
+            return item.name === $scope.anchor;
+          });
+          $scope.temp = x[0];
+        }, function(res){
+          console.log('did not get plan data');
+        }
+      ) 
+    };
+
+    
 
 
   }]);

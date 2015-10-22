@@ -10,8 +10,9 @@ var locationSchema = new mongoose.Schema({
   user: {type: String, required: true},
   start: Date,
   end: Date,
-  duration: Number,
-  gallery: Array
+  plan: String,
+  duration: Number
+//gallery: [Need to figure out Cloudinary stuff]
 });
 
 module.exports = mongoose.model('Location', locationSchema);

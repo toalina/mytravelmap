@@ -1,62 +1,25 @@
 <!-- FEATURES -->
-<section class="features">
-  <h1>Summary View</h1>
-  <!-- MAKE PLAN -->
-  <article class="plan-summary">
-    <h1>Plan</h1>
-    <h2>New York, NY</h2> {{ location.name }}
-    <ul>
-      <li>Time Square</li>
-      <li>SOHO</li>
-      <li>Brooklyn Bridge</li>
-      <li>Central Park</li>
-      <li><a href="#/form" class="btn-xsmall">Add</a></li>
-
-    </ul>
-  </article>
-
-  <!-- ADD PHOTOS -->
-  <article class="photo-summary">
-    <h1>Photos</h1>
-    <section class="gallery">
-      <h2>Preview Gallery</h2>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </section>
-    <li><a href="#/form" class="btn-xsmall">Add</a></li>
-
-  </article>
-
-  <!-- WRITE MEMOS -->
-  <article class="memo-summary">
-    <h1>Memos</h1>
-    <ul>
-      <li>Time Square</li>
-      <li>SOHO</li>
-      <li>Brooklyn Bridge</li>
-      <li>Central Park</li>
-      <li><a href="#/form" class="btn-xsmall">Add</a></li>
-
-    </ul>
-
-  </article>
-
-  <!-- SAVE URLS -->
-  <article class="bookmarks-summary">
-    <h1>Bookmarks</h1>
-    <ul>
-      <li>Time Square</li>
-      <li>SOHO</li>
-      <li>Brooklyn Bridge</li>
-      <li>Central Park</li>
-      <li><a href="#/form" class="btn-xsmall">Add</a></li>
-    </ul>
-  </article>
+<section class="google-map features" data-ng-app="mapsApp" data-init="getSummary()">
+  <div class='ng-modal-overlay'>
+    <div class='ng-modal-dialog' ng-style='dialogStyle'>
+      <h1>Summary View</h1>
+      <article class="plan-summary">
+        <h1>Plan</h1>
+        <h2>{{anchor}}</h2>
+        <ul>
+          <li>Time Square</li>
+          <li>SOHO</li>
+          <li>Brooklyn Bridge</li>
+          <li>Central Park</li>
+          <li><a href="#/form" class="btn-xsmall">Add</a></li>
+        </ul>
+        <a href="#/map"><button class="btn-small">Cancel</button></a>
+    </div>
+  </div>
 </section>
+
+
+
+
+
+

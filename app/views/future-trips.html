@@ -1,18 +1,17 @@
 <!-- !! LIST VIEW !!-->
 <!-- FUTURE TRIPS-->
-<section class="list-wrapper" ng-init = "getTrips()">
+<section class="list-wrapper" ng-init = "getFutureTrips()">
   <h1>Future Journeys</h1>
   <!-- ng-repeat the article -->
-  <article class="list-article">
+  <article class="list-article" ng-repeat = "trip in trips">
     <figure>
       <img src="imgs/JackieChanDrawing.png" alt="Profile avatar or photo of place">
     </figure>
-    <div ng-repeat = "trip in trips">
+    <div>
       <h2>{{trip.name}}</h2>
       <p>{{trip.start}}<p>
-      <p>{{trip.duration}} Days</p>
+      <p>{{trip.duration}}{{trip.duration ? ' days' : '' }}</p>
     </div>
-
     <ul class="article-links">
       <li><a href="#/plan" class="btn-xsmall">Plan</a></li>
       <li><a href="#/photos" class="btn-xsmall">Photos</a></li>
