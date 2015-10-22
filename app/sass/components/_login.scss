@@ -23,9 +23,6 @@
       font-size: $x-large;
     }
   }
-  p {
-    // text-align: center;
-  }
 
   input {
     display: block;
@@ -39,11 +36,12 @@
       margin-right: 1em;
     }
   }
-  .btn-small {
+  button {
+    width: 15em;
     display: block;
     margin: 0 auto;
-    text-align: center;
     margin-top: 1em;
+    width: 12em;
     &:hover {
       cursor: pointer;
     }
@@ -54,8 +52,9 @@
   background-image: url('../imgs/machupicchu.jpg');
   background-size: cover;
   background-position: center center;
-  // padding: 6em 1em 5em 1em;
-  // color: $color-base;
+  button {
+    width: 15em;
+  }
   @media only screen and (min-width: $breakpoint) {
     // height: 30em;
     // padding: 20em 0 15em 0;
