@@ -64,7 +64,7 @@
     margin-bottom: 1em;
   }
   button {
-    width: 5em;
+    width: 10em;
   }
 }
 .mapForm-wrapper {
@@ -81,7 +81,7 @@
 }
 // Created in locations_controller.js
 .infoWindow {
-  // height: 3em;
+  height: 3em;
   // margin: 0 auto;
   @include flexwrapper;
   @media only screen and (min-width: $breakpoint) {
