@@ -13,12 +13,12 @@
   /* A centered div above the overlay with a box shadow. */
   z-index:10000;
   position: absolute;
-  width: 60%; /* Default */
+  width: 80%; /* Default */
   padding: 2em;
   opacity: 1.0;
 
   /* Center the dialog */
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
@@ -27,6 +27,7 @@
   background-color: $color-base;
   @media only screen and (min-width: $breakpoint) {
     width: 50%;
+    top: 55%;
   }
   button {
     margin: 0.5em;
@@ -37,8 +38,6 @@
   h2 {
     font-family: $roboto-slab;
   }
-
-
   fieldset {
     margin: 1em;
   }
@@ -46,6 +45,7 @@
     display: inline-block;
   }
 }
+// Created in locations_controller.js
 .infoWindow {
   width: 10em;
   margin: 0 auto;

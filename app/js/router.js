@@ -3,14 +3,13 @@ module.exports = function(mapsApp) {
     $route
       .when('/welcome', {
         templateUrl: 'views/welcome.html'
-        // controller: Set the $location.path
-        // to go to /#/dashboard
       })
       .when('/dashboard', {
-        templateUrl: 'views/dashboard.html'
+        templateUrl: 'views/dashboard.html',
+        controller: 'TripsController'
       })
       .when('/signin', {
-        templateUrl: 'views/signup.html',
+        templateUrl: 'views/signin.html',
         controller: 'SigninController'
       })
       .when('/signup', {
