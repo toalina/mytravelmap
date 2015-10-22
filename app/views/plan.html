@@ -1,4 +1,4 @@
-<section class="google-map features" data-ng-app="mapsApp" ng-init = "getPlan()">
+<section class="google-map features plan-dialog" data-ng-app="mapsApp" ng-init = "getPlan()">
   <div class='ng-modal-overlay'>
     <div class='ng-modal-dialog' ng-style='dialogStyle'>
       <article class="plan-summary">
@@ -11,9 +11,9 @@
         <li>{{tripInfo2.date | date: 'short'}}</li>
         <li>{{tripInfo2.duration}}</li>
         <li>{{tripInfo2.start | date: 'mediumDate'}} {{tripInfo2.end ?  'to' : ''}} {{tripInfo2.end | date: 'mediumDate'}}</li>
-        <li><a href="#/summary" class="btn-xsmall">Long View</a></li>
-        <li><a href="#/map"><button class="btn-small">Cancel</button></a></li>
       </ul>
+      <a href="#/summary"><button class="btn-small">Long View</button></a>
+      <a href="#/map"><button class="btn-small">Cancel</button></a>
       </article>
     </div>
   </div>
