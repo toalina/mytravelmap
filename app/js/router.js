@@ -19,11 +19,11 @@ module.exports = function(mapsApp) {
       })
       .when('/future', {
         templateUrl: 'views/future-trips.html',
-        controller: 'FutureTripsController'
+        controller: 'TripsController'
       })
       .when('/past', {
-        templateUrl: 'views/past-trips.html'
-        // controller??
+        templateUrl: 'views/past-trips.html',
+        controller: 'TripsController'
       })
       .when('/map', {
         templateUrl: 'views/google-map.html'

@@ -15,13 +15,17 @@ locationRouter.get('/getAll', eatAuth, function(req,res) {
 });
 
 locationRouter.post('/create', jsonParser, function(req,res) {
+  console.log(req.body);
   var newLocation = new Location();
-  newLocation.lng = req.body.lng;
+  newLocation.lng = req.body.lng; 
   newLocation.lat = req.body.lat;
-  // newLocation.user = req.user.username;
+  newLocation.user = req.body.username;
   newLocation.memo = req.body.memo;
   newLocation.name = req.body.name;
+  newLocation.type = req.body.type;
   newLocation.save(function(err, data) {
+    console.log('asdasd');
+    console.log(data);
     if (err) return err;
     res.json(data);
   });
