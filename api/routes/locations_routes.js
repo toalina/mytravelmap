@@ -19,7 +19,7 @@ locationRouter.post('/create', jsonParser, function(req,res) {
   var newLocation = new Location();
   newLocation.lng = req.body.lng; 
   newLocation.lat = req.body.lat;
-  newLocation.user = req.body.username;
+  newLocation.user = req.user.username;
   newLocation.memo = req.body.memo;
   newLocation.name = req.body.name;
   newLocation.type = req.body.type;
