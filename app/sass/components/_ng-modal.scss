@@ -33,6 +33,14 @@
     margin: 0.5em;
   }
 }
+.location-view {
+  label {
+    margin-bottom: 1em;
+  }
+  button {
+    width: 5em;
+  }
+}
 .mapForm-wrapper {
   font-weight: $weight-bold;
   h2 {
@@ -47,15 +55,16 @@
 }
 // Created in locations_controller.js
 .infoWindow {
-  width: 10em;
+  height: 3em;
   margin: 0 auto;
   @media only screen and (min-width: $breakpoint) {
     width: 100%;
   }
   li {
-    display: inline-block;
+    width: 7em;
+    display: inline;
     @media only screen and (min-width: $breakpoint) {
-      display: inline;
+      // display: inline;
     }
   }
 }

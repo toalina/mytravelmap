@@ -32,15 +32,6 @@ module.exports = function(mapsApp) {
         templateUrl: 'views/plan.html',
         controller: 'PlanController'
       })
-      .when('/photos', {
-        templateUrl: 'views/photos.html'
-      })
-      .when('/memos', {
-        templateUrl: 'views/memos.html'
-      })
-      .when('/bookmarks', {
-        templateUrl: 'views/bookmarks.html'
-      })
       .when('/form', {
         templateUrl: 'views/add-edit-form.html',
         controller: 'PlanController'

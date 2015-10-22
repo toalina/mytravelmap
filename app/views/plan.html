@@ -1,17 +1,20 @@
-
-<!-- FEATURES -->
-<section class="features" ng-init = "getPlan()">
-    {{tripInfo2}}
-    <h1>Plan</h1>
-    <h2>{{tripInfo2.name}}</h2>
-    <ul>
-      <li>{{tripInfo2.plan ? 'PLAN:' : ''}} {{tripInfo2.plan}}</li>
-      <li>{{tripInfo2.memo}}</li>
-      <li>{{tripInfo2.date | date: 'short'}}</li>
-      <li>{{tripInfo2.duration}}</li>
-      <li>{{tripInfo2.start | date: 'mediumDate'}} {{tripInfo2.end ?  'to' : ''}} {{tripInfo2.end | date: 'mediumDate'}}</li>
-      <li><a href="#/form" class="btn-xsmall">Add</a></li>
-    </ul>
-
-  </article>
+<section class="google-map features" data-ng-app="mapsApp" ng-init = "getPlan()">
+  <div class='ng-modal-overlay'>
+    <div class='ng-modal-dialog' ng-style='dialogStyle'>
+      <article class="plan-summary">
+      {{tripInfo2}}
+      <h1>Plan (Short View)</h1>
+      <h2>{{tripInfo2.name}}</h2>
+      <ul>
+        <li>{{tripInfo2.plan ? 'PLAN:' : ''}} {{tripInfo2.plan}}</li>
+        <li>{{tripInfo2.memo}}</li>
+        <li>{{tripInfo2.date | date: 'short'}}</li>
+        <li>{{tripInfo2.duration}}</li>
+        <li>{{tripInfo2.start | date: 'mediumDate'}} {{tripInfo2.end ?  'to' : ''}} {{tripInfo2.end | date: 'mediumDate'}}</li>
+        <li><a href="#/summary" class="btn-xsmall">Long View</a></li>
+        <li><a href="#/map"><button class="btn-small">Cancel</button></a></li>
+      </ul>
+      </article>
+    </div>
+  </div>
 </section>
