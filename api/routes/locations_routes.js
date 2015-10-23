@@ -45,6 +45,7 @@ locationRouter.put('/update/:location_id', jsonParser, function(req, res){
       if(req.body.start) location.start = req.body.start;
       if(req.body.end) location.end = req.body.end;
       if(req.body.url) location.gallery.push(req.body.url);
+      if(req.body.bookmark) location.bookmarks.push(req.body.bookmark); 
       location.save(function(err, data){
       if (err) return err;
       res.json(data);
