@@ -71,7 +71,6 @@ module.exports = function(app) {
         function(res){
           $scope.locations.push($scope.temp);
           googleMapService.setMarker($scope.temp);
-          $scope.temp = null;
       },
         function(res){
           alert('Didnt work');
@@ -89,7 +88,6 @@ module.exports = function(app) {
         function(res){
           $scope.locations.push($scope.temp);
           googleMapService.setMarker($scope.temp);
-          $scope.temp = null;
       },
         function(res){
           alert('Didnt work');
@@ -106,14 +104,15 @@ module.exports = function(app) {
       });
     };
 
+
+
     $scope.deleteLocation = function(location) {
       $http.delete('/api/locations/delete/' + location._id, function(err, res) {
         if (err) return console.log(err);
-        $scope.getAll();
-        $location.path('/map');
       })
+      $scope.getAll();
+      $location.path('/map');
     };
-
 
     $scope.deleteTemp;
     
@@ -127,6 +126,7 @@ module.exports = function(app) {
           });
           $scope.deleteTemp = x[0];
           $scope.deleteLocation($scope.deleteTemp);
+
         }, function(res){
           console.log('did not get plan data');
         }
