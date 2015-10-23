@@ -77,17 +77,13 @@
 .article-links {
   list-style-type: none;
   padding-top: 1em;
+  width: 90%;
   @include flexwrapper;
   @media only screen and (min-width: $breakpoint) {
     width: 60%;
   }
-
   li {
     @include flexitem;
-    @media only screen and (min-width: $breakpoint) {
-      // display: inline;
-      // flex-basis: 20%;
-    }
   }
   a {
     font-size: $x-small;
