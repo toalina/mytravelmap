@@ -11,7 +11,6 @@ module.exports = function(app) {
 
     $http.defaults.headers.common.token = eat;
 
-
     $scope.lat = 'LATITUDE';
     $scope.lng = 'LONGITUDE';
     $scope.name = 'NAME';
@@ -147,8 +146,9 @@ module.exports = function(app) {
       )
     };
 
+    $scope.do = function(){
 
-
+    }
 
   }]);
 };
