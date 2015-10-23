@@ -28,13 +28,13 @@
               </fieldset>
               <fieldset>
                 <label for="departure">Departure Date</label>
-                <input type="date" placeholder="10-1-2015" data-ng-model="mapForm.departure" required>
-                {{ mapForm.departure | date }}
+                <input type="date" placeholder="10-1-2015" data-ng-model="newLocation.start" required>
+                {{ newLocation.start | date }}
               </fieldset>
               <fieldset>
                 <label for="days">Duration</label>
-                <input type="number" placeholder="12 days" data-ng-model="mapForm.days" required>
-                {{ mapForm.days }}
+                <input type="number" placeholder="12 days" data-ng-model="newLocation.days" required>
+                {{ newLocation.days }}
               </fieldset>
               <button type="submit" class="btn-small" data-ng-click="createFutureTrip(newLocation)">Future</button>
               <button type="submit" class="btn-small" data-ng-click="createPastTrip(newLocation)">Past</button>
