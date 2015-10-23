@@ -106,6 +106,11 @@ module.exports = function(app) {
 
 
 
+    $scope.shit = function() {
+      console.log('SHIT!!');
+      alert('SHIT!!!!');
+    };
+
     $scope.deleteLocation = function(location) {
       $http.delete('/api/locations/delete/' + location._id, function(err, res) {
         if (err) return console.log(err);
