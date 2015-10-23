@@ -1,7 +1,8 @@
 module.exports = function(app) {
   app.controller('locationCtrl', ['$rootScope','$scope','$http', 'Gservice', '$location', '$cookies', function($rootScope, $scope, $http, Gservice, $location, $cookies){
 
-    $scope.locations = [];           
+    $scope.locations = [];         
+
     var googleMapService = Gservice($scope.locations);
 
     var eat = $cookies.get('eat');
@@ -52,7 +53,6 @@ module.exports = function(app) {
         function(res){
           $scope.locations = res.data;
           googleMapService.initMap($scope.locations);
-          console.log('temp in getAll: ' + $scope.temp);
         },
         function(res){
           alert('not working!!!!');
@@ -60,20 +60,18 @@ module.exports = function(app) {
       )
     };
 
+
     $scope.createFutureTrip = function(location) {
+      $scope.temp.type= 'future';
+      $scope.temp.start = location.start;
+      $scope.temp.end = location.start + location.durate;
       $scope.hideModal();
-      $http.post('/api/locations/create', location) //location = req 
+      $http.post('/api/locations/create', $scope.temp)
       .then(
         function(res){
-          location.lat = $scope.temp.lat;
-          location.lng = $scope.temp.lng;
-          location.memo = '';
-          location.name = $scope.temp.name; 
-          location.type = 'future';
-          location.start = location.start;
-          $scope.locations.push(location);
-          console.log('create future trip');
-          googleMapService.setMarker(location);          
+          $scope.locations.push($scope.temp);
+          googleMapService.setMarker($scope.temp);
+          $scope.temp = null;
       },
         function(res){
           alert('Didnt work');
@@ -82,24 +80,23 @@ module.exports = function(app) {
     };
 
     $scope.createPastTrip = function(location) {
+      $scope.temp.type='past';
+      $scope.temp.start = location.start;
+      $scope.temp.end = location.start + location.durate;
       $scope.hideModal();
-      $http.post('/api/locations/create', location)
+      $http.post('/api/locations/create', $scope.temp)
       .then(
         function(res){
-          location.lat = $scope.temp.lat;
-          location.lng = $scope.temp.lng;
-          location.memo = '';
-          location.name = $scope.temp.name; 
-          location.type = 'past';
-          $scope.locations.push(location);
-          console.log('create past trip');
-          googleMapService.setMarker(location);          
+          $scope.locations.push($scope.temp);
+          googleMapService.setMarker($scope.temp);
+          $scope.temp = null;
       },
         function(res){
           alert('Didnt work');
         }
       )
     };
+
 
     $scope.updateLocation = function(location) {
       locationResource.update(location, function(err){
@@ -112,10 +109,10 @@ module.exports = function(app) {
     $scope.deleteLocation = function(location) {
       $http.delete('/api/locations/delete/' + location._id, function(err, res) {
         if (err) return console.log(err);
+        $scope.getAll();
         $location.path('/map');
       })
     };
-
 
 
     $scope.deleteTemp;

@@ -23,6 +23,7 @@ locationRouter.post('/create', jsonParser, eatAuth, function(req,res) {
   newLocation.memo = req.body.memo;
   newLocation.name = req.body.name;
   newLocation.start = req.body.start;
+  newLocation.end = req.body.end;
   newLocation.type = req.body.type;
   newLocation.save(function(err, data) {
     console.log('asdasd');
