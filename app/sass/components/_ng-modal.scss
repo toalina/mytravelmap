@@ -82,7 +82,6 @@
 // Created in locations_controller.js
 .infoWindow {
   height: 3.5em;
-  // margin: 0 auto;
   @include flexwrapper;
   @media only screen and (min-width: $breakpoint) {
     width: 100%;
