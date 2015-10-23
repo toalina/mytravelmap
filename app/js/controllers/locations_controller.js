@@ -108,9 +108,9 @@ module.exports = function(app) {
     $scope.deleteLocation = function(location) {
       $http.delete('/api/locations/delete/' + location._id, function(err, res) {
         if (err) return console.log(err);
-        $scope.getAll();
-        $location.path('/map');
       })
+      $scope.getAll();
+      $location.path('/map');
     };
 
 
