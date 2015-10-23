@@ -146,9 +146,5 @@ module.exports = function(app) {
         }
       ) 
     };
-
-    
-
-
   }]);
 };
