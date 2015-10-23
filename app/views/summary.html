@@ -1,16 +1,14 @@
 <!-- SUMMARY / LONG VIEW -->
 <section class="features">
   <h1>Summary / Long View</h1>
-  {{tripInfo2.gallery}}
     <!-- PLAN -->
     <article class="features plan-summary" ng-init = "getPlan()">
       <h1>Plan</h1>
       <h2>{{tripInfo2.name}}</h2>
       <ul>
-        <li>{{tripInfo2.plan ? 'PLAN:' : ''}} {{tripInfo2.plan}}</li>
-        <li>{{tripInfo2.memo}}</li>
+        <li>{{tripInfo2.plan}}</li>
         <li>{{tripInfo2.date | date: 'short'}}</li>
-        <li>{{tripInfo2.duration}}</li>
+        <li>{{tripInfo2.duration}}{{tripInfo2.duration ? 'days' : ''}}</li>
         <li>{{tripInfo2.start | date: 'mediumDate'}} {{tripInfo2.end ?  'to' : ''}} {{tripInfo2.end | date: 'mediumDate'}}</li>
         <li><a href="#/form" class="btn-xsmall">Add</a></li>
       </ul>
@@ -19,12 +17,10 @@
     <!-- PHOTOS  -->
     <article class="photo-summary">
       <section class="gallery">
-        <h1>Photo Gallery</h1>
-        
-          <div ng-repeat="image in tripInfo2.gallery">
-            <img ng-src = "{{image}}"/>
-          </div>
-        
+        <h1>Photos</h1> 
+            <div ng-repeat="image in tripInfo2.gallery">
+              <img ng-src = "{{image}}"/>
+            </div>
       </section>
 
       <a href="#/form" class="btn-xsmall">Add</a>
@@ -33,26 +29,18 @@
     <!-- MEMOS -->
     <article class="memo-summary">
       <h1>Memos</h1>
-      <h2>New York, NY {{ xxx.destination }} </h2>
-      <ul>
-        <li>Time Square</li>
-        <li>SOHO</li>
-        <li>Brooklyn Bridge</li>
-        <li>Central Park</li>
+        {{tripInfo2.memo}}
         <li><a href="#/form" class="btn-xsmall">Add</a></li>
-      </ul>
     </article>
 
     <!-- BOOKMARKS  -->
     <article class="bookmarks-summary">
       <h1>Bookmarks</h1>
-      <h2>New York, NY (( xxx.destination )) </h2>
       <ul>
-        <li>Time Square</li>
-        <li>SOHO</li>
-        <li>Brooklyn Bridge</li>
-        <li>Central Park</li>
-        <li><a href="#/form" class="btn-xsmall">Add</a></li>
+        <li ng-repeat="x in tripInfo2.bookmarks"><a href = "{{x}}">{{x}}</a></li>
+        <li>
+          <a href="#/form" class="btn-xsmall">Add</a>
+        </li>
       </ul>
     </article>
 </section> <!--END OF SUMMARY SECTION -->
