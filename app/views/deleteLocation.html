@@ -1,13 +1,11 @@
+
 <!-- MAP -->
 <section class="google-map plan-dialog">
   <div class='ng-modal-overlay'>
     <div class='ng-modal-dialog' ng-style='dialogStyle'>
       <h1>{{anchor}} </h1>
-
-    <h2>Right-click to choose a location</h2>
     <button class="btn-small" data-ng-click="deleteTrip()">Delete</button>
-    <button class="btn-small" ng-click="do(); $event.preventDefault()">Cancel</button>
+    <a href="#/map"><button class="btn-small">Cancel</button></a>
   </div>
   </div>
 </section>
-
