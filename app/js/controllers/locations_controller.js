@@ -1,16 +1,15 @@
 module.exports = function(app) {
   app.controller('locationCtrl', ['$rootScope','$scope','$http', 'Gservice', '$location', '$cookies', function($rootScope, $scope, $http, Gservice, $location, $cookies){
 
-    $scope.locations = [];         
+    $scope.locations = [];
 
     var googleMapService = Gservice($scope.locations);
 
     var eat = $cookies.get('eat');
     if (!(eat && eat.length))
       $location.path('/signup');
-    
+
     $http.defaults.headers.common.token = eat;
-    
 
     $scope.lat = 'LATITUDE';
     $scope.lng = 'LONGITUDE';
@@ -116,7 +115,7 @@ module.exports = function(app) {
 
 
     $scope.deleteTemp;
-    
+
     $scope.deleteTrip = function() {
       $http.get('api/locations/getAll')
       .then(
@@ -144,11 +143,12 @@ module.exports = function(app) {
         }, function(res){
           console.log('did not get plan data');
         }
-      ) 
+      )
     };
 
-    
+    $scope.do = function(){
 
+    }
 
   }]);
 };

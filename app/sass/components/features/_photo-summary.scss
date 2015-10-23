@@ -8,27 +8,16 @@
     font-family: $lato;
   }
 }
-
 .gallery {
   padding: 1em;
   div {
-    width: 4em;
-    height: 4em;
-    text-align: center;
     margin: .5em .5em .5em 0;
     display: inline-block;
-    &:nth-child(odd) {
-      background-color: $color-primary;
-      &:hover {
-        background-color: $color-accent-light;
-      }
-    }
-    &:nth-child(even) {
-      background-color: $color-accent;
-      &:hover {
-        background-color: $color-accent-light;
-      }
-    }
+  }
+  img {
+    width: 10em;
+    height: 10em;
+    text-align: center;
   }
 }
 

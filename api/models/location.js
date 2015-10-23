@@ -12,7 +12,8 @@ var locationSchema = new mongoose.Schema({
   end: Date,
   plan: String,
   duration: Number,
-  gallery: [{type: String}]
+  gallery: [{type: String}],
+  bookmarks: [{type: String}]
 });
 
 module.exports = mongoose.model('Location', locationSchema);

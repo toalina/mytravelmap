@@ -14,6 +14,9 @@ module.exports = function(app){
     var arr;
     $scope.tripInfo;
     $scope.tripInfo2;
+    // $scope.gallery = $scope.tripInfo2.filter(function(item){
+    //   return item.gallery;
+    // });
 
     $scope.getPlan = function(){
       $http.get('/api/locations/getAll')
@@ -36,7 +39,7 @@ module.exports = function(app){
       alert($scope.tripInfo2._id);
       $http.put('/api/locations/update/' + $scope.tripInfo2._id, updateForm)
       .then(
-        function(res){console.log('Update Successful!!!')},
+        function(res){$location.path('/summary')},
         function(res){console.log('Failed to update record')}
       )
     }
