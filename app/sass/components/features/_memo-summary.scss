@@ -5,6 +5,9 @@
       color: $color-primary;
     }
   }
+  a {
+    font-family: $lato;
+  }
   @media only screen and (min-width: $breakpoint) {
     width: 60%;
     margin: 0 auto;

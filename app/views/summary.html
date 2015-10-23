@@ -10,8 +10,8 @@
         <li>{{tripInfo2.date | date: 'short'}}</li>
         <li>{{tripInfo2.duration}}{{tripInfo2.duration ? 'days' : ''}}</li>
         <li>{{tripInfo2.start | date: 'mediumDate'}} {{tripInfo2.end ?  'to' : ''}} {{tripInfo2.end | date: 'mediumDate'}}</li>
-        <li><a href="#/form" class="btn-xsmall">Add</a></li>
       </ul>
+      <a href="#/form" class="btn-xsmall">Add</a>
     </article>
 
     <!-- PHOTOS  -->
@@ -31,7 +31,7 @@
     <article class="memo-summary">
       <h1>Memos</h1>
         {{tripInfo2.memo}}
-        <li><a href="#/form" class="btn-xsmall">Add</a></li>
+      <a href="#/form" class="btn-xsmall">Add</a>
     </article>
 
     <!-- BOOKMARKS  -->
@@ -39,10 +39,8 @@
       <h1>Bookmarks</h1>
       <ul>
         <li ng-repeat="x in tripInfo2.bookmarks"><a href = "{{x}}">{{x}}</a></li>
-        <li>
-          <a href="#/form" class="btn-xsmall">Add</a>
-        </li>
       </ul>
+      <a href="#/form" class="btn-xsmall">Add</a>
     </article>
 </section> <!--END OF SUMMARY SECTION -->
 
