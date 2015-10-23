@@ -11,8 +11,8 @@ var locationSchema = new mongoose.Schema({
   start: Date,
   end: Date,
   plan: String,
-  duration: Number
-//gallery: [Need to figure out Cloudinary stuff]
+  duration: Number,
+  gallery: [{type: String}]
 });
 
 module.exports = mongoose.model('Location', locationSchema);

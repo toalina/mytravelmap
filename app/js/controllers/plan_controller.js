@@ -41,6 +41,36 @@ module.exports = function(app){
       )
     }
 
+    var myUrl;
+    $scope.addPhoto = function() {
+      cloudinary.openUploadWidget({
+        cloud_name: 'dhtizamqh',
+        upload_preset: 'bslsfe4i'
+        },
+        function(error, result) {
+          if (error)
+            console.log(error);
+          if (result)
+            console.log('from controller ', result[0].url);
+            myURL = (result[0].url);  // save photo in the database
+            alert(myURL)
+            $scope.sendPhoto(myURL);
+        });
+    };
+
+    $scope.sendPhoto = function(str){
+      console.log(str);
+      $http({
+        method: 'PUT',
+        url: '/api/locations/addphoto/' + $scope.tripInfo2._id,
+        data: {'picture':str}
+        }) 
+      .then(
+        function(res){alert('succccccceeeeeessssss on send photo')},
+        function(res){alert('faaaaaaaaail on sent photo')}
+      )
+    }
+
 
 
 
