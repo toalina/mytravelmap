@@ -14,6 +14,9 @@ module.exports = function(app){
     var arr;
     $scope.tripInfo;
     $scope.tripInfo2;
+    // $scope.gallery = $scope.tripInfo2.filter(function(item){
+    //   return item.gallery;
+    // });
 
     $scope.getPlan = function(){
       $http.get('/api/locations/getAll')
