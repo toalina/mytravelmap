@@ -1,10 +1,9 @@
 <!-- SUMMARY / LONG VIEW -->
 <section class="features">
   <h1>Summary / Long View</h1>
-
+  {{tripInfo2.gallery}}
     <!-- PLAN -->
     <article class="features plan-summary" ng-init = "getPlan()">
-      {{tripInfo2}}
       <h1>Plan</h1>
       <h2>{{tripInfo2.name}}</h2>
       <ul>
@@ -19,16 +18,13 @@
 
     <!-- PHOTOS  -->
     <article class="photo-summary">
-      <h1>Photos</h1>
-      <h2>Some place</h2>
       <section class="gallery">
         <h1>Photo Gallery</h1>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
+        
+          <div ng-repeat="image in tripInfo2.gallery">
+            <img ng-src = "{{image}}"/>
+          </div>
+        
       </section>
 
       <a href="#/form" class="btn-xsmall">Add</a>
