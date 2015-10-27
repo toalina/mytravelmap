@@ -38,7 +38,7 @@ locationRouter.put('/update/:location_id', jsonParser, function(req, res){
     if (err) return err;
       if(req.body.lng) location.lng = req.body.lng;
       if(req.body.lat)  location.lat = req.body.lat;
-      if(req.body.memo) location.memo = req.body.memo;
+      if(req.body.memo) location.memo.push(req.body.memo);
       if(req.body.plan) location.plan = req.body.plan;
       if(req.body.name) location.name = req.body.name;
       if(req.body.duration) location.duration = req.body.duration;
