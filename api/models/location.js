@@ -4,7 +4,7 @@ var User = require('./user');
 var locationSchema = new mongoose.Schema({
   lat: Number,
   lng: Number,
-  memo: String,
+  memo: [{type: String}],
   name: String,
   type: String,
   user: {type: String, required: true},

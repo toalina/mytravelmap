@@ -33,7 +33,6 @@ module.exports = function(app){
     };
 
     $scope.updatePlan = function(updateForm){
-      alert($scope.tripInfo2._id);
       $http.put('/api/locations/update/' + $scope.tripInfo2._id, updateForm)
       .then(
         function(res){$location.path('/summary')},

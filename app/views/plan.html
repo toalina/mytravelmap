@@ -6,7 +6,13 @@
       <h2>{{tripInfo2.name}}</h2>
       <ul>
         <li>{{tripInfo2.plan ? 'PLAN:' : ''}} {{tripInfo2.plan}}</li>
-        <li>{{tripInfo2.memo}}</li>
+        <li>
+          <ul>
+            <li ng-repeat="note in tripInfo2.memo">
+              {{note}}
+            </li>
+          </ul>
+        </li>
         <li>{{tripInfo2.date | date: 'short'}}</li>
         <li>{{tripInfo2.duration}}</li>
         <li>{{tripInfo2.start | date: 'mediumDate'}} {{tripInfo2.end ?  'to' : ''}} {{tripInfo2.end | date: 'mediumDate'}}</li>
