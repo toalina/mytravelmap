@@ -66,7 +66,10 @@ module.exports = function(app){
         data: {'picture':str}
         }) 
       .then(
-        function(res){console.log('successful photo upload')},
+        function(res){
+          console.log('successful photo upload');
+          $location.path('/summary');
+         },
         function(res){console.log('failed photo upload')}
       )
     }
