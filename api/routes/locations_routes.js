@@ -53,29 +53,18 @@ locationRouter.put('/update/:location_id', jsonParser, function(req, res){
   });
 });
 
-// locationRouter.put('/addphoto/:location_id', jsonParser, function(req, res){
-//   Location.update({'_id': req.params.location_id},{$pushAll: } function(err, location) {
-//       if (err) return err;
-//       if(req.body.url){
-//         console.log(req.body.url);
-//         location.gallery.push(req.body.url);
-//         location.save(function(err, data){
-//       if (err) return err;
-//       res.json(data);
-//     });
-//   });
-// });
 
-  locationRouter.put('/addphoto/:location_id', jsonParser, function(req, res){
-    Location.findByIdAndUpdate(
-    req.params.location_id,
-    {$push: {"gallery": req.body.picture}},
-    {safe: true, upsert: true},
-    function(err, model) {
-        console.log(err);
-    }
-    );  
-  });
+locationRouter.put('/addphoto/:location_id', jsonParser, function(req, res){
+  Location.findByIdAndUpdate(
+  req.params.location_id,
+  {$addToSet: {"gallery": req.body.picture}},
+  {safe: true, upsert: true},
+  function(err, model) {
+    console.log(err);
+  }
+  );
+  res.end();  
+});
 
 locationRouter.delete('/delete/:location_id', jsonParser, function(req, res){
   Location.remove({'_id': req.params.location_id}, function(err){
