@@ -19,7 +19,9 @@
       <section class="gallery">
         <h1>Photos</h1>
             <div ng-repeat="image in tripInfo2.gallery">
-              <img ng-src = "{{image}}"/>
+              <a href = "{{image}}" target="_blank"> 
+                <img ng-src = "{{image}}"/>
+              </a>
             </div>
       </section>
       <a href="#/photoForm" class="btn-xsmall">Add</a>
