@@ -3,7 +3,6 @@ module.exports = function(app) {
     $scope.name;
 
     $rootScope.$on('markerOpening', function(event, tempName){
-      alert('yayayayaya');
       $scope.$apply(function(){
       $scope.name = tempName;
       alert($scope.name);

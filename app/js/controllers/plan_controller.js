@@ -52,7 +52,6 @@ module.exports = function(app){
           if (result)
             console.log('from controller ', result[0].url);
             myURL = (result[0].url);  // save photo in the database
-            alert(myURL)
             $scope.sendPhoto(myURL);
         });
     };
