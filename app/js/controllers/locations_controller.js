@@ -54,7 +54,7 @@ module.exports = function(app) {
           googleMapService.initMap($scope.locations);
         },
         function(res){
-          alert('not working!!!!');
+          console.log('unable to retrieve map data');
         }
       )
     };
@@ -73,7 +73,7 @@ module.exports = function(app) {
           $scope.temp = null;
       },
         function(res){
-          alert('Didnt work');
+          console.log('unable to create new trip');
         }
       )
     };
@@ -91,7 +91,7 @@ module.exports = function(app) {
           $scope.temp = null;
       },
         function(res){
-          alert('Didnt work');
+          console.log('unable to create new trip');
         }
       )
     };

@@ -17,21 +17,25 @@
     <!-- PHOTOS  -->
     <article class="photo-summary">
       <section class="gallery">
-
         <h1>Photos</h1>
             <div ng-repeat="image in tripInfo2.gallery">
-              <img ng-src = "{{image}}"/>
+              <a href = "{{image}}" target="_blank">
+                <img ng-src = "{{image}}"/>
+              </a>
             </div>
       </section>
-
-      <a href="#/form" class="btn-xsmall">Add</a>
+      <a href="#/photoForm" class="btn-xsmall">Add</a>
     </article>
 
     <!-- MEMOS -->
     <article class="memo-summary">
       <h1>Memos</h1>
-        {{tripInfo2.memo}}
-      <a href="#/form" class="btn-xsmall">Add</a>
+        <ul>
+          <li ng-repeat="note in tripInfo2.memo">
+            {{note}}
+          </li>
+        </ul>
+        <a href="#/form" class="btn-xsmall">Add</a>
     </article>
 
     <!-- BOOKMARKS  -->

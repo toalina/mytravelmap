@@ -12,7 +12,6 @@ module.exports = function(app){
       $http.get('/api/locations/getAll')
       .then(
         function(res){
-          // $scope.trips = res.data;
           var x = res.data;
           var g = x.filter(function(item){
             return item.type === "future";

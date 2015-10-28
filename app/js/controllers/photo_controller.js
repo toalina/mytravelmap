@@ -16,10 +16,5 @@ module.exports = function(app) {
             myURL = (result[0].url);  // save photo in the database
         });
     };
-
-    $scope.removePhoto = function(url) {
-
-      //remove photo shit here
-    };
   }]);
 };
