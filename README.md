@@ -2,7 +2,7 @@
 ## Code Fellows Project Week (Week 8)
 ### Kumji, Phil, Jeff, & Alina
 
-## Live Demo [here](https://mytravelmap.herokuapp.com/)
+Live Demo [here](https://mytravelmap.herokuapp.com/)
 
 ## Description
 
